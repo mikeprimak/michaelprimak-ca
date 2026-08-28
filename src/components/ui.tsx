@@ -1,0 +1,146 @@
+import Link from "next/link";
+import type { ComponentProps, ReactNode } from "react";
+
+export function Arrow({ className = "size-4" }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      className={className}
+    >
+      <path d="M3 8h10M9 4l4 4-4 4" />
+    </svg>
+  );
+}
+
+type ButtonProps = {
+  href?: string;
+  children: ReactNode;
+  size?: "md" | "sm";
+  className?: string;
+  /** Invert colours (for use on a dark callout). */
+  inverted?: boolean;
+} & Omit<ComponentProps<"button">, "children" | "className">;
+
+const btnBase =
+  "inline-flex shrink-0 items-center gap-2.5 rounded-full font-medium whitespace-nowrap transition-colors hover:bg-accent hover:text-on-accent disabled:opacity-60 disabled:hover:bg-btn-bg disabled:hover:text-btn-fg";
+
+export function Button({
+  href,
+  children,
+  size = "md",
+  className = "",
+  inverted = false,
+  ...rest
+}: ButtonProps) {
+  const cls = [
+    btnBase,
+    size === "md" ? "h-[52px] px-6 text-[16px]" : "h-[42px] px-[18px] text-[15px]",
+    inverted ? "bg-bg text-ink" : "bg-btn-bg text-btn-fg",
+    className,
+  ].join(" ");
+  if (href) {
+    return (
+      <Link href={href} className={cls}>
+        {children}
+        <Arrow />
+      </Link>
+    );
+  }
+  return (
+    <button className={cls} {...rest}>
+      {children}
+      <Arrow />
+    </button>
+  );
+}
+
+export function TextLink({
+  href,
+  children,
+  className = "",
+  external = false,
+}: {
+  href: string;
+  children: ReactNode;
+  className?: string;
+  external?: boolean;
+}) {
+  const cls = `inline-flex items-center gap-2 border-b border-line pb-0.5 font-medium text-ink transition-colors hover:border-accent hover:text-accent ${className}`;
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+        {children}
+        <Arrow />
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={cls}>
+      {children}
+      <Arrow />
+    </Link>
+  );
+}
+
+/** "01 —— Services" style section label. */
+export function Eyebrow({ number, label }: { number?: string; label: string }) {
+  return (
+    <div className="mb-7 flex items-center gap-3.5">
+      {number && (
+        <>
+          <span className="mono">{number}</span>
+          <span aria-hidden="true" className="block h-px w-7 bg-ink3" />
+        </>
+      )}
+      <span className="mono">{label}</span>
+    </div>
+  );
+}
+
+export function SectionHeading({
+  children,
+  intro,
+  className = "",
+}: {
+  children: ReactNode;
+  intro?: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <h2 className="serif mb-5 max-w-[760px] text-[34px] leading-[1.08] sm:text-[46px]">
+        {children}
+      </h2>
+      {intro && (
+        <p className="mb-9 max-w-[620px] text-[17px] text-ink2 sm:mb-14 sm:text-[19px]">
+          {intro}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export function Section({
+  id,
+  children,
+  className = "",
+}: {
+  id?: string;
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <section
+      id={id}
+      className={`scroll-mt-16 border-t border-line py-16 sm:py-24 ${className}`}
+    >
+      <div className="wrap">{children}</div>
+    </section>
+  );
+}

@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* Dark mode is driven by next-themes adding `.dark` to <html>. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---- Design tokens (mirrors design/mock) ---- */
+:root {
+  --bg: #f4f1ea;
+  --bg2: #ebe7de;
+  --bg3: #e2ddd2;
+  --ink: #1a1815;
+  --ink2: #4a463f;
+  --ink3: #7d786e;
+  --line: #d8d3c7;
+  --accent: #b8491f;
+  --accent-h: #983a16;
+  --on-accent: #ffffff;
+  --btn-bg: #1a1815;
+  --btn-fg: #f4f1ea;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #161412;
+  --bg2: #1f1c19;
+  --bg3: #2a2622;
+  --ink: #f0ebe2;
+  --ink2: #bfb8ab;
+  --ink3: #8a8377;
+  --line: #2f2b26;
+  --accent: #e8703f;
+  --accent-h: #f28a5e;
+  --on-accent: #161412;
+  --btn-bg: #f0ebe2;
+  --btn-fg: #161412;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg2: var(--bg2);
+  --color-bg3: var(--bg3);
+  --color-ink: var(--ink);
+  --color-ink2: var(--ink2);
+  --color-ink3: var(--ink3);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-h: var(--accent-h);
+  --color-on-accent: var(--on-accent);
+  --color-btn-bg: var(--btn-bg);
+  --color-btn-fg: var(--btn-fg);
+
+  --font-sans: var(--font-geist), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-wrap: pretty;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  /* Page gutter + max width */
+  .wrap {
+    @apply mx-auto w-full max-w-[1216px] px-5 sm:px-8 lg:px-12;
+  }
+  /* Serif display type */
+  .serif {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.012em;
+  }
+  /* Small mono labels */
+  .mono {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink3);
+  }
+}

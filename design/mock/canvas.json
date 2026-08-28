@@ -1,0 +1,57 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "title": "Home — light",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 5640
+    },
+    {
+      "file": "HomeDark.dc.html",
+      "title": "Home — dark",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 5640
+    },
+    {
+      "file": "Mobile.dc.html",
+      "title": "Home — phone (390)",
+      "x": 3120,
+      "y": 0,
+      "w": 390,
+      "h": 8800
+    },
+    {
+      "file": "CaseStudy.dc.html",
+      "title": "Case study — Good Fights",
+      "x": 0,
+      "y": 5840,
+      "w": 1440,
+      "h": 3240
+    },
+    {
+      "file": "AltCool.dc.html",
+      "title": "Alternate stance — cool / grotesque (for comparison only)",
+      "x": 1560,
+      "y": 5840,
+      "w": 1440,
+      "h": 1520
+    }
+  ],
+  "annotations": [
+    {
+      "id": "readme",
+      "x": 3640,
+      "y": 0,
+      "w": 360,
+      "text": "michaelprimak.ca — design mock, 2026-08-27\n\nRecommended direction: warm paper, serif display + mono labels, one burnt-orange accent. Same page in light, dark and phone width.\n\nDashed boxes = screenshots to add. [Brackets] = facts to fill in (employers, years, stats). Numbers in the 'Live from production' card are sample values — the real site pulls them from the Good Fights API.\n\nThe 'Alternate stance' artboard (bottom right) is a hero-only sketch of a cooler, grotesque-type version, in case the warm serif look feels too soft."
+    }
+  ],
+  "launch": {
+    "view": "focused",
+    "file": "Main.dc.html"
+  }
+}
