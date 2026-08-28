@@ -1,8 +1,46 @@
 # michaelprimak.ca rebuild — handoff brief
 
-Status as of 2026-08-27: PLANNING. No site code written yet. Mike answered the open
-questions (see "Answers" below); next step is agreeing on design direction, then a
-design mock, then build.
+Status as of 2026-08-28: BUILT AND DEPLOYED (preview). The Next.js site is in this
+repo, pushed to github.com/mikeprimak/michaelprimak-ca (branch main, private repo) and
+auto-deploys to the Vercel project "michaelprimak-ca-next"
+(prj_B3tuqgsEKnujZCeXa5YGo65LCDSx): https://michaelprimak-ca-next.vercel.app
+The OLD site still lives in the separate Vercel project "michaelprimak-ca" and still
+serves michaelprimak.ca — cutover = move the domain to the new project.
+
+## Current state of the build (2026-08-28)
+- Stack: Next.js 16 (App Router, Turbopack), TypeScript, Tailwind v4, next-themes,
+  Resend. Content in src/content/site.ts and src/content/projects.ts. README.md explains
+  editing. `npm run build` and `npx eslint .` are clean.
+- Pages: / (hero w/ live Good Fights stats, services, work, how I work, experience,
+  contact form), /work/[slug] x4, /how-this-site-was-built, 404, OG image, sitemap,
+  robots, icon.svg.
+- Live stats: src/lib/good-fights.ts reads pagination totals from
+  https://fightcrewapp-backend.onrender.com/api/fights and /api/events (revalidate 1h,
+  5s timeout, static fallback 15,200 / 1,554).
+- Contact form: server action src/app/actions/contact.ts, honeypot + min-fill-time
+  spam check, sends via Resend. NEEDS `RESEND_API_KEY` in Vercel env (and ideally a
+  verified domain + CONTACT_FROM_EMAIL). Until then the form shows a "not connected,
+  email me directly" message. See .env.example.
+- Design mock (approved): https://claude.ai/code/artifact/1c34caec-1b8f-47cf-8ba3-785d3d8054e2
+  sources in design/mock/.
+
+## Still needed from Mike (placeholders in the content files)
+- Experience timeline: employers, roles, years (src/content/site.ts `experience`).
+- Good Fights: 3 phone screenshots into /public + list in projects.ts; App Store and
+  Google Play URLs; outcome numbers (installs, ratings, store rating).
+- avoidjawsurgery: screenshot; pages migrated / days-to-launch numbers.
+- Meaford Osteopathy: live URL if still up.
+- Resend API key (for the form). Decide whether the GitHub repo should be public (the
+  "How this site was built" page links to it; a private repo 404s for visitors).
+- Confirm "Ontario, Canada" in the footer, LinkedIn URL, reply-time promise.
+
+## Cutover checklist (when approved)
+1. Add michaelprimak.ca (+ www) to the Vercel project michaelprimak-ca-next (Settings →
+   Domains); Vercel will move it off the old project or ask to.
+2. Verify https://michaelprimak.ca serves the new site; check OG preview, sitemap.
+3. Pause/delete the old project "michaelprimak-ca" later.
+
+## History
 
 ## The ask (from Mike)
 - Existing site: https://michaelprimak.ca — hand-coded React SPA (client-rendered; the
