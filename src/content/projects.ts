@@ -140,9 +140,9 @@ export const projects: Project[] = [
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static rebuild · AI-assisted",
     image: {
-      src: "/avoidjawsurgery.png",
-      alt: "avoidjawsurgery.com — “Avoid Jaw Surgery” over a panoramic jaw X-ray",
-      kind: "artwork",
+      src: "/logo-avoidjawsurgery.png",
+      alt: "avoidjawsurgery.com wordmark: “Avoid” above “Jaw Surgery” in italic brick red",
+      kind: "logo",
     },
     screenshots: [],
     screenshotKind: "web",
