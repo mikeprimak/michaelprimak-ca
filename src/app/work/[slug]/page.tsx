@@ -87,9 +87,10 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
                 key={s.src}
                 src={s.src}
                 alt={s.alt}
-                width={project.screenshotKind === "phone" ? 260 : 900}
-                height={project.screenshotKind === "phone" ? 560 : 560}
-                className={project.screenshotKind === "phone" ? "w-[150px] rounded-3xl sm:w-[260px]" : "w-full max-w-[900px] rounded-xl"}
+                width={project.screenshotKind === "phone" ? 648 : 900}
+                height={project.screenshotKind === "phone" ? 1440 : 560}
+                sizes={project.screenshotKind === "phone" ? "(min-width: 640px) 260px, 150px" : "(min-width: 900px) 900px, 100vw"}
+                className={project.screenshotKind === "phone" ? "h-auto w-[150px] rounded-3xl sm:w-[260px]" : "h-auto w-full max-w-[900px] rounded-xl"}
               />
             ))}
           </div>

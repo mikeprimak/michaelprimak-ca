@@ -51,7 +51,20 @@ export const projects: Project[] = [
     kind: "Mobile app · Founder",
     featured: true,
     image: { src: "/good-fights-icon.png", alt: "Good Fights app icon", kind: "icon" },
-    screenshots: [], // TODO(Mike): add 3 phone screenshots to /public and list them here.
+    screenshots: [
+      {
+        src: "/good-fights-events.png",
+        alt: "Good Fights home screen: upcoming cards grouped by day, each with its poster, start time, broadcaster and a list of hype-rated fights.",
+      },
+      {
+        src: "/good-fights-upcoming.png",
+        alt: "The Upcoming tab: promotion filters, an event hero, Canadian broadcast listings for Sportsnet+ and Paramount+, and the main card with a hype score against each fight.",
+      },
+      {
+        src: "/good-fights-rate.png",
+        alt: "Rating a fight: Swanson vs Choi at UFC 206 scored 10 out of 10 on a colour-graded scale, with a written review and a link to the comments.",
+      },
+    ],
     screenshotKind: "phone",
     meta: [
       { label: "Role", value: "Founder · sole developer" },
