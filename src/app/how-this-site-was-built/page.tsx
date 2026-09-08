@@ -22,7 +22,7 @@ const stack = [
 const process = [
   {
     title: "Brief first, code last",
-    body: "Before anything was built: who the site is for (freelance clients first, employers second), what it has to say, and what the old site was missing. That brief drove every later decision.",
+    body: "Before anything was built: who the site is for (employers first), what it has to say, and what the old site was missing. That brief drove every later decision.",
   },
   {
     title: "A real design mock, approved before coding",
@@ -94,7 +94,7 @@ export default function HowThisSiteWasBuiltPage() {
 
       <div className="flex flex-col items-start justify-between gap-6 border-t border-line py-14 sm:flex-row sm:items-center">
         <h2 className="serif text-[32px] sm:text-[36px]">Want yours built this way?</h2>
-        <Button href="/#contact">Start a project</Button>
+        <Button href="/#contact">Get in touch</Button>
       </div>
     </article>
   );

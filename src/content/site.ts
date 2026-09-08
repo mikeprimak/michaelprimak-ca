@@ -4,10 +4,10 @@
  */
 
 export const site = {
-  name: "Mike Primak",
+  name: "Michael Primak",
   legalName: "Michael Primak",
   url: "https://michaelprimak.ca",
-  title: "Mike Primak — Senior full-stack developer",
+  title: "Michael Primak — Senior full-stack developer",
   description:
     "Senior full-stack developer in Ontario, Canada. React Native, TypeScript, Node and Postgres — shipped to the App Store and Google Play, with LLM features running in production.",
   location: "Ontario, Canada",
@@ -18,7 +18,7 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/michael-primak/",
     repo: "https://github.com/mikeprimak/michaelprimak-ca",
   },
-  resumePath: "/Mike-Primak-Resume.pdf",
+  resumePath: "/Michael-Primak-Resume.pdf",
   /** Reply-time promise shown next to the contact form. */
   replyTime: "one business day",
 };
@@ -27,16 +27,15 @@ export const nav = [
   { label: "Work", href: "/#work" },
   { label: "How I build", href: "/#how" },
   { label: "Experience", href: "/#experience" },
-  { label: "Services", href: "/#services" },
   { label: "Contact", href: "/#contact" },
 ];
 
 export const hero = {
   eyebrow: "Senior full-stack developer · Ontario, Canada · Remote",
   headline: "I design, build and run products end to end.",
-  lede: "Seven years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a Mobile and Web app I built and operate from the database up: apps on both stores, a Next.js site, the API behind them, and the scrapers and LLM enrichment that keep it current — 3,415 users, 76,516 ratings, all on infrastructure I operate myself.",
+  lede: "Nine years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a Mobile and Web app I built and operate from the database up: apps on both stores, a Next.js site, the API behind them, and the scrapers and LLM enrichment that keep it current — 3,415 users, 76,516 ratings, all on infrastructure I operate myself.",
   primaryCta: { label: "See the work", href: "/#work" },
-  secondaryCta: { label: "Open to senior roles and freelance projects", href: "/#contact" },
+  secondaryCta: { label: "Open to senior full-stack roles", href: "/#contact" },
   /** Compact, scannable stack line — recruiters and ATS both read this. */
   stack: [
     "TypeScript",
@@ -79,29 +78,6 @@ export const howIWork = {
     title: "This site is a working example.",
     body: "Designed and coded with Claude Code, with me reviewing every decision — statically generated, accessible, fast, and dark-mode aware. If you want to know how something here was built, ask me.",
   },
-};
-
-export const services = {
-  heading: "Available for freelance projects, too.",
-  intro:
-    "Alongside full-time work I take on client projects. Every one runs the same way: a short call, a written scope with a fixed price or a clear estimate, a preview link from the first week, then I launch it and hand you the keys.",
-  items: [
-    {
-      title: "Websites & web apps",
-      body: "Marketing sites, booking, dashboards, and the back-end behind them. Built to load fast, rank on Google, and be easy to update after I'm gone.",
-      stack: "Next.js · React · TypeScript · WordPress · Node · PostgreSQL",
-    },
-    {
-      title: "iOS & Android apps",
-      body: "One codebase, both stores. From the first build through App Store and Play Store review, updates, and the API the app talks to.",
-      stack: "React Native · Expo · REST APIs · App Store & Play Store",
-    },
-    {
-      title: "Technical leadership",
-      body: "A fractional lead for teams that need a senior hand: scoping, hiring, code review, and keeping developers, designers and customer teams pulling in one direction.",
-      stack: "Fractional lead · Team management · Code review · Planning",
-    },
-  ],
 };
 
 export type Role = "Developer" | "Manager";
@@ -151,16 +127,12 @@ export const experience = {
 
 export const contact = {
   heading: "Get in touch.",
-  intro: `Hiring, or have a project in mind? Tell me a little about it. I reply within ${site.replyTime}.`,
+  intro: `Hiring? Tell me about the role and the team. I reply within ${site.replyTime}.`,
   hiringNote:
     "Open to senior full-stack, front-end and React Native roles — remote, Canada. Résumé is above, or ask and I'll send it.",
   projectTypes: [
-    "A role at your company",
-    "Contract work",
-    "Website",
-    "Mobile app",
-    "Website and mobile app",
-    "Team lead / technical leadership",
-    "Not sure yet",
+    "A full-time role",
+    "A contract role",
+    "Something else",
   ],
 };

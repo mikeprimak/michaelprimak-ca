@@ -56,7 +56,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="What are you building?" id="type" error={err.type}>
+      <Field label="What's this about?" id="type" error={err.type}>
         <div className="relative">
           <select id="type" name="type" required defaultValue="" aria-invalid={!!err.type} className={`${inputCls} appearance-none pr-10`}>
             <option value="" disabled>

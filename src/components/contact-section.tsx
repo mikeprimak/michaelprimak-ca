@@ -5,7 +5,7 @@ import { Eyebrow, Section } from "./ui";
 export function ContactSection() {
   return (
     <Section id="contact">
-      <Eyebrow number="05" label="Contact" />
+      <Eyebrow number="04" label="Contact" />
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
         <div className="flex flex-col gap-7">
           <div>

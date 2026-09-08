@@ -41,7 +41,7 @@ export function SiteHeader() {
           ))}
           <ThemeToggle />
           <Button href="/#contact" size="sm">
-            Start a project
+            Get in touch
           </Button>
         </div>
 
@@ -80,7 +80,7 @@ export function SiteHeader() {
           ))}
           <div className="mt-4 px-3">
             <Button href="/#contact" onClick={() => setOpen(false)}>
-              Start a project
+              Get in touch
             </Button>
           </div>
         </div>

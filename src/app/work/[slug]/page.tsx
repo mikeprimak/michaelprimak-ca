@@ -167,8 +167,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         </Block>
 
         <div className="flex flex-col items-start justify-between gap-6 border-t border-line py-14 sm:flex-row sm:items-center">
-          <h2 className="serif text-[32px] sm:text-[36px]">Have something like this in mind?</h2>
-          <Button href="/#contact">Start a project</Button>
+          <h2 className="serif text-[32px] sm:text-[36px]">Looking for someone who builds like this?</h2>
+          <Button href="/#contact">Get in touch</Button>
         </div>
       </div>
     </article>
