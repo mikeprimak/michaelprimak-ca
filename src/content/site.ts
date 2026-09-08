@@ -34,7 +34,7 @@ export const nav = [
 export const hero = {
   eyebrow: "Senior full-stack developer · Ontario, Canada · Remote",
   headline: "I design, build and run products end to end.",
-  lede: "Seven years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is mine from the database up: apps on both stores, a Next.js site, the API behind them, and the scrapers and LLM enrichment that keep it current — 3,415 users, 76,516 ratings, all on infrastructure I operate myself.",
+  lede: "Seven years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a Mobile and Web app I built and operate from the database up: apps on both stores, a Next.js site, the API behind them, and the scrapers and LLM enrichment that keep it current — 3,415 users, 76,516 ratings, all on infrastructure I operate myself.",
   primaryCta: { label: "See the work", href: "/#work" },
   secondaryCta: { label: "Open to senior roles and freelance projects", href: "/#contact" },
   /** Compact, scannable stack line — recruiters and ATS both read this. */
@@ -112,7 +112,7 @@ export const experience = {
     "I've written the code, sat with the customer, and run the team — which is why I'm comfortable being handed any of the three.",
   timeline: [
     {
-      when: "2024 – now",
+      when: "Sept 2025 – now",
       org: "Good Fights",
       role: "Founder and sole developer. React Native apps on the App Store and Google Play, a Node/TypeScript API on Postgres, a Next.js site, daily scrapers and Claude-based enrichment — successor to Fighting Tomatoes.",
       type: "Developer" as Role,
@@ -130,7 +130,7 @@ export const experience = {
       type: "Developer" as Role,
     },
     {
-      when: "2020 – 2024",
+      when: "2016 – 2025",
       org: "Fighting Tomatoes",
       role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
       type: "Developer" as Role,

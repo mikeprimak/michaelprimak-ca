@@ -62,16 +62,20 @@ export function Hero() {
           </ul>
         </div>
         <div className="flex flex-col items-start gap-5 lg:items-end">
-          <Image
-            src="/mike-primak.png"
-            alt={`${site.name}, smiling`}
-            width={1019}
-            height={1131}
-            priority
-            sizes="(min-width: 1024px) 264px, 160px"
-            className="h-auto w-40 lg:w-[264px]"
-          />
-          <LiveCard />
+          {/* The photo is narrower than the live card, so it centres over the card
+              rather than hanging off one edge of it. */}
+          <div className="flex w-full max-w-[400px] flex-col items-center gap-5">
+            <Image
+              src="/mike-primak.png"
+              alt={`${site.name}, smiling`}
+              width={1019}
+              height={1131}
+              priority
+              sizes="(min-width: 1024px) 264px, 160px"
+              className="h-auto w-40 lg:w-[264px]"
+            />
+            <LiveCard />
+          </div>
         </div>
       </div>
     </div>
