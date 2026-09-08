@@ -22,7 +22,42 @@ export function PhoneFrames({ tall = false }: { tall?: boolean }) {
   );
 }
 
+function FeaturedShots({ project }: { project: Project }) {
+  if (project.screenshots.length === 0) return <PhoneFrames />;
+  const phone = project.screenshotKind === "phone";
+  return (
+    <div className="flex items-end justify-center gap-2.5 sm:gap-4">
+      {project.screenshots.map((s) => (
+        <Image
+          key={s.src}
+          src={s.src}
+          alt={s.alt}
+          width={s.width ?? (phone ? 648 : 900)}
+          height={s.height ?? (phone ? 1440 : 560)}
+          sizes={phone ? "(min-width: 640px) 150px, 96px" : "(min-width: 640px) 460px, 100vw"}
+          className={phone ? "h-auto w-24 rounded-2xl sm:w-[150px]" : "h-auto w-full rounded-xl"}
+        />
+      ))}
+    </div>
+  );
+}
+
 function Thumb({ project }: { project: Project }) {
+  const shot = project.screenshots[0];
+  if (shot) {
+    return (
+      <div className="h-[190px] overflow-hidden rounded-2xl bg-bg2">
+        <Image
+          src={shot.src}
+          alt={shot.alt}
+          width={shot.width ?? 900}
+          height={shot.height ?? 560}
+          sizes="(min-width: 768px) 380px, 100vw"
+          className="size-full object-cover object-top"
+        />
+      </div>
+    );
+  }
   if (project.image?.kind === "logo") {
     return (
       <div className="flex h-[190px] items-center justify-center rounded-2xl bg-bg2 p-8">
@@ -83,7 +118,7 @@ export function Work() {
           </ul>
           <TextLink href={`/work/${f.slug}`}>Read the case study</TextLink>
         </div>
-        <PhoneFrames />
+        <FeaturedShots project={f} />
       </div>
 
       {/* Others */}
