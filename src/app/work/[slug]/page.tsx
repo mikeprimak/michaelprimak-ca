@@ -96,8 +96,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           </div>
         ) : project.screenshotKind === "phone" ? (
           <PhoneFrames tall />
-        ) : project.image?.kind === "logo" ? (
-          <Image src={project.image.src} alt={project.image.alt} width={240} height={240} className="size-40 rounded-xl mix-blend-multiply sm:size-60 dark:mix-blend-normal" />
+        ) : project.image?.kind === "logo" || project.image?.kind === "artwork" ? (
+          <Image src={project.image.src} alt={project.image.alt} width={240} height={240} className={`size-40 rounded-xl object-contain sm:size-60${project.image.kind === "logo" ? " mix-blend-multiply dark:mix-blend-normal" : ""}`} />
         ) : (
           <div
             className="flex h-[240px] w-full max-w-[900px] items-center justify-center rounded-2xl border border-dashed border-ink3 font-mono text-[12.5px] tracking-[0.06em] text-ink3 uppercase sm:h-[420px]"

@@ -16,7 +16,9 @@ export type Project = {
   kind: string;
   featured?: boolean;
   /** Logo or icon shown on cards. Path under /public. */
-  image?: { src: string; alt: string; kind: "icon" | "logo" };
+  /** `logo` is blended onto the card (designed for logos on white); `artwork` is a
+   *  full-bleed image such as a site screenshot and must not be blended. */
+  image?: { src: string; alt: string; kind: "icon" | "logo" | "artwork" };
   /** Screenshots for the case study page. Paths under /public. Empty = placeholder frames.
    *  width/height are the file's real pixel size — pass them so the layout box matches the
    *  image's aspect ratio and nothing gets squashed. */
@@ -141,7 +143,7 @@ export const projects: Project[] = [
     image: {
       src: "/avoidjawsurgery.png",
       alt: "avoidjawsurgery.com — “Avoid Jaw Surgery” over a panoramic jaw X-ray",
-      kind: "logo",
+      kind: "artwork",
     },
     screenshots: [],
     screenshotKind: "web",
