@@ -17,8 +17,10 @@ export type Project = {
   featured?: boolean;
   /** Logo or icon shown on cards. Path under /public. */
   image?: { src: string; alt: string; kind: "icon" | "logo" };
-  /** Screenshots for the case study page. Paths under /public. Empty = placeholder frames. */
-  screenshots: { src: string; alt: string }[];
+  /** Screenshots for the case study page. Paths under /public. Empty = placeholder frames.
+   *  width/height are the file's real pixel size — pass them so the layout box matches the
+   *  image's aspect ratio and nothing gets squashed. */
+  screenshots: { src: string; alt: string; width?: number; height?: number }[];
   screenshotKind: "phone" | "web";
   meta: { label: string; value: string }[];
   links: { label: string; href: string }[];
@@ -54,14 +56,20 @@ export const projects: Project[] = [
     screenshots: [
       {
         src: "/good-fights-events.png",
+        width: 648,
+        height: 1440,
         alt: "Good Fights home screen: upcoming cards grouped by day, each with its poster, start time, broadcaster and a list of hype-rated fights.",
       },
       {
         src: "/good-fights-upcoming.png",
+        width: 648,
+        height: 1440,
         alt: "The Upcoming tab: promotion filters, an event hero, Canadian broadcast listings for Sportsnet+ and Paramount+, and the main card with a hype score against each fight.",
       },
       {
         src: "/good-fights-rate.png",
+        width: 648,
+        height: 1440,
         alt: "Rating a fight: Swanson vs Choi at UFC 206 scored 10 out of 10 on a colour-graded scale, with a written review and a link to the comments.",
       },
     ],
@@ -130,7 +138,14 @@ export const projects: Project[] = [
     deck: "A WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static rebuild · AI-assisted",
-    screenshots: [], // TODO(Mike): add a screenshot of the new site.
+    screenshots: [
+      {
+        src: "/avoidjawsurgery.png",
+        width: 1170,
+        height: 800,
+        alt: "The rebuilt avoidjawsurgery.com hero: a dark panoramic jaw X-ray behind the headline “Avoid Jaw Surgery” and the line “Far more damaging than surgeons admit. Many regret it.”",
+      },
+    ],
     screenshotKind: "web",
     meta: [
       { label: "Role", value: "Developer" },
