@@ -31,6 +31,9 @@ export type Project = {
   /** Renders the architecture diagram when true (Good Fights only, for now). */
   architecture?: "good-fights";
   hardParts: { title: string; body: string }[];
+  /** "stats" (default) renders big figures. "quote" renders a single pull quote —
+   *  a sentence set at the stat size wraps badly. */
+  outcomeKind?: "stats" | "quote";
   outcome: { value: string; label: string }[];
 };
 
@@ -110,20 +113,16 @@ export const projects: Project[] = [
     architecture: "good-fights",
     hardParts: [
       {
-        title: "Two app stores, one release",
-        body: "Getting through Apple and Google review on every version, and keeping a release cadence that doesn't leave users stranded on an old build.",
+        title: "Live trackers that stay accurate",
+        body: "Following the progress and outcome of fights as they happen, across more than 15 combat-sports organizations. Every promotion publishes differently, and they redesign without warning — so the trackers had to be built to survive a moving target, degrading quietly instead of breaking, and isolated enough that one organization's changes don't take the rest down with them.",
       },
       {
-        title: "Updating without resubmitting",
-        body: "Over-the-air updates have rules about which builds they can target. Getting that right meant fewer store submissions and faster fixes.",
+        title: "Clear the moment you open it",
+        body: "A first-time user has to grasp what they are looking at, what they can do and what to do next — immediately, without a tour. That meant deciding which features earn their place and which don't: enough to be genuinely useful, not so many that the app stops being readable, and ordered so the things people actually came for are the things they find first.",
       },
       {
-        title: "Trusting a model in production",
-        body: "An LLM that is right most of the time is not good enough when the output is published as fact. Every enriched field carries a confidence score and is dropped below a threshold, and the enrichment code is unit-tested like any other service — including a test that checks quoted material against the source.",
-      },
-      {
-        title: "Running the whole stack myself",
-        body: "Docker and nginx on a Linux VPS, Prisma migrations against Postgres, Cloudflare R2 for images, cron for the overnight jobs, PostHog for behaviour. No platform team — scheduled jobs moved off paid CI onto a server I run, with enough monitoring to know when something breaks.",
+        title: "Working out what fans actually want",
+        body: "Nobody hands you the requirements for this. Identifying what combat-sports fans want, building it, watching how it really gets used, and adjusting — it is continuous work, not a question that was settled at launch.",
       },
     ],
     outcome: [
@@ -219,7 +218,12 @@ export const projects: Project[] = [
         title: "Right-sized",
         body: "No CMS, no framework, no monthly bills beyond hosting — matched to what a small clinic actually needs to maintain.",
       },
+      {
+        title: "Built for people who would rather not use a website",
+        body: "The patients are older and mostly not comfortable online. Everything that matters — phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
+      },
     ],
+    outcomeKind: "quote",
     outcome: [{ value: "“Patients love it”", label: "— the client, after launch" }],
   },
   {
@@ -250,6 +254,14 @@ export const projects: Project[] = [
       {
         title: "Built for hand-off",
         body: "The measure of success was the team not needing me afterwards: a simple theme, sensible defaults and no custom code to break.",
+      },
+      {
+        title: "Making it look like something",
+        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design — getting it to feel considered rather than templated.",
+      },
+      {
+        title: "Gathering their story into one place",
+        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. Finding it, judging what belonged, and shaping it into pages that read as one coherent account of who they are and what they do was as much editorial and content work as it was development.",
       },
     ],
     outcome: [{ value: "Live", label: "and maintained by the organization" }],

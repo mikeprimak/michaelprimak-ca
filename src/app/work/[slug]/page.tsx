@@ -143,14 +143,27 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         </Block>
 
         <Block heading="Outcome">
-          <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
-            {project.outcome.map((o) => (
-              <div key={o.label}>
-                <dd className="serif mb-2 text-[40px] leading-none sm:text-[52px]">{o.value}</dd>
-                <dt className="text-sm text-ink3">{o.label}</dt>
-              </div>
-            ))}
-          </dl>
+          {project.outcomeKind === "quote" ? (
+            <figure className="max-w-[42ch]">
+              {project.outcome.map((o) => (
+                <div key={o.label}>
+                  <blockquote className="serif text-[28px] leading-[1.25] sm:text-[34px]">
+                    {o.value}
+                  </blockquote>
+                  <figcaption className="mt-3 text-sm text-ink3">{o.label}</figcaption>
+                </div>
+              ))}
+            </figure>
+          ) : (
+            <dl className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+              {project.outcome.map((o) => (
+                <div key={o.label}>
+                  <dd className="serif mb-2 text-[40px] leading-none sm:text-[52px]">{o.value}</dd>
+                  <dt className="text-sm text-ink3">{o.label}</dt>
+                </div>
+              ))}
+            </dl>
+          )}
         </Block>
 
         <div className="flex flex-col items-start justify-between gap-6 border-t border-line py-14 sm:flex-row sm:items-center">

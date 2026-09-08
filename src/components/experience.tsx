@@ -30,7 +30,11 @@ export function Experience() {
       <div className="mt-10 flex flex-wrap gap-10">
         <div className="flex flex-col gap-1.5">
           <span className="mono">Education</span>
-          <span>{experience.education}</span>
+          <ul className="flex flex-col gap-1">
+            {experience.education.map((e) => (
+              <li key={e}>{e}</li>
+            ))}
+          </ul>
         </div>
         <div className="flex flex-col gap-1.5">
           <span className="mono">Résumé</span>

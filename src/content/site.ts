@@ -142,8 +142,11 @@ export const experience = {
       type: "Manager" as Role,
     },
   ],
-  education:
-    "Big Data Analytics, Georgian College · BA Human Kinetics, Laurentian University · Master of Osteopathic Sciences, Canadian Academy of Osteopathy",
+  education: [
+    "Big Data Analytics, Georgian College",
+    "Master of Osteopathic Sciences, Canadian Academy of Osteopathy",
+    "BA Human Kinetics, Laurentian University",
+  ],
 };
 
 export const contact = {
