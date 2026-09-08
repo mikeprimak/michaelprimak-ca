@@ -12,8 +12,13 @@ export type LiveStats = {
   live: boolean;
 };
 
-// Last known values (2026-08-27). Used when the API can't be reached.
-const FALLBACK: LiveStats = { fights: 15200, events: 1554, live: false };
+// Last known values (2026-09-08). Used when the API can't be reached.
+//
+// These are lower than the raw table counts (15,730 fights / 1,635 events) because
+// /api/fights and /api/events exclude cancelled bouts and shelved promotions — i.e.
+// this is what a user can actually see in the app, which is the honest number to show
+// on a live card. The case study quotes the full database figures.
+const FALLBACK: LiveStats = { fights: 15344, events: 1573, live: false };
 
 async function total(path: string): Promise<number> {
   const res = await fetch(`${API}${path}?limit=1`, {

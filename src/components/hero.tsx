@@ -22,7 +22,7 @@ async function LiveCard() {
       <dl className="grid grid-cols-2 gap-3.5">
         <div>
           <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fights)}</dd>
-          <dt className="text-[13px] text-ink3">fights in the catalogue</dt>
+          <dt className="text-[13px] text-ink3">fights live in the app</dt>
         </div>
         <div>
           <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.events)}</dd>
