@@ -50,6 +50,16 @@ export function Hero() {
             <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
             <TextLink href={hero.secondaryCta.href}>{hero.secondaryCta.label}</TextLink>
           </div>
+          <ul className="mt-9 flex max-w-[560px] flex-wrap gap-x-2.5 gap-y-2">
+            {hero.stack.map((s) => (
+              <li
+                key={s}
+                className="rounded-full border border-line px-3 py-1 font-mono text-[12.5px] tracking-[0.02em] text-ink2"
+              >
+                {s}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className="flex flex-col items-start gap-5 lg:items-end">
           <Image

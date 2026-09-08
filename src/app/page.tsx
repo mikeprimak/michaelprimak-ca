@@ -12,10 +12,10 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Services />
       <Work />
       <HowIWork />
       <Experience />
+      <Services />
       <ContactSection />
     </>
   );

@@ -4,7 +4,7 @@ import { Eyebrow, Section, SectionHeading } from "./ui";
 export function Services() {
   return (
     <Section id="services">
-      <Eyebrow number="01" label="Services" />
+      <Eyebrow number="04" label="Freelance" />
       <SectionHeading intro={services.intro}>{services.heading}</SectionHeading>
       <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
         {services.items.map((s) => (

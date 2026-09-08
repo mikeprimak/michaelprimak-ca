@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/content/site";
 
 export function SiteFooter() {
@@ -15,9 +14,6 @@ export function SiteFooter() {
           <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-ink2 hover:text-accent">
             LinkedIn
           </a>
-          <Link href="/how-this-site-was-built" className="text-ink2 hover:text-accent">
-            How this site was built
-          </Link>
         </div>
       </footer>
     </div>

@@ -4,7 +4,7 @@ import { Eyebrow, Section, SectionHeading, TextLink } from "./ui";
 export function Experience() {
   return (
     <Section id="experience">
-      <Eyebrow number="04" label="Experience" />
+      <Eyebrow number="03" label="Experience" />
       <SectionHeading intro={experience.intro}>{experience.heading}</SectionHeading>
       <ol className="border-t border-line">
         {experience.timeline.map((row, i) => (

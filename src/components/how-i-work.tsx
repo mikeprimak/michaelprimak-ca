@@ -1,10 +1,10 @@
 import { howIWork } from "@/content/site";
-import { Button, Eyebrow, Section, SectionHeading } from "./ui";
+import { Eyebrow, Section, SectionHeading } from "./ui";
 
 export function HowIWork() {
   return (
     <Section id="how">
-      <Eyebrow number="03" label="How I work" />
+      <Eyebrow number="02" label="How I build" />
       <SectionHeading intro={howIWork.intro}>{howIWork.heading}</SectionHeading>
       <ol className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-3">
         {howIWork.steps.map((s, i) => (
@@ -17,14 +17,9 @@ export function HowIWork() {
           </li>
         ))}
       </ol>
-      <div className="grid grid-cols-1 items-center gap-7 rounded-3xl bg-ink px-7 py-7 text-bg sm:px-12 sm:py-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-10">
-        <div>
-          <h3 className="serif mb-2.5 text-[28px] leading-[1.15] sm:text-[32px]">{howIWork.callout.title}</h3>
-          <p className="opacity-75">{howIWork.callout.body}</p>
-        </div>
-        <Button href={howIWork.callout.cta.href} inverted>
-          {howIWork.callout.cta.label}
-        </Button>
+      <div className="rounded-3xl bg-ink px-7 py-7 text-bg sm:px-12 sm:py-10">
+        <h3 className="serif mb-2.5 text-[28px] leading-[1.15] sm:text-[32px]">{howIWork.callout.title}</h3>
+        <p className="max-w-[720px] opacity-75">{howIWork.callout.body}</p>
       </div>
     </Section>
   );

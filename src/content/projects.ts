@@ -35,9 +35,19 @@ export const projects: Project[] = [
     slug: "good-fights",
     title: "Good Fights",
     summary:
-      "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a fight catalogue going back to 1994 that daily scrapers keep current.",
-    deck: "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a catalogue going back to 1994.",
-    tags: ["React Native", "Node · TypeScript", "PostgreSQL", "iOS + Android", "Next.js"],
+      "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a fight catalogue going back to 1993 that daily scrapers keep current.",
+    deck: "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a catalogue going back to 1993.",
+    tags: [
+      "React Native · Expo",
+      "TypeScript",
+      "Node",
+      "PostgreSQL · Prisma",
+      "Next.js",
+      "LLM enrichment",
+      "Docker",
+      "GitHub Actions",
+      "iOS + Android",
+    ],
     kind: "Mobile app · Founder",
     featured: true,
     image: { src: "/good-fights-icon.png", alt: "Good Fights app icon", kind: "icon" },
@@ -48,12 +58,17 @@ export const projects: Project[] = [
       { label: "Platforms", value: "iOS · Android · Web" },
       {
         label: "Stack",
-        value: "React Native (Expo), Node/Express in TypeScript, PostgreSQL + Prisma, Next.js",
+        value:
+          "React Native (Expo), Node/Express in TypeScript, PostgreSQL + Prisma, Next.js, Docker on a Linux VPS, Cloudflare R2",
       },
     ],
     links: [
       { label: "goodfights.app", href: "https://goodfights.app" },
-      // TODO(Mike): add the App Store and Google Play listing URLs.
+      { label: "App Store", href: "https://apps.apple.com/ca/app/good-fights/id6757172609" },
+      {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.fightcrewapp.mobile",
+      },
     ],
     problem: [
       "Film fans have Rotten Tomatoes. Fight fans had nothing — no place to rate an individual fight, see what the crowd thought, or find the great ones they missed.",
@@ -61,9 +76,12 @@ export const projects: Project[] = [
     ],
     shipped: [
       "iOS and Android apps from one React Native codebase, published through App Store and Play Store review.",
-      "Accounts with email and Google sign-in; ratings tied to a user's history.",
-      "A fight catalogue back to 1994 — fighters, results, stats — kept current by daily scrapers.",
+      "Accounts with email and Google sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — 3,415 registered users who have submitted 76,516 fight ratings and 1,450 written reviews.",
+      "A catalogue of 15,730 fights across 1,635 events dating to 1993 — 10,567 fighters, results and stats — kept current by daily scrapers.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
+      "Claude-based enrichment that writes fight and fighter detail, gated on a confidence score so nothing the model is unsure about is published — with unit tests that check its output, including one that verifies quoted material is real.",
+      "34 scheduled GitHub Actions workflows running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
+      "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus 3,670 automatically written news articles.",
       "Over-the-air updates so fixes reach users without a new store submission.",
     ],
     architecture: "good-fights",
@@ -77,15 +95,18 @@ export const projects: Project[] = [
         body: "Over-the-air updates have rules about which builds they can target. Getting that right meant fewer store submissions and faster fixes.",
       },
       {
-        title: "Production on a small budget",
-        body: "A lean Postgres instance, scheduled jobs moved off paid CI onto a small server, and enough monitoring to know when something breaks.",
+        title: "Trusting a model in production",
+        body: "An LLM that is right most of the time is not good enough when the output is published as fact. Every enriched field carries a confidence score and is dropped below a threshold, and the enrichment code is unit-tested like any other service — including a test that checks quoted material against the source.",
+      },
+      {
+        title: "Running the whole stack myself",
+        body: "Docker and nginx on a Linux VPS, Prisma migrations against Postgres, Cloudflare R2 for images, cron for the overnight jobs, PostHog for behaviour. No platform team — scheduled jobs moved off paid CI onto a server I run, with enough monitoring to know when something breaks.",
       },
     ],
-    // TODO(Mike): real numbers.
     outcome: [
-      { value: "[N]", label: "installs across both stores" },
-      { value: "[N]", label: "fights rated by users" },
-      { value: "[N.N]★", label: "average store rating" },
+      { value: "76,516", label: "fight ratings submitted by users" },
+      { value: "3,415", label: "registered users" },
+      { value: "15,730", label: "fights catalogued across 1,635 events" },
     ],
   },
   {
@@ -128,9 +149,9 @@ export const projects: Project[] = [
       },
     ],
     outcome: [
-      { value: "[N]", label: "pages migrated" },
+      { value: "13", label: "pages migrated word-for-word" },
       { value: "100+", label: "testimonials preserved" },
-      { value: "[N days]", label: "from start to launch" },
+      { value: "0", label: "dependencies, frameworks or build steps" },
     ],
   },
   {
