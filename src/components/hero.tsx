@@ -65,11 +65,11 @@ export function Hero() {
           <Image
             src="/mike-primak.png"
             alt={`${site.name}, smiling`}
-            width={264}
-            height={264}
+            width={1019}
+            height={1131}
             priority
             sizes="(min-width: 1024px) 264px, 160px"
-            className="size-40 rounded-full bg-bg2 object-cover lg:size-[264px]"
+            className="h-auto w-40 lg:w-[264px]"
           />
           <LiveCard />
         </div>

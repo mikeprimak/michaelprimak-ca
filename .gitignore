@@ -43,3 +43,5 @@ next-env.d.ts
 # design canvas build output (2.6 MB, regenerated from design/mock sources)
 design/mock/michaelprimak-ca-design.html
 design/mock/*.dc.html
+
+.vercel
