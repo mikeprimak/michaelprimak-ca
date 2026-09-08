@@ -106,16 +106,16 @@ export const experience = {
       type: "Developer" as Role,
     },
     {
-      when: "2016 – 2025",
-      org: "Fighting Tomatoes",
-      role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
-      type: "Developer" as Role,
-    },
-    {
       when: "2018 – 2020",
       org: "WellnessLiving Systems Inc.",
       role: "White Label App Dept. Coordinator. Ran a team of developers, designers and support staff delivering white-label mobile apps to B2B clients.",
       type: "Manager" as Role,
+    },
+    {
+      when: "2016 – 2025",
+      org: "Fighting Tomatoes",
+      role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
+      type: "Developer" as Role,
     },
   ],
   education: [
