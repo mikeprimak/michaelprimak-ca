@@ -138,14 +138,12 @@ export const projects: Project[] = [
     deck: "A WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static rebuild · AI-assisted",
-    screenshots: [
-      {
-        src: "/avoidjawsurgery.png",
-        width: 1170,
-        height: 800,
-        alt: "The rebuilt avoidjawsurgery.com hero: a dark panoramic jaw X-ray behind the headline “Avoid Jaw Surgery” and the line “Far more damaging than surgeons admit. Many regret it.”",
-      },
-    ],
+    image: {
+      src: "/avoidjawsurgery.png",
+      alt: "avoidjawsurgery.com — “Avoid Jaw Surgery” over a panoramic jaw X-ray",
+      kind: "logo",
+    },
+    screenshots: [],
     screenshotKind: "web",
     meta: [
       { label: "Role", value: "Developer" },
