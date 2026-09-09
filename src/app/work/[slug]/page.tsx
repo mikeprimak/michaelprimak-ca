@@ -41,9 +41,17 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   };
 }
 
-function Block({ heading, children }: { heading: string; children: React.ReactNode }) {
+/** `wide` puts the heading above the content instead of in a side column, for
+ *  content that needs the full width (the three-column "hard parts" grid). */
+function Block({ heading, children, wide = false }: { heading: string; children: React.ReactNode; wide?: boolean }) {
   return (
-    <div className="grid grid-cols-1 gap-5 border-t border-line py-12 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:py-[72px]">
+    <div
+      className={
+        wide
+          ? "flex flex-col gap-8 border-t border-line py-12 lg:py-[72px]"
+          : "grid grid-cols-1 gap-5 border-t border-line py-12 lg:grid-cols-[260px_minmax(0,1fr)] lg:gap-12 lg:py-[72px]"
+      }
+    >
       <h2 className="serif text-[30px] leading-[1.1] sm:text-[34px]">{heading}</h2>
       <div>{children}</div>
     </div>
@@ -150,11 +158,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           </Block>
         )}
 
-        <Block heading="The hard parts">
+        <Block heading="The hard parts" wide>
+          {/* Full width and a slightly smaller title so each heading fits on one line. */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {project.hardParts.map((h) => (
               <div key={h.title} className="flex flex-col gap-2.5 border-t border-ink pt-5">
-                <h3 className="text-[21px] leading-[1.2] font-medium">{h.title}</h3>
+                <h3 className="text-[19px] leading-[1.2] font-medium sm:text-[20px]">{h.title}</h3>
                 <p className="text-[16px] text-ink2">{h.body}</p>
               </div>
             ))}
