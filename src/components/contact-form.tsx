@@ -26,13 +26,7 @@ export function ContactForm() {
     return (
       <div className="rounded-2xl border border-line bg-bg2 p-8" role="status" aria-live="polite">
         <h3 className="serif mb-2 text-3xl">Thanks — got it.</h3>
-        <p className="text-ink2">
-          I’ll reply within {site.replyTime}. If it’s urgent, email me at{" "}
-          <a href={`mailto:${site.email}`} className="text-ink underline underline-offset-4 hover:text-accent">
-            {site.email}
-          </a>
-          .
-        </p>
+        <p className="text-ink2">I’ll reply within {site.replyTime}.</p>
       </div>
     );
   }
