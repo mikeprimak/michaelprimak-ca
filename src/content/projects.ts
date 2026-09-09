@@ -260,7 +260,7 @@ export const projects: Project[] = [
     hardParts: [
       {
         title: "Ultra Easy To Use",
-        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so anyone can use the website without searching it.",
+        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — is concise, clear and on the home page, so anyone can use the website without searching it.",
       },
       {
         title: "Keeping it simple",
