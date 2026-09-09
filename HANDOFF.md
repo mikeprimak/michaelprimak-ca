@@ -3,7 +3,41 @@
 **Status 2026-09-08: LIVE.** The new Next.js site is serving michaelprimak.ca. Cutover is
 done, the old site is backed up, and every content placeholder is filled.
 
-One task is outstanding, and it is the first thing below.
+Two tasks are outstanding. The deploy check (added 2026-09-09) comes first because
+nothing else matters until the live site reflects `main`.
+
+---
+
+# START HERE (2026-09-09) — confirm the site actually deploys from GitHub
+
+Seven commits were pushed to `main` on 2026-09-09 from a remote Claude session
+(`73a3f07` … `332e08a`): résumé accuracy fixes, the freelance/Fighting Tomatoes split,
+project reorder, a "Résumé (PDF)" footer link, and a regenerated `public/Michael-Primak-Resume.pdf`.
+Mike could not see any of it live.
+
+**Suspicion:** the Vercel project `michaelprimak-ca-next` is NOT connected to the GitHub
+repo, despite what the Infrastructure section below says. Evidence: no commit on GitHub
+(today's or yesterday's) carries a Vercel status check, which a Git-connected project
+always adds. The local folder is CLI-linked to the project, so deploys have probably
+only ever happened via `vercel` from this folder.
+
+Do this, in order:
+
+1. `git pull` in `C:\Users\avoca\mpnew` so the working copy has all seven commits.
+2. Open https://www.michaelprimak.ca and scroll to the footer. If there is no
+   **Résumé (PDF)** link beside GitHub and LinkedIn, the site has not deployed today.
+   (If the link IS there, deploys work and any stale PDF is browser cache — hard-refresh.)
+3. Deploy now from the linked folder: `npx vercel --prod`. Re-check the footer.
+4. Make pushes deploy on their own: Vercel dashboard → project `michaelprimak-ca-next` →
+   Settings → Git → Connect Git Repository → `mikeprimak/michaelprimak-ca`, production
+   branch `main`. Afterwards every commit on GitHub shows a Vercel check mark.
+   (If the dashboard shows the repo is already connected, the problem is elsewhere —
+   check Deployments for failed builds and read the build log.)
+5. Optional: the PDF was printed on Linux with **Carlito** standing in for Calibri
+   (metric-compatible, same two-page layout). For the true Calibri version, re-run the
+   Chrome command under "Things to know" item 4 below and commit the result.
+6. Correct the Infrastructure section below to say how deploys really happen, and
+   delete this block once the footer link is live.
 
 ---
 
@@ -142,11 +176,11 @@ installs already has an answer on the page.
    was removed on request; the page still exists at
    `src/app/how-this-site-was-built/page.tsx`, unlinked and out of the sitemap). Make the
    repo public or delete the page.
-4. **`resume/Mike-Primak-Resume.html` is the source of the PDF.** If you edit it,
+4. **`resume/Michael-Primak-Resume.html` is the source of the PDF.** If you edit it,
    regenerate with headers off — Chrome's print dialog otherwise bakes in a date stamp
    and your local file path:
    ```powershell
-   & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="C:\Users\avoca\mpnew\public\Mike-Primak-Resume.pdf" "file:///C:/Users/avoca/mpnew/resume/Mike-Primak-Resume.html"
+   & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="C:\Users\avoca\mpnew\public\Michael-Primak-Resume.pdf" "file:///C:/Users/avoca/mpnew/resume/Michael-Primak-Resume.html"
    ```
 
 ---
