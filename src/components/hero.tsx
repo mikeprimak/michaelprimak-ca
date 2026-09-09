@@ -26,12 +26,12 @@ function LiveCard({ stats }: { stats: LiveStats }) {
       </span>
       <dl className="grid grid-cols-2 gap-3.5">
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.totalRatings)}</dd>
-          <dt className="text-[13px] text-ink3">user ratings</dt>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fightsInApp)}</dd>
+          <dt className="text-[13px] text-ink3">fights covered</dt>
         </div>
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fightsInApp)}</dd>
-          <dt className="text-[13px] text-ink3">fights live in the app</dt>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.totalRatings)}</dd>
+          <dt className="text-[13px] text-ink3">user ratings</dt>
         </div>
       </dl>
       <p className="text-[15px] text-ink2">
