@@ -30,6 +30,8 @@ type ButtonProps = {
   variant?: "solid" | "outline";
   /** Called on click for both the link and the button form. */
   onClick?: () => void;
+  /** Open in a new tab as a plain anchor (files, other sites). */
+  external?: boolean;
 } & Omit<ComponentProps<"button">, "children" | "className" | "onClick">;
 
 const btnBase =
@@ -43,6 +45,7 @@ export function Button({
   inverted = false,
   variant = "solid",
   onClick,
+  external = false,
   ...rest
 }: ButtonProps) {
   const fill =
@@ -57,6 +60,14 @@ export function Button({
     fill,
     className,
   ].join(" ");
+  if (href && external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls} onClick={onClick} data-no-read>
+        {children}
+        <Arrow />
+      </a>
+    );
+  }
   if (href) {
     return (
       <SectionLink href={href} className={cls} onClick={onClick} data-no-read>

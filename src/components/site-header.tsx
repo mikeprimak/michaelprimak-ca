@@ -24,8 +24,10 @@ export function SiteHeader() {
   }, [open]);
 
   return (
-    // Sticky on phones so the menu is always a tap away; static on desktop.
-    <header className="sticky top-0 z-50 bg-bg/90 backdrop-blur md:static md:bg-bg md:backdrop-blur-none">
+    // Sticky on phones so the menu is always a tap away; static on desktop. Keep the
+    // background solid and free of filters: backdrop-filter would make this element the
+    // containing block for the fixed mobile menu, which then collapses to the header's height.
+    <header className="sticky top-0 z-50 bg-bg md:static">
       <div className="wrap">
         <nav aria-label="Main" className="flex h-16 items-center justify-between sm:h-[76px]">
           <Link href="/" className="serif text-2xl text-ink" onClick={close}>

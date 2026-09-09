@@ -9,26 +9,22 @@ const fmt = new Intl.NumberFormat("en-CA");
 async function LiveCard() {
   const stats = await getLiveStats();
   return (
-    <div className="flex w-full max-w-[400px] flex-col gap-3.5 rounded-2xl border border-line bg-bg2 px-[22px] py-5">
-      <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5">
-        <span className="mono flex items-center">
-          <span
-            aria-hidden="true"
-            className="mr-2 inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b] shadow-[0_0_0_3px_rgba(47,158,91,0.18)]"
-          />
-          {stats.live ? "Live data from one of my projects" : "Data from one of my projects"}
-        </span>
-        <span className="mono ml-auto flex items-center gap-1.5">
-          <Image
-            src="/good-fights-icon.png"
-            alt=""
-            width={16}
-            height={16}
-            className="size-4 rounded-[4px]"
-          />
-          Good Fights
-        </span>
-      </div>
+    <div className="relative flex w-full max-w-[400px] flex-col gap-3.5 rounded-2xl border border-line bg-bg2 px-[22px] py-5">
+      {/* App icon sits in the card's top-right corner; the label wraps beside it. */}
+      <Image
+        src="/good-fights-icon.png"
+        alt="Good Fights app icon"
+        width={44}
+        height={44}
+        className="absolute top-3.5 right-3.5 size-11 rounded-[10px]"
+      />
+      <span className="mono flex min-h-11 items-center pr-14 leading-[1.5]">
+        <span
+          aria-hidden="true"
+          className="mr-2 inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b] shadow-[0_0_0_3px_rgba(47,158,91,0.18)]"
+        />
+        {stats.live ? "Live data from one of my projects" : "Data from one of my projects"}
+      </span>
       <dl className="grid grid-cols-2 gap-3.5">
         <div>
           <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fights)}</dd>
@@ -40,7 +36,7 @@ async function LiveCard() {
         </div>
       </dl>
       <p className="text-[15px] text-ink2">
-        Real numbers from an app I built and run. {stats.live ? "Updated hourly." : "Last known values."}
+        Real numbers from Good Fights, an app I built and run. {stats.live ? "Updated hourly." : "Last known values."}
       </p>
     </div>
   );
@@ -52,7 +48,19 @@ export function Hero() {
       <div className="grid grid-cols-1 items-center gap-10 py-10 pb-16 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-[72px] lg:py-[88px] lg:pb-24">
         <div>
           <div className="mb-7 flex flex-wrap items-center gap-3.5">
-            <p className="mono">{hero.eyebrow}</p>
+            <p className="mono">
+              {hero.eyebrow}
+              <span aria-hidden="true"> · </span>
+              <a
+                href={site.resumePath}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ink2 underline decoration-line underline-offset-4 transition-colors hover:text-accent"
+                data-no-read
+              >
+                Download resume
+              </a>
+            </p>
             <ListenButton targetId="intro" className="ml-auto" />
           </div>
           <h1 className="serif mb-7 text-[42px] leading-[1.04] sm:text-[56px] lg:text-[66px]">

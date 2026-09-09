@@ -62,13 +62,14 @@ function Thumb({ project }: { project: Project }) {
     // Blending only suits logos drawn on white; it turns artwork muddy in light mode.
     const blend = project.image.kind === "logo" ? " mix-blend-multiply dark:mix-blend-normal" : "";
     return (
-      <div className="flex h-[190px] items-center justify-center rounded-2xl bg-bg2 p-8">
+      <div className="flex h-[220px] items-center justify-center rounded-2xl bg-bg2 p-6">
         <Image
           src={project.image.src}
           alt={project.image.alt}
-          width={160}
-          height={160}
-          className={`max-h-full w-auto max-w-[180px] rounded-lg dark:rounded-xl${blend}`}
+          width={240}
+          height={240}
+          sizes="240px"
+          className={`max-h-full w-auto max-w-[260px] rounded-lg dark:rounded-xl${blend}`}
         />
       </div>
     );

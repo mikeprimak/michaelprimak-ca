@@ -1,5 +1,5 @@
 import { experience, site } from "@/content/site";
-import { Eyebrow, Section, SectionHeading, TextLink } from "./ui";
+import { Button, Eyebrow, Section, SectionHeading } from "./ui";
 
 export function Experience() {
   return (
@@ -38,9 +38,9 @@ export function Experience() {
         </div>
         <div className="flex flex-col gap-1.5">
           <span className="mono">Resume</span>
-          <TextLink href={site.resumePath} external>
-            Download PDF
-          </TextLink>
+          <Button href={site.resumePath} external variant="outline" size="sm" className="self-start">
+            PDF resume
+          </Button>
         </div>
       </div>
     </Section>
