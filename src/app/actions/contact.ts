@@ -2,15 +2,14 @@
 
 import { Resend } from "resend";
 import { site } from "@/content/site";
+import { validateContact, type ContactErrors } from "@/lib/contact-validation";
 
 export type ContactState = {
   status: "idle" | "sent" | "error";
   message?: string;
   /** Field-level errors keyed by input name. */
-  errors?: Partial<Record<"name" | "email" | "message", string>>;
+  errors?: ContactErrors;
 };
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export async function sendMessage(_prev: ContactState, formData: FormData): Promise<ContactState> {
   const get = (k: string) => String(formData.get(k) ?? "").trim();
@@ -28,11 +27,7 @@ export async function sendMessage(_prev: ContactState, formData: FormData): Prom
   }
 
   // --- Validation ---
-  const errors: ContactState["errors"] = {};
-  if (name.length < 2) errors.name = "Please enter your name.";
-  if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
-  if (message.length < 10) errors.message = "Tell me a little more — at least a sentence.";
-  if (message.length > 5000) errors.message = "That's a bit long — please keep it under 5000 characters.";
+  const errors = validateContact({ name, email, message });
   if (Object.keys(errors).length) {
     return { status: "error", message: "Please fix the highlighted fields.", errors };
   }
