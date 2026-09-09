@@ -268,7 +268,7 @@ export const projects: Project[] = [
       },
       {
         title: "Ultra Easy To Use",
-        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
+        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so anyone can use the website without searching it.",
       },
     ],
     outcomeKind: "quote",
