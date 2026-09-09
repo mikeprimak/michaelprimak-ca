@@ -3,41 +3,7 @@
 **Status 2026-09-08: LIVE.** The new Next.js site is serving michaelprimak.ca. Cutover is
 done, the old site is backed up, and every content placeholder is filled.
 
-Two tasks are outstanding. The deploy check (added 2026-09-09) comes first because
-nothing else matters until the live site reflects `main`.
-
----
-
-# START HERE (2026-09-09) — confirm the site actually deploys from GitHub
-
-Seven commits were pushed to `main` on 2026-09-09 from a remote Claude session
-(`73a3f07` … `332e08a`): résumé accuracy fixes, the freelance/Fighting Tomatoes split,
-project reorder, a "Résumé (PDF)" footer link, and a regenerated `public/Michael-Primak-Resume.pdf`.
-Mike could not see any of it live.
-
-**Suspicion:** the Vercel project `michaelprimak-ca-next` is NOT connected to the GitHub
-repo, despite what the Infrastructure section below says. Evidence: no commit on GitHub
-(today's or yesterday's) carries a Vercel status check, which a Git-connected project
-always adds. The local folder is CLI-linked to the project, so deploys have probably
-only ever happened via `vercel` from this folder.
-
-Do this, in order:
-
-1. `git pull` in `C:\Users\avoca\mpnew` so the working copy has all seven commits.
-2. Open https://www.michaelprimak.ca and scroll to the footer. If there is no
-   **Résumé (PDF)** link beside GitHub and LinkedIn, the site has not deployed today.
-   (If the link IS there, deploys work and any stale PDF is browser cache — hard-refresh.)
-3. Deploy now from the linked folder: `npx vercel --prod`. Re-check the footer.
-4. Make pushes deploy on their own: Vercel dashboard → project `michaelprimak-ca-next` →
-   Settings → Git → Connect Git Repository → `mikeprimak/michaelprimak-ca`, production
-   branch `main`. Afterwards every commit on GitHub shows a Vercel check mark.
-   (If the dashboard shows the repo is already connected, the problem is elsewhere —
-   check Deployments for failed builds and read the build log.)
-5. Optional: the PDF was printed on Linux with **Carlito** standing in for Calibri
-   (metric-compatible, same two-page layout). For the true Calibri version, re-run the
-   Chrome command under "Things to know" item 4 below and commit the result.
-6. Correct the Infrastructure section below to say how deploys really happen, and
-   delete this block once the footer link is live.
+One task is outstanding: connecting the contact form to email.
 
 ---
 
@@ -180,8 +146,13 @@ installs already has an answer on the page.
    regenerate with headers off — Chrome's print dialog otherwise bakes in a date stamp
    and your local file path:
    ```powershell
-   & "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless --disable-gpu --no-pdf-header-footer --print-to-pdf="C:\Users\avoca\mpnew\public\Michael-Primak-Resume.pdf" "file:///C:/Users/avoca/mpnew/resume/Michael-Primak-Resume.html"
+   Start-Process -Wait -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList @("--headless=new","--disable-gpu","--no-first-run","--user-data-dir=$env:TEMP\chrome-headless-profile","--no-pdf-header-footer","--print-to-pdf=C:\Users\avoca\mpnew\public\Michael-Primak-Resume.pdf","file:///C:/Users/avoca/mpnew/resume/Michael-Primak-Resume.html")
    ```
+   The separate `--user-data-dir` matters: without it, a Chrome that is already open
+   swallows the command and exits 0 having written nothing. Check the result embeds
+   `Calibri`, not `Carlito` (`Select-String -Path public\Michael-Primak-Resume.pdf -Pattern "BaseFont"`);
+   Carlito means it was printed on a machine without Calibri. Regenerated with real
+   Calibri on 2026-09-09 (`ef85134`).
 
 ---
 
@@ -190,7 +161,26 @@ installs already has an answer on the page.
     NEW  project michaelprimak-ca-next  prj_B3tuqgsEKnujZCeXa5YGo65LCDSx   <- serves the domain
     OLD  project michaelprimak-ca       prj_0Ar49duyGMiszDf579YT2KM9c5En   <- do NOT delete, this is the rollback
     team michael-primaks-projects       team_Bn7tGQctGzWXvu1WTA4kIUjv
-    repo github.com/mikeprimak/michaelprimak-ca (private, branch main, auto-deploys)
+    repo github.com/mikeprimak/michaelprimak-ca (branch main)
+
+**Deploys happen from GitHub.** The project is connected to the repo through Vercel's
+Git integration; every push to `main` builds and goes to production in about 20 s.
+Verified 2026-09-09: all seven commits pushed that day each produced a production
+deployment, and the Vercel API reports `source: git` with the matching commit SHA on
+each. The folder is also CLI-linked (`.vercel/project.json`), so `npx vercel --prod`
+works as a manual fallback, but it is never needed for a normal push.
+
+**Do not read the absence of a GitHub status check as "not deploying."** The Vercel
+GitHub app was not posting checks to commits on this repo when this was investigated,
+yet the deployments were happening. If the live site looks stale, the order of checks is:
+(1) hard-refresh or open in a private window; phones in particular cache aggressively,
+and that was the whole story on 2026-09-09; (2) `npx vercel ls --prod` in this folder
+and compare the newest deployment's age to the push time; (3)
+`npx vercel inspect https://www.michaelprimak.ca` to see which commit is serving;
+(4) only then look at the Deployments tab for a failed build.
+
+Note: Vercel's deployment metadata reports the repo as **public**, while the notes
+below say private. Check the repo's visibility on GitHub before relying on either.
 
 **DNS is at GoDaddy, not Vercel** — the previous handoff assumed Vercel and was wrong.
 Nameservers are `ns31/ns32.domaincontrol.com`. Apex and `www` both A-record to Vercel's
