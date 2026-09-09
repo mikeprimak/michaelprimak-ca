@@ -276,6 +276,22 @@ export const projects: Project[] = [
   },
 ];
 
+/**
+ * "The hard parts" titles are laid out three across on desktop and must fit on one
+ * line (Mike, 2026-09-09). 36 characters is the longest that fits at the sizes in
+ * src/app/work/[slug]/page.tsx; the build fails rather than ship a wrapped title.
+ */
+export const MAX_HARD_PART_TITLE = 36;
+for (const p of projects) {
+  for (const h of p.hardParts) {
+    if (h.title.length > MAX_HARD_PART_TITLE) {
+      throw new Error(
+        `projects.ts: "${h.title}" (${p.slug}) is ${h.title.length} characters; hard-part titles must be ${MAX_HARD_PART_TITLE} or fewer so they fit on one line.`,
+      );
+    }
+  }
+}
+
 export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
 export const otherProjects = projects.filter((p) => p !== featuredProject);
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);

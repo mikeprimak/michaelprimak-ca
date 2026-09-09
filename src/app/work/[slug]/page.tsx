@@ -124,7 +124,15 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         ) : project.screenshotKind === "phone" ? (
           <PhoneFrames tall />
         ) : project.image?.kind === "logo" || project.image?.kind === "artwork" ? (
-          <Image src={project.image.src} alt={project.image.alt} width={360} height={360} sizes="(min-width: 640px) 360px, 240px" className={`size-60 rounded-xl object-contain sm:size-[360px]${project.image.kind === "logo" ? " mix-blend-multiply dark:mix-blend-normal" : ""}`} />
+          <Image
+            src={project.image.src}
+            alt={project.image.alt}
+            width={360}
+            height={360}
+            sizes="(min-width: 640px) 360px, 240px"
+            // Keep the class list as plain strings: Tailwind ignores a class glued to a ${} expression.
+            className={["size-60 rounded-xl object-contain sm:size-[360px]", project.image.kind === "logo" ? "mix-blend-multiply dark:mix-blend-normal" : ""].join(" ")}
+          />
         ) : (
           <div
             className="flex h-[240px] w-full max-w-[900px] items-center justify-center rounded-2xl border border-dashed border-ink3 font-mono text-[12.5px] tracking-[0.06em] text-ink3 uppercase sm:h-[420px]"
@@ -159,11 +167,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         )}
 
         <Block heading="The hard parts" wide>
-          {/* Full width and a slightly smaller title so each heading fits on one line. */}
+          {/* Full width, a title that scales down on narrow phones, and a length cap in
+              projects.ts (MAX_HARD_PART_TITLE) so each heading always fits on one line. */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {project.hardParts.map((h) => (
               <div key={h.title} className="flex flex-col gap-2.5 border-t border-ink pt-5">
-                <h3 className="text-[19px] leading-[1.2] font-medium sm:text-[20px]">{h.title}</h3>
+                <h3 className="text-[clamp(16px,4.6vw,20px)] leading-[1.2] font-medium whitespace-nowrap md:text-[20px]">{h.title}</h3>
                 <p className="text-[16px] text-ink2">{h.body}</p>
               </div>
             ))}
