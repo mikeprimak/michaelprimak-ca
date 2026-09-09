@@ -98,9 +98,10 @@ export function Work() {
             <Image
               src={f.image.src}
               alt={f.image.alt}
-              width={56}
-              height={56}
-              className="mb-[22px] size-14 rounded-[14px]"
+              width={112}
+              height={112}
+              sizes="112px"
+              className="mb-[22px] size-24 rounded-[20px] sm:size-28 sm:rounded-[24px]"
             />
           )}
           <h3 className="serif mb-3.5 text-[32px] leading-[1.08] sm:text-[40px]">
