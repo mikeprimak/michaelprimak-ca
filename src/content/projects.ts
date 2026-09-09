@@ -132,6 +132,46 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "lgbt-voice-tanzania",
+    title: "LGBT Voice Tanzania",
+    summary:
+      "Website for an LGBT+ advocacy organization, built on WordPress so the team can publish and manage it themselves.",
+    deck: "A WordPress site for an LGBT+ advocacy organization, built so the team can run it themselves.",
+    tags: ["WordPress", "Non-profit"],
+    kind: "WordPress · Non-profit",
+    image: { src: "/logo-lgbt-voice.png", alt: "LGBT Voice logo", kind: "logo" },
+    screenshots: [],
+    screenshotKind: "web",
+    meta: [
+      { label: "Role", value: "Developer" },
+      { label: "Client", value: "LGBT Voice Tanzania" },
+      { label: "Stack", value: "WordPress" },
+    ],
+    links: [{ label: "lgbtvoicetz.org", href: "https://lgbtvoicetz.org/" }],
+    problem: [
+      "An advocacy organization needed a public home for its work that a small, non-technical team could update on their own, from anywhere.",
+    ],
+    shipped: [
+      "A WordPress site set up so the team can publish news and pages without a developer.",
+      "A clear structure for who the organization is, what it does, and how to get involved.",
+    ],
+    hardParts: [
+      {
+        title: "Built for hand-off",
+        body: "The measure of success was the team not needing me afterwards: a simple theme, sensible defaults and no custom code to break.",
+      },
+      {
+        title: "Making it look like something",
+        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design — getting it to feel considered rather than templated.",
+      },
+      {
+        title: "Gathering their story into one place",
+        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. Finding it, judging what belonged, and shaping it into pages that read as one coherent account of who they are and what they do was as much editorial and content work as it was development.",
+      },
+    ],
+    outcome: [{ value: "Live", label: "and maintained by the organization" }],
+  },
+  {
     slug: "avoidjawsurgery",
     title: "avoidjawsurgery.com",
     summary:
@@ -225,46 +265,6 @@ export const projects: Project[] = [
     ],
     outcomeKind: "quote",
     outcome: [{ value: "“Patients love it”", label: "— the client, after launch" }],
-  },
-  {
-    slug: "lgbt-voice-tanzania",
-    title: "LGBT Voice Tanzania",
-    summary:
-      "Website for an LGBT+ advocacy organization, built on WordPress so the team can publish and manage it themselves.",
-    deck: "A WordPress site for an LGBT+ advocacy organization, built so the team can run it themselves.",
-    tags: ["WordPress", "Non-profit"],
-    kind: "WordPress · Non-profit",
-    image: { src: "/logo-lgbt-voice.png", alt: "LGBT Voice logo", kind: "logo" },
-    screenshots: [],
-    screenshotKind: "web",
-    meta: [
-      { label: "Role", value: "Developer" },
-      { label: "Client", value: "LGBT Voice Tanzania" },
-      { label: "Stack", value: "WordPress" },
-    ],
-    links: [{ label: "lgbtvoicetz.org", href: "https://lgbtvoicetz.org/" }],
-    problem: [
-      "An advocacy organization needed a public home for its work that a small, non-technical team could update on their own, from anywhere.",
-    ],
-    shipped: [
-      "A WordPress site set up so the team can publish news and pages without a developer.",
-      "A clear structure for who the organization is, what it does, and how to get involved.",
-    ],
-    hardParts: [
-      {
-        title: "Built for hand-off",
-        body: "The measure of success was the team not needing me afterwards: a simple theme, sensible defaults and no custom code to break.",
-      },
-      {
-        title: "Making it look like something",
-        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design — getting it to feel considered rather than templated.",
-      },
-      {
-        title: "Gathering their story into one place",
-        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. Finding it, judging what belonged, and shaping it into pages that read as one coherent account of who they are and what they do was as much editorial and content work as it was development.",
-      },
-    ],
-    outcome: [{ value: "Live", label: "and maintained by the organization" }],
   },
 ];
 
