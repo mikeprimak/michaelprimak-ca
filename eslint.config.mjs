@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Not part of the app: recovered old-site source and the design-mock generator.
     "reference/**",
     "design/**",
+    // Static demo of a client site, rendered from its original PHP; theme JS is not ours.
+    "public/demo/**",
   ]),
 ]);
 

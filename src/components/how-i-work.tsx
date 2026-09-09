@@ -4,9 +4,9 @@ import { Eyebrow, Section, SectionHeading } from "./ui";
 export function HowIWork() {
   return (
     <Section id="how">
-      <Eyebrow number="02" label="How I build" />
+      <Eyebrow number="02" label="How I work" readId="how" />
       <SectionHeading intro={howIWork.intro}>{howIWork.heading}</SectionHeading>
-      <ol className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-3">
+      <ol className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {howIWork.steps.map((s, i) => (
           <li key={s.title} className="flex flex-col gap-3">
             <span className="serif text-[44px] leading-none text-accent" aria-hidden="true">

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GoodFightsArchitecture } from "@/components/architecture-diagram";
+import { ListenButton } from "@/components/listen-button";
 import { Button } from "@/components/ui";
 import { PhoneFrames } from "@/components/work";
 import { getProject, projects } from "@/content/projects";
@@ -38,7 +39,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
   if (!project) notFound();
 
   return (
-    <article className="wrap">
+    <article className="wrap" id="case-study">
       <nav aria-label="Breadcrumb" className="mt-8 flex items-center gap-2.5 sm:mt-12">
         <Link href="/#work" className="text-ink3 hover:text-accent">
           Work
@@ -47,6 +48,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
           /
         </span>
         <span className="mono text-ink">{project.title}</span>
+        <ListenButton targetId="case-study" className="ml-auto" />
       </nav>
 
       <header className="pt-6 pb-10 sm:pb-14">

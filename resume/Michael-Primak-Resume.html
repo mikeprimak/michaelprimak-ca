@@ -28,8 +28,10 @@
   ul { margin: 3pt 0 0; padding-left: 15pt; }
   li { margin-bottom: 2.5pt; }
   p { margin: 0 0 5pt; }
-  .skills p { margin: 0 0 3pt; }
-  .skills b { display: inline-block; min-width: 96pt; }
+  .skills p { margin: 0 0 3pt; display: flex; }
+  .skills b { flex: 0 0 96pt; }
+  .skills span { flex: 1 1 auto; }
+  .nowrap { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -57,13 +59,13 @@
 
 <h2>Skills</h2>
 <div class="skills">
-  <p><b>Languages</b> TypeScript, JavaScript, PHP, Python, SQL, HTML, CSS</p>
-  <p><b>Front end</b> React, React Native (Expo), Next.js, Tailwind CSS, WordPress, WooCommerce</p>
-  <p><b>Back end</b> Node.js, Fastify, REST APIs, PostgreSQL, Prisma, MySQL</p>
-  <p><b>AI</b> LLM feature development (Claude), prompt engineering, confidence gating and output validation, AI-assisted development (Claude Code)</p>
-  <p><b>Testing &amp; CI</b> Jest, GitHub Actions, automated type-checking and linting, ESLint</p>
-  <p><b>Infrastructure</b> Docker, Linux VPS, systemd, cron, Cloudflare R2, Vercel, Render, EAS, App Store and Google Play release</p>
-  <p><b>Data</b> Web scraping (Puppeteer, Cheerio), automated data pipelines, PostHog analytics, SEO</p>
+  <p><b>Languages</b> <span>TypeScript, JavaScript, PHP, Python, SQL, HTML, CSS</span></p>
+  <p><b>Front end</b> <span>React, React Native (Expo), Next.js, Tailwind CSS, WordPress, WooCommerce</span></p>
+  <p><b>Back end</b> <span>Node.js, Fastify, REST APIs, PostgreSQL, Prisma, MySQL</span></p>
+  <p><b>AI</b> <span>LLM feature development (Claude), prompt engineering, confidence gating and output validation, <span class="nowrap">AI-assisted</span> development (Claude Code)</span></p>
+  <p><b>Testing &amp; CI</b> <span>Jest, GitHub Actions, automated type-checking and linting, ESLint</span></p>
+  <p><b>Infrastructure</b> <span>Docker, Linux VPS, systemd, cron, Cloudflare R2, Vercel, Render, EAS, App Store and Google Play release</span></p>
+  <p><b>Data</b> <span>Web scraping (Puppeteer, Cheerio), automated data pipelines, PostHog analytics, SEO</span></p>
 </div>
 
 <h2>Experience</h2>
@@ -126,7 +128,7 @@
   <ul>
     <li><b>goodfights.app</b> &mdash; Combat sports fight-rating platform: React Native apps on both stores, a Next.js web app and a TypeScript/Node API on PostgreSQL, with daily scrapers, live event tracking and Claude-based content enrichment. Founded, built and operated solo; 3,415 users and 76,516 ratings. Details under Experience.</li>
     <li><b>lgbtvoicetz.org</b> &mdash; Redesigned and built the WordPress site for LGBT Voice Tanzania, an LGBT rights advocacy group, set up so a small non-technical team can publish and manage it without a developer.</li>
-    <li><b>avoidjawsurgery.com</b> &mdash; Rebuilt a slow WordPress site as dependency-free static HTML. Every page and 100 testimonials migrated word-for-word, fully redesigned, with sitemap and robots preserved so search rankings carried over. Built AI-assisted with Claude Code and reviewed page by page.</li>
+    <li><b>avoidjawsurgery.com</b> &mdash; Rebuilt a slow WordPress site as dependency-free static HTML. Every page and 100 testimonials migrated word-for-word, fully redesigned, with sitemap and robots preserved so search rankings carried over. Built <span class="nowrap">AI-assisted</span> with Claude Code and reviewed page by page.</li>
     <li><b>meafordosteopathy.com</b> &mdash; Business website with integrated online booking for a local health clinic.</li>
     <li><b>michaelprimak.ca</b> &mdash; This portfolio: Next.js, TypeScript and Tailwind, statically generated, with a live section that reads real figures from the Good Fights production API.</li>
   </ul>

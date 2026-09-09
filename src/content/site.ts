@@ -25,7 +25,7 @@ export const site = {
 
 export const nav = [
   { label: "Work", href: "/#work" },
-  { label: "How I build", href: "/#how" },
+  { label: "How I work", href: "/#how" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -33,8 +33,8 @@ export const nav = [
 export const hero = {
   eyebrow: "Senior full-stack developer · Ontario, Canada · Remote",
   headline: "I design, build and run products end to end.",
-  lede: "Nine years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a Mobile and Web app I built and operate from the database up: apps on both stores, a Next.js site, the API behind them, and the scrapers and LLM enrichment that keep it current — 3,415 users, 76,516 ratings, all on infrastructure I operate myself.",
-  primaryCta: { label: "See the work", href: "/#work" },
+  lede: "Nine years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a mobile and web app I built and operate from the database up: React Native on iOS and Android, a Next.js web app, a Node API, and the scrapers, LLM enrichment and user input that keep it all current — 3,415 users, 76,516 ratings, on a platform I built and operate myself.",
+  primaryCta: { label: "See some of my work", href: "/#work" },
   secondaryCta: { label: "Open to senior full-stack roles", href: "/#contact" },
   /** Compact, scannable stack line — recruiters and ATS both read this. */
   stack: [
@@ -57,13 +57,17 @@ export const work = {
 };
 
 export const howIWork = {
-  heading: "AI in production, not just in my editor.",
+  heading: "If it can be built, I can build it.",
   intro:
-    "Everyone says they use AI now. Here is what that actually looks like when it has to survive contact with real users.",
+    "Twenty years of writing code by hand, first as a hobbyist and then professionally, and now fully integrated with AI-assisted development. I own the whole ecosystem: the product, the code, the tests, the pipeline and the servers it runs on.",
   steps: [
     {
+      title: "By hand, and with AI",
+      body: "I learned to code long before there was a model to ask, so I can read, debug and design without one — and I use Claude Code every day because it makes a careful developer faster, not because it replaces one. Whatever the stack, the language or the shape of the problem, the answer is the same: it gets built, and it gets built properly.",
+    },
+    {
       title: "LLM features with guardrails",
-      body: "Good Fights enriches its catalogue with Claude and gates every result on a confidence score, so nothing the model is unsure about reaches a user. There are unit tests that check the model's output — including one that verifies quoted material is real. I use Claude Code daily too, but the part that counts is the model running in production.",
+      body: "Good Fights enriches its catalogue with Claude and gates every result on a confidence score, so nothing the model is unsure about reaches a user. There are unit tests that check the model's output — including one that verifies quoted material is real. The part that counts is the model running in production.",
     },
     {
       title: "Tested, and shipped by a pipeline",

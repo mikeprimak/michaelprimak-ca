@@ -154,6 +154,7 @@ export const projects: Project[] = [
     shipped: [
       "A WordPress site set up so the team can publish news and pages without a developer.",
       "A clear structure for who the organization is, what it does, and how to get involved.",
+      "A beautiful design that effectively communicates the organization's work and the coverage it has earned.",
     ],
     hardParts: [
       {
@@ -175,8 +176,8 @@ export const projects: Project[] = [
     slug: "avoidjawsurgery",
     title: "avoidjawsurgery.com",
     summary:
-      "A WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word, redesigned, and ready to host anywhere.",
-    deck: "A WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
+      "A legacy WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word, redesigned, and ready to host anywhere.",
+    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static rebuild · AI-assisted",
     image: {
@@ -193,7 +194,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "avoidjawsurgery.com", href: "https://avoidjawsurgery.com" }],
     problem: [
-      "The original site ran on WordPress on shared hosting: slow, expensive to keep patched, and fragile to edit. The content — a dozen long-form pages and 100 testimonials — was the valuable part, and it was locked inside the CMS.",
+      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. The content — a dozen long-form pages and 100 testimonials — was the valuable part, and it was locked inside the CMS.",
     ],
     shipped: [
       "Every page and all 100 testimonials migrated word-for-word, with source links preserved.",
@@ -236,17 +237,22 @@ export const projects: Project[] = [
       { label: "Role", value: "Designer & developer" },
       { label: "Client", value: "Meaford Osteopathy — a clinic in Meaford, Ontario" },
       { label: "Stack", value: "HTML, CSS, JavaScript, third-party booking integration" },
+      {
+        label: "Status",
+        value: "The clinic has since moved to a hosted platform. \"See the site\" opens the site as I built it, rendered from the original source.",
+      },
     ],
     links: [
-      // TODO(Mike): add the live URL if the site is still up.
+      { label: "See the site", href: "/demo/meaford-osteopathy" },
       { label: "Source on GitHub", href: "https://github.com/mikeprimak/MeafordOsteopathy" },
     ],
     problem: [
-      "A one-practitioner clinic needed what most small businesses need: a site that says what the clinic does, where it is, and lets patients book without a phone call.",
+      "A one-practitioner clinic needed what most small businesses need: a site that says what the clinic does, where it is, and lets patients book.",
     ],
     shipped: [
       "Pages for services, the practitioner, location and contact — written to be found by local search.",
       "An integrated booking system so patients can book appointments directly from the site.",
+      "Google Analytics and a Google Business Profile, set up and integrated so the clinic shows up in local search and can see how the site is used.",
       "A design the client could keep updating with simple edits.",
     ],
     hardParts: [
@@ -260,7 +266,7 @@ export const projects: Project[] = [
       },
       {
         title: "Ultra Easy To Use",
-        body: "The patients are older and mostly not comfortable online. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
+        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
       },
     ],
     outcomeKind: "quote",

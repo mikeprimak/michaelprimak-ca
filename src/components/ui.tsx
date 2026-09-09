@@ -1,5 +1,6 @@
-import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
+import { ListenButton } from "./listen-button";
+import { SectionLink } from "./section-link";
 
 export function Arrow({ className = "size-4" }: { className?: string }) {
   return (
@@ -25,10 +26,14 @@ type ButtonProps = {
   className?: string;
   /** Invert colours (for use on a dark callout). */
   inverted?: boolean;
-} & Omit<ComponentProps<"button">, "children" | "className">;
+  /** `outline` is the same shape with a border instead of a fill, for a secondary action. */
+  variant?: "solid" | "outline";
+  /** Called on click for both the link and the button form. */
+  onClick?: () => void;
+} & Omit<ComponentProps<"button">, "children" | "className" | "onClick">;
 
 const btnBase =
-  "inline-flex shrink-0 items-center gap-2.5 rounded-full font-medium whitespace-nowrap transition-colors hover:bg-accent hover:text-on-accent disabled:opacity-60 disabled:hover:bg-btn-bg disabled:hover:text-btn-fg";
+  "inline-flex shrink-0 items-center gap-2.5 rounded-full font-medium whitespace-nowrap transition-colors disabled:opacity-60";
 
 export function Button({
   href,
@@ -36,24 +41,32 @@ export function Button({
   size = "md",
   className = "",
   inverted = false,
+  variant = "solid",
+  onClick,
   ...rest
 }: ButtonProps) {
+  const fill =
+    variant === "outline"
+      ? "border border-ink text-ink hover:border-accent hover:text-accent"
+      : inverted
+        ? "bg-bg text-ink hover:bg-accent hover:text-on-accent"
+        : "bg-btn-bg text-btn-fg hover:bg-accent hover:text-on-accent disabled:hover:bg-btn-bg disabled:hover:text-btn-fg";
   const cls = [
     btnBase,
     size === "md" ? "h-[52px] px-6 text-[16px]" : "h-[42px] px-[18px] text-[15px]",
-    inverted ? "bg-bg text-ink" : "bg-btn-bg text-btn-fg",
+    fill,
     className,
   ].join(" ");
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <SectionLink href={href} className={cls} onClick={onClick} data-no-read>
         {children}
         <Arrow />
-      </Link>
+      </SectionLink>
     );
   }
   return (
-    <button className={cls} {...rest}>
+    <button className={cls} onClick={onClick} data-no-read {...rest}>
       {children}
       <Arrow />
     </button>
@@ -74,22 +87,22 @@ export function TextLink({
   const cls = `inline-flex items-center gap-2 border-b border-line pb-0.5 font-medium text-ink transition-colors hover:border-accent hover:text-accent ${className}`;
   if (external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls} data-no-read>
         {children}
         <Arrow />
       </a>
     );
   }
   return (
-    <Link href={href} className={cls}>
+    <SectionLink href={href} className={cls} data-no-read>
       {children}
       <Arrow />
-    </Link>
+    </SectionLink>
   );
 }
 
-/** "01 —— Services" style section label. */
-export function Eyebrow({ number, label }: { number?: string; label: string }) {
+/** "01 —— Services" style section label. Pass `readId` to add a Listen button on the right. */
+export function Eyebrow({ number, label, readId }: { number?: string; label: string; readId?: string }) {
   return (
     <div className="mb-7 flex items-center gap-3.5">
       {number && (
@@ -99,6 +112,7 @@ export function Eyebrow({ number, label }: { number?: string; label: string }) {
         </>
       )}
       <span className="mono">{label}</span>
+      {readId && <ListenButton targetId={readId} className="ml-auto" />}
     </div>
   );
 }

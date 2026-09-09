@@ -87,7 +87,7 @@ export function Work() {
   const f = featuredProject;
   return (
     <Section id="work">
-      <Eyebrow number="01" label="Selected work" />
+      <Eyebrow number="01" label="Selected work" readId="work" />
       <SectionHeading intro={work.intro}>{work.heading}</SectionHeading>
 
       {/* Featured */}

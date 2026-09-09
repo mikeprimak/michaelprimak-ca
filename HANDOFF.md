@@ -1,9 +1,11 @@
 # michaelprimak.ca — handoff
 
-**Status 2026-09-08: LIVE.** The new Next.js site is serving michaelprimak.ca. Cutover is
-done, the old site is backed up, and every content placeholder is filled.
+**Status 2026-09-09: LIVE.** The new Next.js site is serving michaelprimak.ca. Cutover is
+done, the old site is backed up, and every content placeholder is filled. A round of
+Mike's edits went in on 2026-09-09 (see "Changes on 2026-09-09" below).
 
-One task is outstanding: connecting the contact form to email.
+One task is outstanding: connecting the contact form to email. One thing needs a
+look in a real browser: the Meaford Osteopathy demo at /demo/meaford-osteopathy.
 
 ---
 
@@ -129,6 +131,49 @@ installs already has an answer on the page.
 
 ---
 
+## Changes on 2026-09-09
+
+Mike's list, all done and pushed:
+
+- Hero: new lede, "See some of my work", both calls to action are the same size
+  (grid row; `variant="outline"` on the second), live card header reads
+  "● Live data from one of my projects" with the Good Fights icon + name on the right,
+  headshot is 70% of the viewport width on phones.
+- "How I build" is now **"How I work"** (nav, eyebrow, content): heading "If it can be
+  built, I can build it", intro about 20 years of hand-written code now fully
+  AI-assisted, and a fourth step "By hand, and with AI" ahead of the three AI /
+  testing / infrastructure ones. Four columns on desktop.
+- **Listen buttons** (`src/components/listen-button.tsx`): every home-page section and
+  each case study has one; it reads the section with the browser's built-in speech
+  synthesis (Web Speech API), no key, no network. `data-no-read` on an element skips
+  it (the form, buttons). Chrome cuts off long utterances, so it queues ~220-char
+  chunks. Hidden automatically where the API is missing.
+- **Back button** (`src/components/section-link.tsx`): in-page links (`/#work` etc.)
+  scroll and `replaceState` instead of pushing history, so Back leaves the site
+  instead of walking through every section. `Button` and `TextLink` use it.
+- Header is sticky on phones; the mobile menu's "Get in touch" now closes the menu
+  (the `Button` link form was dropping `onClick`).
+- Contact: form first, "Or reach me directly" under it.
+- Copy: avoidjawsurgery "legacy WordPress site", "slow, expensive, tedious to keep
+  patched"; Meaford "lets patients book", Google Analytics + Business Profile bullet,
+  "Many patients are older, so clarity and ease of use are everything"; LGBT Voice
+  "A beautiful design..." bullet.
+- Résumé: skills rows are flex so a wrapped line aligns under the text column, and
+  "AI-assisted" no longer breaks at the hyphen. PDF regenerated (real Calibri).
+- **Meaford Osteopathy demo.** meafordosteopathy.com now redirects to a Squarespace
+  site, so Mike's build is not live anywhere. `scripts/build-meaford-demo.mjs` renders
+  the original PHP (variables + includes, no database) to static HTML in
+  `public/demo/meaford-osteopathy/`, one folder per page, copying only the 56 assets
+  the pages reference (6.6 MB, not the theme's 430 MB). `next.config.ts` has two
+  afterFiles rewrites so `/demo/meaford-osteopathy` and `/demo/meaford-osteopathy/<Page>`
+  serve the folder's index.html. The case study links to it ("See the site").
+  Rebuild: `MEAFORD_PHP=<path to php.exe> node scripts/build-meaford-demo.mjs`
+  (source: `C:Usersavocamichaelprimak-caprojectsMeafordOsteopathy`; a portable
+  PHP zip from windows.php.net works, nothing needs installing).
+  **Not yet verified in a real browser**: the theme (Canvas) renders blank in headless
+  Chrome, for the original PHP too, so the screenshots proved nothing either way.
+  Every referenced asset returns 200. Open it and look.
+
 ## Outstanding, after the email
 
 1. **Eyeball avoidjawsurgery on the home page and its case study.** It is rendered like
@@ -252,6 +297,7 @@ excuse; both are done.
 
 ## Commits this session
 
+    (2026-09-09) one commit: Mike's edit list — see "Changes on 2026-09-09"
     1c8e37d  Render avoidjawsurgery like the other client projects
     d44c8ed  Show screenshots on the home page too
     cda9e84  Add avoidjawsurgery screenshot; per-image intrinsic sizes
