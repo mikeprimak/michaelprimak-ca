@@ -102,12 +102,12 @@ export const projects: Project[] = [
     ],
     shipped: [
       "iOS and Android apps from one React Native codebase, published through App Store and Play Store review.",
-      "Accounts with email and Google sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — 3,415 registered users who have submitted 76,516 fight ratings and 1,450 written reviews.",
+      "Accounts with email, Google and Apple sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — 3,415 registered users who have submitted 76,516 fight ratings and 1,450 written reviews.",
       "A catalogue of 15,730 fights across 1,635 events dating to 1993 — 10,567 fighters, results and stats — kept current by daily scrapers.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
       "Claude-based enrichment that writes fight and fighter detail, gated on a confidence score so nothing the model is unsure about is published — with unit tests that check its output, including one that verifies quoted material is real.",
-      "34 scheduled jobs — built as GitHub Actions workflows, since moved to VPS cron with per-job locking and failure alerts — running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
-      "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus 3,670 automatically written news articles.",
+      "More than 30 scheduled jobs — built as GitHub Actions workflows, since moved to VPS cron with per-job locking and failure alerts — running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
+      "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus an automated content system that writes an SEO-focused preview and results article for every numbered UFC card and refreshes a monthly fighter-rankings article from live data.",
       "Over-the-air updates so fixes reach users without a new store submission.",
     ],
     architecture: "good-fights",
@@ -193,10 +193,10 @@ export const projects: Project[] = [
     ],
     links: [{ label: "avoidjawsurgery.com", href: "https://avoidjawsurgery.com" }],
     problem: [
-      "The original site ran on WordPress on shared hosting: slow, expensive to keep patched, and fragile to edit. The content — a dozen long-form pages and over a hundred testimonials — was the valuable part, and it was locked inside the CMS.",
+      "The original site ran on WordPress on shared hosting: slow, expensive to keep patched, and fragile to edit. The content — a dozen long-form pages and 100 testimonials — was the valuable part, and it was locked inside the CMS.",
     ],
     shipped: [
-      "Every page and all 100+ testimonials migrated word-for-word, with source links preserved.",
+      "Every page and all 100 testimonials migrated word-for-word, with source links preserved.",
       "A complete visual redesign: modern dark theme, responsive, with a mobile menu and scroll-to-top.",
       "Plain HTML, CSS and JavaScript — no dependencies, no build step, so it can be hosted anywhere for next to nothing.",
       "Sitemap and robots set up so search rankings carried over.",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
     ],
     outcome: [
       { value: "13", label: "pages migrated word-for-word" },
-      { value: "100+", label: "testimonials preserved" },
+      { value: "100", label: "testimonials preserved" },
       { value: "0", label: "dependencies, frameworks or build steps" },
     ],
   },

@@ -67,7 +67,7 @@ export const howIWork = {
     },
     {
       title: "Tested, and shipped by a pipeline",
-      body: "Jest on the API — including tests that check what the model produced — type-checking and linting on every package, and 34 scheduled jobs, built as GitHub Actions workflows and now run from VPS cron, covering the scrapers, enrichment, database backups and content checks. Over-the-air updates push a fix to users without waiting on app-store review.",
+      body: "Jest on the API — including tests that check what the model produced — type-checking and linting on every package, and more than 30 scheduled jobs, built as GitHub Actions workflows and now run from VPS cron, covering the scrapers, enrichment, database backups and content checks. Over-the-air updates push a fix to users without waiting on app-store review.",
     },
     {
       title: "I run the infrastructure",
