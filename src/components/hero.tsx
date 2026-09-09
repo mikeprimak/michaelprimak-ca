@@ -27,12 +27,12 @@ async function LiveCard() {
       </span>
       <dl className="grid grid-cols-2 gap-3.5">
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fights)}</dd>
-          <dt className="text-[13px] text-ink3">fights live in the app</dt>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.ratings)}</dd>
+          <dt className="text-[13px] text-ink3">ratings and hype scores from users</dt>
         </div>
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.events)}</dd>
-          <dt className="text-[13px] text-ink3">events tracked</dt>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fights)}</dd>
+          <dt className="text-[13px] text-ink3">fights live in the app</dt>
         </div>
       </dl>
       <p className="text-[15px] text-ink2">
