@@ -67,11 +67,11 @@ export const howIWork = {
     },
     {
       title: "Tested, and shipped by a pipeline",
-      body: "Jest across the API and the mobile app, type-checking and linting on every package, and 34 GitHub Actions workflows running the scrapers, enrichment, database backups and content checks on schedule. Over-the-air updates push a fix to users without waiting on app-store review.",
+      body: "Jest on the API — including tests that check what the model produced — type-checking and linting on every package, and 34 scheduled jobs, built as GitHub Actions workflows and now run from VPS cron, covering the scrapers, enrichment, database backups and content checks. Over-the-air updates push a fix to users without waiting on app-store review.",
     },
     {
       title: "I run the infrastructure",
-      body: "Docker and nginx on a Linux VPS, Postgres with Prisma migrations, Cloudflare R2 for images, cron for the jobs that have to happen at 4am, PostHog for what people actually do. No platform team behind me — when production breaks at 11pm, it's me.",
+      body: "A Docker-built API on Render, a Linux VPS where systemd and cron run the scrapers, the live trackers and the jobs that have to happen at 4am, Postgres with Prisma migrations, Cloudflare R2 for images, PostHog for what people actually do. No platform team behind me — when production breaks at 11pm, it's me.",
     },
   ],
   callout: {

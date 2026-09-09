@@ -27,7 +27,7 @@ export function GoodFightsArchitecture() {
           <text x="110" y="150" className={title}>Web</text>
           <text x="110" y="172" className={sub}>Next.js · goodfights.app</text>
           <text x="380" y="100" className={title}>REST API</text>
-          <text x="380" y="122" className={sub}>Node · Express · TS</text>
+          <text x="380" y="122" className={sub}>Node · Fastify · TS</text>
           <text x="650" y="100" className={title}>Database</text>
           <text x="650" y="122" className={sub}>PostgreSQL · Prisma</text>
           <text x="380" y="238" className={title}>Daily scrapers</text>

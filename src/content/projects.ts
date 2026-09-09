@@ -85,7 +85,7 @@ export const projects: Project[] = [
       {
         label: "Stack",
         value:
-          "React Native (Expo), Node/Express in TypeScript, PostgreSQL + Prisma, Next.js, Docker on a Linux VPS, Cloudflare R2",
+          "React Native (Expo), Node/Fastify in TypeScript, PostgreSQL + Prisma, Next.js, Docker on Render, a Linux VPS for scrapers and live trackers, Cloudflare R2",
       },
     ],
     links: [
@@ -106,7 +106,7 @@ export const projects: Project[] = [
       "A catalogue of 15,730 fights across 1,635 events dating to 1993 — 10,567 fighters, results and stats — kept current by daily scrapers.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
       "Claude-based enrichment that writes fight and fighter detail, gated on a confidence score so nothing the model is unsure about is published — with unit tests that check its output, including one that verifies quoted material is real.",
-      "34 scheduled GitHub Actions workflows running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
+      "34 scheduled jobs — built as GitHub Actions workflows, since moved to VPS cron with per-job locking and failure alerts — running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
       "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus 3,670 automatically written news articles.",
       "Over-the-air updates so fixes reach users without a new store submission.",
     ],

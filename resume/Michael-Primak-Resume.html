@@ -59,11 +59,11 @@
 <div class="skills">
   <p><b>Languages</b> TypeScript, JavaScript, PHP, Python, SQL, HTML, CSS</p>
   <p><b>Front end</b> React, React Native (Expo), Next.js, Tailwind CSS, WordPress, WooCommerce</p>
-  <p><b>Back end</b> Node.js, Express, Fastify, REST APIs, PostgreSQL, Prisma, MySQL</p>
-  <p><b>AI</b> LLM feature development (Claude, OpenAI), prompt engineering, confidence gating and output validation, AI-assisted development (Claude Code)</p>
+  <p><b>Back end</b> Node.js, Fastify, REST APIs, PostgreSQL, Prisma, MySQL</p>
+  <p><b>AI</b> LLM feature development (Claude), prompt engineering, confidence gating and output validation, AI-assisted development (Claude Code)</p>
   <p><b>Testing &amp; CI</b> Jest, GitHub Actions, automated type-checking and linting, ESLint</p>
-  <p><b>Infrastructure</b> Docker, nginx, Linux VPS, Cloudflare R2, cron, Vercel, Render, EAS, App Store and Google Play release</p>
-  <p><b>Data</b> Web scraping (Puppeteer, Playwright, Cheerio), automated data pipelines, PostHog analytics, SEO</p>
+  <p><b>Infrastructure</b> Docker, Linux VPS, systemd, cron, Cloudflare R2, Vercel, Render, EAS, App Store and Google Play release</p>
+  <p><b>Data</b> Web scraping (Puppeteer, Cheerio), automated data pipelines, PostHog analytics, SEO</p>
 </div>
 
 <h2>Experience</h2>
@@ -75,8 +75,8 @@
   <ul>
     <li>Designed, built and operate a cross-platform product end to end: React Native (Expo) apps live on the App Store and Google Play, a Next.js web app, and a TypeScript/Node REST API on PostgreSQL with Prisma.</li>
     <li>Built Claude-based enrichment that generates catalogue content, gated on a confidence score so output the model is unsure about is never published; covered by Jest unit tests, including one that verifies quoted material against its source.</li>
-    <li>Run 34 scheduled GitHub Actions workflows covering scrapers, AI enrichment, database backups, deduplication and content-freshness checks.</li>
-    <li>Operate production personally: Docker and nginx on a Linux VPS, Prisma migrations against PostgreSQL, Cloudflare R2 image storage, cron jobs, push notifications, PostHog analytics and SEO.</li>
+    <li>Built 34 scheduled GitHub Actions workflows covering scrapers, AI enrichment, database backups, deduplication and content-freshness checks, then moved the daily jobs to VPS cron with per-job locking and failure alerts when the repo went private.</li>
+    <li>Operate production personally: a Docker-built API on Render, a Linux VPS running the scrapers and live event trackers under systemd and cron, Prisma migrations against PostgreSQL, Cloudflare R2 image storage, push notifications, PostHog analytics and SEO.</li>
     <li>Grew the product to 3,415 registered users who have submitted 76,516 fight ratings and 1,450 written reviews, migrating the existing Fighting Tomatoes user base onto the new platform.</li>
     <li>Maintain a catalogue of 15,730 fights across 1,635 events and 10,567 fighters dating to 1993, kept current by daily scrapers with Cloudflare bypass, plus 3,670 automatically generated news articles.</li>
     <li>Ship over-the-air updates so fixes reach users without waiting on a new app-store submission.</li>
