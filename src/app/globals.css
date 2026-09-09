@@ -56,9 +56,10 @@
 }
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+  /* No global scroll-behavior: smooth. Next.js resets the scroll position on every
+     page change, and with smooth scrolling the browser animates that reset, so
+     opening a case study looked like the *same* page scrolling to the top. In-page
+     jumps get their smooth scroll from SectionLink (scrollIntoView) instead. */
   body {
     background: var(--bg);
     color: var(--ink);
@@ -81,10 +82,25 @@
     outline: 2px solid var(--accent);
     outline-offset: 3px;
   }
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
+}
+
+/* Page-change transition for the case studies: a short fade so a new page reads as a new page. */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.page-enter {
+  animation: page-enter 0.32s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
   }
 }
 

@@ -64,7 +64,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
   const project = raw.architecture === "good-fights" ? withLiveNumbers(raw, await getLiveStats()) : raw;
 
   return (
-    <article className="wrap" id="case-study">
+    <article className="wrap page-enter" id="case-study">
       <nav aria-label="Breadcrumb" className="mt-8 flex items-center gap-2.5 sm:mt-12">
         <Link href="/#work" className="text-ink3 hover:text-accent">
           Work
