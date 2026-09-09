@@ -56,31 +56,13 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="What's this about?" id="type" error={err.type}>
-        <div className="relative">
-          <select id="type" name="type" required defaultValue="" aria-invalid={!!err.type} className={`${inputCls} appearance-none pr-10`}>
-            <option value="" disabled>
-              Choose one
-            </option>
-            {contact.projectTypes.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="pointer-events-none absolute top-1/2 right-4 size-4 -translate-y-1/2 text-ink3" aria-hidden="true">
-            <path d="M4 6l4 4 4-4" />
-          </svg>
-        </div>
-      </Field>
-
       <Field label="Message" id="message" error={err.message}>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          placeholder="What it is, who it's for, and any timeline or budget you have in mind."
+          placeholder={contact.messagePlaceholder}
           aria-invalid={!!err.message}
           className={`${inputCls} min-h-[150px] resize-y py-3.5`}
         />

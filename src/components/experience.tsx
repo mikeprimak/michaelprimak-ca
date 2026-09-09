@@ -19,7 +19,7 @@ export function Experience() {
             </span>
             <span
               className={`justify-self-start rounded-full border px-2.5 py-1 font-mono text-[11.5px] tracking-[0.06em] whitespace-nowrap uppercase ${
-                row.type === "Manager" ? "border-accent text-accent" : "border-line text-ink2"
+                row.type === "Coordinator" ? "border-accent text-accent" : "border-line text-ink2"
               }`}
             >
               {row.type}
@@ -37,7 +37,7 @@ export function Experience() {
           </ul>
         </div>
         <div className="flex flex-col gap-1.5">
-          <span className="mono">Résumé</span>
+          <span className="mono">Resume</span>
           <TextLink href={site.resumePath} external>
             Download PDF
           </TextLink>

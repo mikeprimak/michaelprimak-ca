@@ -1,13 +1,13 @@
 "use server";
 
 import { Resend } from "resend";
-import { contact, site } from "@/content/site";
+import { site } from "@/content/site";
 
 export type ContactState = {
   status: "idle" | "sent" | "error";
   message?: string;
   /** Field-level errors keyed by input name. */
-  errors?: Partial<Record<"name" | "email" | "type" | "message", string>>;
+  errors?: Partial<Record<"name" | "email" | "message", string>>;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -16,7 +16,6 @@ export async function sendMessage(_prev: ContactState, formData: FormData): Prom
   const get = (k: string) => String(formData.get(k) ?? "").trim();
   const name = get("name");
   const email = get("email");
-  const type = get("type");
   const message = get("message");
 
   // --- Spam checks (silent): honeypot field and a minimum fill time. ---
@@ -32,7 +31,6 @@ export async function sendMessage(_prev: ContactState, formData: FormData): Prom
   const errors: ContactState["errors"] = {};
   if (name.length < 2) errors.name = "Please enter your name.";
   if (!EMAIL_RE.test(email)) errors.email = "Please enter a valid email address.";
-  if (!contact.projectTypes.includes(type)) errors.type = "Please pick one.";
   if (message.length < 10) errors.message = "Tell me a little more — at least a sentence.";
   if (message.length > 5000) errors.message = "That's a bit long — please keep it under 5000 characters.";
   if (Object.keys(errors).length) {
@@ -45,7 +43,7 @@ export async function sendMessage(_prev: ContactState, formData: FormData): Prom
   const from = process.env.CONTACT_FROM_EMAIL || "Website <onboarding@resend.dev>";
 
   if (!apiKey) {
-    console.warn("[contact] RESEND_API_KEY is not set; message not sent.", { name, email, type });
+    console.warn("[contact] RESEND_API_KEY is not set; message not sent.", { name, email });
     return {
       status: "error",
       message: `The form isn't connected to email yet — please email me directly at ${site.email}.`,
@@ -58,8 +56,8 @@ export async function sendMessage(_prev: ContactState, formData: FormData): Prom
       from,
       to,
       replyTo: email,
-      subject: `New project inquiry from ${name} — ${type}`,
-      text: [`Name: ${name}`, `Email: ${email}`, `Type: ${type}`, "", message].join("\n"),
+      subject: `New message from ${name} via michaelprimak.ca`,
+      text: [`Name: ${name}`, `Email: ${email}`, "", message].join("\n"),
     });
     if (error) throw new Error(error.message);
     return { status: "sent" };

@@ -33,7 +33,7 @@ export const nav = [
 export const hero = {
   eyebrow: "Senior full-stack developer · Ontario, Canada · Remote",
   headline: "I design, build and run products end to end.",
-  lede: "Nine years shipping web and mobile products in React Native, TypeScript, Node and Postgres. Good Fights is a mobile and web app I built and operate from the database up: React Native on iOS and Android, a Next.js web app, a Node API, and the scrapers, LLM enrichment and user input that keep it all current — 3,415 users, 76,516 ratings, on a platform I built and operate myself.",
+  lede: "Nine years shipping web and mobile products. Good Fights is the one I own end to end: apps on iOS and Android, a web app, the API behind them, and the scrapers, LLM enrichment and user input that keep it all current — 3,415 users and 76,516 ratings, on a platform I built and run myself.",
   primaryCta: { label: "See some of my work", href: "/#work" },
   secondaryCta: { label: "Open to senior full-stack roles", href: "/#contact" },
   /** Compact, scannable stack line — recruiters and ATS both read this. */
@@ -84,10 +84,10 @@ export const howIWork = {
   },
 };
 
-export type Role = "Developer" | "Manager";
+export type Role = "Developer" | "Coordinator";
 
 export const experience = {
-  heading: "Coder and manager, at small and mid-sized organizations.",
+  heading: "Coder and coordinator, at small and mid-sized organizations.",
   intro:
     "I've written the code, sat with the customer, and run the team — which is why I'm comfortable being handed any of the three.",
   timeline: [
@@ -113,7 +113,7 @@ export const experience = {
       when: "2018 – 2020",
       org: "WellnessLiving Systems Inc.",
       role: "White Label App Dept. Coordinator. Ran a team of developers, designers and support staff delivering white-label mobile apps to B2B clients.",
-      type: "Manager" as Role,
+      type: "Coordinator" as Role,
     },
     {
       when: "2016 – 2025",
@@ -132,11 +132,7 @@ export const experience = {
 export const contact = {
   heading: "Get in touch.",
   intro: `Hiring? Tell me about the role and the team. I reply within ${site.replyTime}.`,
-  hiringNote:
-    "Open to senior full-stack, front-end and React Native roles — remote, Canada. Résumé is above, or ask and I'll send it.",
-  projectTypes: [
-    "A full-time role",
-    "A contract role",
-    "Something else",
-  ],
+  /** Placeholder in the message box. Written for hiring managers and recruiters as much as clients. */
+  messagePlaceholder:
+    "The role or project, what the team is working on, and anything you'd like me to know before we talk.",
 };

@@ -15,21 +15,14 @@ export function ContactSection() {
             <h2 className="serif mb-5 text-[34px] leading-[1.08] sm:text-[46px]">{contact.heading}</h2>
             <p className="max-w-[620px] text-[17px] text-ink2 sm:text-[19px]">{contact.intro}</p>
           </div>
-          <p className="text-[15px] text-ink2">{contact.hiringNote}</p>
         </div>
         {/* The form comes first; the direct links sit under it on every screen size. */}
         <div className="flex flex-col gap-8" data-no-read>
           <ContactForm />
           <div className="flex flex-col gap-2.5">
-            <span className="mono">Or reach me directly</span>
+            <span className="mono">Or email me directly at</span>
             <a href={`mailto:${site.email}`} className={directLink}>
               {site.email}
-            </a>
-            <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className={directLink}>
-              LinkedIn
-            </a>
-            <a href={site.links.github} target="_blank" rel="noopener noreferrer" className={directLink}>
-              GitHub
             </a>
           </div>
         </div>

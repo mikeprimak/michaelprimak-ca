@@ -9,7 +9,7 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap gap-6">
           <a href={site.resumePath} target="_blank" rel="noopener noreferrer" className="text-ink2 hover:text-accent">
-            Résumé (PDF)
+            Resume (PDF)
           </a>
           <a href={site.links.github} target="_blank" rel="noopener noreferrer" className="text-ink2 hover:text-accent">
             GitHub
