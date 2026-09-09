@@ -1,17 +1,24 @@
 # michaelprimak.ca — handoff
 
-**Status 2026-09-09: LIVE.** The new Next.js site is serving michaelprimak.ca. Cutover is
-done, the old site is backed up, and every content placeholder is filled. A round of
-Mike's edits went in on 2026-09-09 (see "Changes on 2026-09-09" below).
-
-One task is outstanding: connecting the contact form to email. One thing needs a
-look in a real browser: the Meaford Osteopathy demo at /demo/meaford-osteopathy.
+**Status 2026-09-09 (end of day): LIVE and complete.** The site serves michaelprimak.ca,
+the contact form delivers email (tested), every Good Fights number on the site is live
+from the production API, and Mike's full edit list from 2026-09-09 is in (see "Changes on
+2026-09-09" below). Nothing is blocking. The site is no longer a reason not to apply.
 
 ---
 
-# START HERE — connect the contact form
+# Contact form (done 2026-09-09)
 
-The contact form does not send email. The Vercel project `michaelprimak-ca-next` has
+**Working.** Test message delivered to michaelsprimak@gmail.com on 2026-09-09. The
+`RESEND_API_KEY` on Vercel had been added with an **empty value** the day before (the
+paste at the CLI prompt did not take), and the code's `if (!apiKey)` check treats an
+empty string as missing, so the form silently used the fallback message. Re-added as a
+*sensitive* variable (Vercel never shows it again) and redeployed. If it ever breaks:
+`npx vercel env ls production` shows whether the variable exists but not whether it is
+empty; pull it with `npx vercel env pull` won't work for a sensitive value, so just
+re-add it. The rest of this section is the original setup guide, kept for reference.
+
+The contact form originally did not send email. The Vercel project `michaelprimak-ca-next` has
 **zero environment variables**, so `src/app/actions/contact.ts` short-circuits at its
 `if (!apiKey)` branch and returns:
 
@@ -174,20 +181,53 @@ Mike's list, all done and pushed:
   Chrome, for the original PHP too, so the screenshots proved nothing either way.
   Every referenced asset returns 200. Open it and look.
 
-## Outstanding, after the email
+## Also done later on 2026-09-09
 
-1. **Eyeball avoidjawsurgery on the home page and its case study.** It is rendered like
+- **Good Fights numbers are live everywhere.** New backend endpoint
+  `GET /api/public-stats` (fight-mobile-app commit bd01d6cf, deployed on Render) returns
+  fightRatings, hypeRatings, totalRatings, reviews, users, fights, events, fighters, cached
+  an hour per process. `src/lib/good-fights.ts` reads it plus `/api/fights` and
+  `/api/events` (the app-visible counts), with a `fill()` helper that replaces `{users}`,
+  `{fightRatings}` etc. in copy. The hero paragraph, the live card and the Good Fights case
+  study all use it; both pages have `revalidate = 3600`. "Updated hourly" means
+  stale-while-revalidate: the first visit after an hour serves the old page and rebuilds;
+  the next visit is fresh. Card shows "fights covered" (app-visible) and "user ratings"
+  (fight ratings + hype scores); the case study says "fight ratings" (post-fight only).
+- **Contact form UX**: controlled inputs (a failed submit no longer wipes the fields), live
+  validation after the first attempt, rules shared with the server in
+  `src/lib/contact-validation.ts`. No subject dropdown; message placeholder written for
+  hiring managers; only the email address under "Or email me directly at".
+- **Navigation**: no global `scroll-behavior: smooth` (it made Next's scroll reset on page
+  change look like the same page scrolling up); SectionLink does smooth in-page scrolls;
+  case studies fade in (`.page-enter`).
+- **Case studies**: "hard parts" block is full width, titles never wrap (clamp on narrow
+  phones, `MAX_HARD_PART_TITLE = 36` enforced at build). Logos 240/360px. Meaford hard
+  parts rewritten: Ultra Easy To Use, Keeping it simple, Google Business Profile.
+- **Tailwind gotcha**: a class glued to a `${}` expression inside a template literal is
+  not scanned (`sm:size-[360px]${blend}` produced no CSS). Build class lists with
+  `[...].join(" ")`. Also: `backdrop-filter` on the header made it the containing block
+  for the fixed mobile menu; the header background is a plain solid colour for that reason.
+- Copy: Coordinator (not Manager), "Resume" without accents, nav "Selected work" /
+  "Working style", hero lede without technology names, "Download resume" in the eyebrow
+  line, outlined "PDF resume" button.
+
+## Outstanding
+
+1. **Meaford demo in a real browser.** /demo/meaford-osteopathy renders blank in headless
+   Chrome (so does the original PHP), so it was never visually confirmed. Open it once.
+2. **Eyeball avoidjawsurgery on the home page and its case study.** It is rendered like
    Meaford and LGBT Voice (`image.kind: "logo"`), which applies `mix-blend-multiply` in
    light mode — designed for logos on white. On a dark X-ray image it may look muddy. If
    so, exempt it from that class in `src/components/work.tsx` (`Thumb`) and
    `src/app/work/[slug]/page.tsx`. A cropped 1170×800 wide version is in git history at
    `cda9e84` if you'd rather go back to that.
-2. **Meaford Osteopathy has no live URL** — `projects.ts` links only to GitHub.
 3. **The repo is private.** Nothing links to it now (the "How this site was built" link
    was removed on request; the page still exists at
    `src/app/how-this-site-was-built/page.tsx`, unlinked and out of the sitemap). Make the
    repo public or delete the page.
-4. **`resume/Michael-Primak-Resume.html` is the source of the PDF.** If you edit it,
+4. **Listen buttons** use the browser's own voices; quality varies by device. If a
+   consistent voice matters, pre-generate audio per section with a paid TTS service.
+5. **`resume/Michael-Primak-Resume.html` is the source of the PDF.** If you edit it,
    regenerate with headers off — Chrome's print dialog otherwise bakes in a date stamp
    and your local file path:
    ```powershell
