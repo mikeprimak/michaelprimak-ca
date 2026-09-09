@@ -259,16 +259,16 @@ export const projects: Project[] = [
     ],
     hardParts: [
       {
-        title: "Booking that just works",
-        body: "The booking tool had to feel like part of the site, not a bolt-on, on both phone and desktop.",
-      },
-      {
-        title: "Right-sized",
-        body: "No CMS, no framework, no monthly bills beyond hosting — matched to what a small clinic actually needs to maintain.",
-      },
-      {
         title: "Ultra Easy To Use",
         body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so anyone can use the website without searching it.",
+      },
+      {
+        title: "Keeping it simple",
+        body: "A one-practitioner clinic does not need much: a few pages, a booking link, hours and a map. The discipline was in not adding more — no CMS, no framework, nothing to maintain — so the site stays fast and the client never pays for things they do not use.",
+      },
+      {
+        title: "Google Business Profile",
+        body: "Most patients find a local clinic through Google, not by typing in a web address. I set up and verified the clinic's Google Business Profile and connected it, along with Google Analytics, to the site — so the clinic shows up in local search and on Maps with the right hours, phone number and booking link, and can see where its visitors come from.",
       },
     ],
     outcomeKind: "quote",
