@@ -1,5 +1,7 @@
 /**
- * Case studies. To add a project: append an object here — the home page card and
+ * Case studies. In the Good Fights entry, `{users}`, `{fightRatings}`, `{reviews}`, `{fights}`,
+ * `{events}`, `{fighters}` are replaced with live numbers when the page renders
+ * (src/lib/good-fights.ts), so the copy stays in step with production. To add a project: append an object here — the home page card and
  * the /work/<slug> page are generated from it. Keep `featured` on exactly one.
  * Anything in [square brackets] is a placeholder still to be filled in.
  */
@@ -102,8 +104,8 @@ export const projects: Project[] = [
     ],
     shipped: [
       "iOS and Android apps from one React Native codebase, published through App Store and Play Store review.",
-      "Accounts with email, Google and Apple sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — 3,415 registered users who have submitted 76,516 fight ratings and 1,450 written reviews.",
-      "A catalogue of 15,730 fights across 1,635 events dating to 1993 — 10,567 fighters, results and stats — kept current by daily scrapers.",
+      "Accounts with email, Google and Apple sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — {users} registered users who have submitted {fightRatings} fight ratings and {reviews} written reviews.",
+      "A catalogue of {fights} fights across {events} events dating to 1993 — {fighters} fighters, results and stats — kept current by daily scrapers.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
       "Claude-based enrichment that writes fight and fighter detail, gated on a confidence score so nothing the model is unsure about is published — with unit tests that check its output, including one that verifies quoted material is real.",
       "More than 30 scheduled jobs — built as GitHub Actions workflows, since moved to VPS cron with per-job locking and failure alerts — running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
@@ -126,9 +128,9 @@ export const projects: Project[] = [
       },
     ],
     outcome: [
-      { value: "76,516", label: "fight ratings submitted by users" },
-      { value: "3,415", label: "registered users" },
-      { value: "15,730", label: "fights catalogued across 1,635 events" },
+      { value: "{fightRatings}", label: "fight ratings submitted by users" },
+      { value: "{users}", label: "registered users" },
+      { value: "{fights}", label: "fights catalogued across {events} events" },
     ],
   },
   {

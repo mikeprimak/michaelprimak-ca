@@ -6,7 +6,23 @@ import { GoodFightsArchitecture } from "@/components/architecture-diagram";
 import { ListenButton } from "@/components/listen-button";
 import { Button } from "@/components/ui";
 import { PhoneFrames } from "@/components/work";
-import { getProject, projects } from "@/content/projects";
+import { getProject, projects, type Project } from "@/content/projects";
+import { fill, getLiveStats, type LiveStats } from "@/lib/good-fights";
+
+// Re-render at most once an hour so the Good Fights numbers stay in step with production.
+export const revalidate = 3600;
+
+/** Fill `{stat}` tokens in every string of the project's copy. */
+function withLiveNumbers(p: Project, stats: LiveStats): Project {
+  const f = (s: string) => fill(s, stats);
+  return {
+    ...p,
+    problem: p.problem.map(f),
+    shipped: p.shipped.map(f),
+    hardParts: p.hardParts.map((h) => ({ ...h, body: f(h.body) })),
+    outcome: p.outcome.map((o) => ({ value: f(o.value), label: f(o.label) })),
+  };
+}
 
 type Params = { slug: string };
 
@@ -35,8 +51,9 @@ function Block({ heading, children }: { heading: string; children: React.ReactNo
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<Params> }) {
-  const project = getProject((await params).slug);
-  if (!project) notFound();
+  const raw = getProject((await params).slug);
+  if (!raw) notFound();
+  const project = raw.architecture === "good-fights" ? withLiveNumbers(raw, await getLiveStats()) : raw;
 
   return (
     <article className="wrap" id="case-study">

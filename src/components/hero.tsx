@@ -1,13 +1,12 @@
 import Image from "next/image";
 import { hero, site } from "@/content/site";
-import { getLiveStats } from "@/lib/good-fights";
+import { fill, getLiveStats, type LiveStats } from "@/lib/good-fights";
 import { Button } from "./ui";
 import { ListenButton } from "./listen-button";
 
 const fmt = new Intl.NumberFormat("en-CA");
 
-async function LiveCard() {
-  const stats = await getLiveStats();
+function LiveCard({ stats }: { stats: LiveStats }) {
   return (
     <div className="relative flex w-full max-w-[400px] flex-col gap-3.5 rounded-2xl border border-line bg-bg2 px-[22px] py-5">
       {/* App icon sits in the card's top-right corner; the label wraps beside it. */}
@@ -27,11 +26,11 @@ async function LiveCard() {
       </span>
       <dl className="grid grid-cols-2 gap-3.5">
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.ratings)}</dd>
-          <dt className="text-[13px] text-ink3">ratings and hype scores from users</dt>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.totalRatings)}</dd>
+          <dt className="text-[13px] text-ink3">user ratings</dt>
         </div>
         <div>
-          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fights)}</dd>
+          <dd className="serif mb-1.5 text-[34px] leading-none">{fmt.format(stats.fightsInApp)}</dd>
           <dt className="text-[13px] text-ink3">fights live in the app</dt>
         </div>
       </dl>
@@ -42,7 +41,8 @@ async function LiveCard() {
   );
 }
 
-export function Hero() {
+export async function Hero() {
+  const stats = await getLiveStats();
   return (
     <div className="wrap" id="intro">
       <div className="grid grid-cols-1 items-center gap-10 py-10 pb-16 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-[72px] lg:py-[88px] lg:pb-24">
@@ -66,7 +66,7 @@ export function Hero() {
           <h1 className="serif mb-7 text-[42px] leading-[1.04] sm:text-[56px] lg:text-[66px]">
             {hero.headline}
           </h1>
-          <p className="mb-9 max-w-[560px] text-[17px] text-ink2 sm:text-[19px]">{hero.lede}</p>
+          <p className="mb-9 max-w-[560px] text-[17px] text-ink2 sm:text-[19px]">{fill(hero.lede, stats)}</p>
           {/* Both calls to action are the same size: a grid row stretches them to
               matching width and height, and the labels are allowed to wrap. */}
           <div className="grid max-w-[640px] grid-cols-1 gap-3 sm:grid-cols-2">
@@ -108,7 +108,7 @@ export function Hero() {
               sizes="(min-width: 1024px) 264px, (min-width: 640px) 240px, 70vw"
               className="h-auto w-[70vw] max-w-[320px] sm:w-60 lg:w-[264px]"
             />
-            <LiveCard />
+            <LiveCard stats={stats} />
           </div>
         </div>
       </div>

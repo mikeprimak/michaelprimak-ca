@@ -30,10 +30,11 @@ export const nav = [
   { label: "Contact", href: "/#contact" },
 ];
 
+/** `{users}`, `{totalRatings}` etc. are filled with live Good Fights numbers at render time (src/lib/good-fights.ts). */
 export const hero = {
   eyebrow: "Senior full-stack developer · Ontario, Canada · Remote",
   headline: "I design, build and run products end to end.",
-  lede: "Nine years shipping web and mobile products. Good Fights is the one I own end to end: apps on iOS and Android, a web app, the API behind them, and the scrapers, LLM enrichment and user input that keep it all current — 3,415 users and 76,516 ratings, on a platform I built and run myself.",
+  lede: "Nine years shipping web and mobile products. Good Fights is the one I own end to end: apps on iOS and Android, a web app, the API behind them, and the scrapers, LLM enrichment and user input that keep it all current — {users} users and {totalRatings} ratings, on a platform I built and run myself.",
   primaryCta: { label: "See some of my work", href: "/#work" },
   secondaryCta: { label: "Open to senior full-stack roles", href: "/#contact" },
   /** Compact, scannable stack line — recruiters and ATS both read this. */
