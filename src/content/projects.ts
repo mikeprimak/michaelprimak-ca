@@ -259,8 +259,8 @@ export const projects: Project[] = [
         body: "No CMS, no framework, no monthly bills beyond hosting — matched to what a small clinic actually needs to maintain.",
       },
       {
-        title: "Built for people who would rather not use a website",
-        body: "The patients are older and mostly not comfortable online. Everything that matters — phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
+        title: "Ultra Easy To Use",
+        body: "The patients are older and mostly not comfortable online. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — sits above the fold on every screen size, so someone who does not want to be on a website can get in, get the one thing they came for, and get out.",
       },
     ],
     outcomeKind: "quote",
