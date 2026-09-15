@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const stack = [
   ["Framework", "Next.js (App Router) with TypeScript, statically generated"],
   ["Styling", "Tailwind CSS with a small set of design tokens; light and dark themes"],
-  ["Type", "Instrument Serif for display, Geist for text, Geist Mono for labels — self-hosted"],
+  ["Type", "Poppins throughout, as on the original site — self-hosted"],
   ["Content", "Plain TypeScript data files, so a text change is a one-line edit"],
   ["Contact form", "A server action with spam checks, delivering by email through Resend"],
   ["Live data", "The hero card reads real totals from the Good Fights API, refreshed hourly"],

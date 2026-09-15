@@ -22,7 +22,7 @@ async function loadFont(family: string, text: string): Promise<ArrayBuffer | und
 
 export default async function OpenGraphImage() {
   const text = `${hero.headline}${site.name}${site.url}Senior full-stack developer · Remote, Canada`;
-  const serif = await loadFont("Instrument Serif", text);
+  const serif = await loadFont("Poppins:wght@600", text);
 
   return new ImageResponse(
     (
@@ -36,7 +36,7 @@ export default async function OpenGraphImage() {
           padding: "72px 80px",
           background: "#f4f1ea",
           color: "#1a1815",
-          fontFamily: serif ? "Instrument Serif" : "serif",
+          fontFamily: serif ? "Poppins" : "sans-serif",
         }}
       >
         <div style={{ display: "flex", fontSize: 24, letterSpacing: 2, color: "#7d786e", textTransform: "uppercase" }}>
@@ -53,7 +53,7 @@ export default async function OpenGraphImage() {
     ),
     {
       ...size,
-      fonts: serif ? [{ name: "Instrument Serif", data: serif, style: "normal", weight: 400 }] : undefined,
+      fonts: serif ? [{ name: "Poppins", data: serif, style: "normal", weight: 600 }] : undefined,
     },
   );
 }

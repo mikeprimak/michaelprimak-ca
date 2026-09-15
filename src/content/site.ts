@@ -109,6 +109,7 @@ export const experience = {
       when: "Sept 2025 – now",
       org: "Good Fights",
       logo: "/logos/good-fights.png",
+      logoBg: "#181818",
       role: "Founder and sole developer. React Native apps on the App Store and Google Play, a Node/TypeScript API on Postgres, a Next.js site, daily scrapers and Claude-based enrichment — successor to Fighting Tomatoes.",
       type: "Developer" as Role,
     },
@@ -137,6 +138,7 @@ export const experience = {
       when: "2016 – 2025",
       org: "Fighting Tomatoes",
       logo: "/logos/fighting-tomatoes.png",
+      logoBg: "#181818",
       role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
       type: "Developer" as Role,
     },
@@ -151,7 +153,8 @@ export const experience = {
 export const contact = {
   eyebrow: "Get in Touch",
   heading: "Contact Me",
-  intro: `Hiring? Tell me about the role and the team. I reply within ${site.replyTime}.`,
+  emailLabel: "Email:",
+  formLead: "or send a message using the form below",
   /** Placeholder in the message box. Written for hiring managers and recruiters as much as clients. */
   messagePlaceholder:
     "The role or project, what the team is working on, and anything you'd like me to know before we talk.",
