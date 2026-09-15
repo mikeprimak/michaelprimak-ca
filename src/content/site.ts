@@ -39,11 +39,11 @@ export const nav = [
  */
 export const hero = {
   greeting: "Hello, I'm",
-  title: "Software Developer",
+  title: "Senior Software Developer",
   tagline: "Full Stack Web & Mobile - Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
-  primaryCta: { label: "Download CV", href: site.resumePath },
+  primaryCta: { label: "Download Resume", href: site.resumePath },
   secondaryCta: { label: "Contact Info", href: "/#contact" },
   socials: [
     { label: "LinkedIn", href: site.links.linkedin, icon: "/icon-linkedin.png" },
@@ -162,7 +162,4 @@ export const contact = {
   heading: "Contact Me",
   emailLabel: "Email:",
   formLead: "or send a message using the form below",
-  /** Placeholder in the message box. Written for hiring managers and recruiters as much as clients. */
-  messagePlaceholder:
-    "The role or project, what the team is working on, and anything you'd like me to know before we talk.",
 };

@@ -5,7 +5,7 @@ import { Eyebrow, Section, SectionHeading } from "./ui";
 export function ContactSection() {
   return (
     <Section id="contact">
-      <Eyebrow label={contact.eyebrow} readId="contact" />
+      <Eyebrow label={contact.eyebrow} />
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
       {/* Email first, then the form under it. */}
       <div className="mx-auto flex w-full max-w-[680px] flex-col items-center gap-8" data-no-read>

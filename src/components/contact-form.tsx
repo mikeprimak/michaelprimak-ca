@@ -2,7 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { sendMessage, type ContactState } from "@/app/actions/contact";
-import { contact, site } from "@/content/site";
+import { site } from "@/content/site";
 import { validateContact, type ContactErrors, type ContactFields } from "@/lib/contact-validation";
 import { Button } from "./ui";
 
@@ -82,7 +82,6 @@ export function ContactForm() {
             type="text"
             autoComplete="name"
             required
-            placeholder="Your name"
             value={fields.name}
             onChange={update("name")}
             aria-invalid={!!err.name}
@@ -97,7 +96,6 @@ export function ContactForm() {
             type="email"
             autoComplete="email"
             required
-            placeholder="you@company.com"
             value={fields.email}
             onChange={update("email")}
             aria-invalid={!!err.email}
@@ -113,7 +111,6 @@ export function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder={contact.messagePlaceholder}
           value={fields.message}
           onChange={update("message")}
           aria-invalid={!!err.message}
