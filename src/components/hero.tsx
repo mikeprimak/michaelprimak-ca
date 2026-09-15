@@ -25,10 +25,10 @@ export function Hero() {
 
           {/* One logo per technology, like the original site's row of icons. The name is
               in the tooltip and for screen readers only. */}
-          <ul className="mb-8 flex max-w-[560px] flex-wrap justify-center gap-x-4 gap-y-3" aria-label="Technologies I use">
+          <ul className="mb-8 grid grid-cols-9 gap-x-3 gap-y-3 sm:gap-x-4" aria-label="Technologies I use">
             {techIcons.map((t) => (
-              <li key={t.label} title={t.label}>
-                <svg viewBox="0 0 24 24" role="img" aria-label={t.label} className="size-7" fill={t.color}>
+              <li key={t.label} title={t.label} className="flex justify-center">
+                <svg viewBox="0 0 24 24" role="img" aria-label={t.label} className="size-6 sm:size-7" fill={t.color}>
                   <path d={t.path} />
                 </svg>
               </li>

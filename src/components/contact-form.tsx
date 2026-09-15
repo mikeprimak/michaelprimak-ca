@@ -135,7 +135,7 @@ export function ContactForm() {
       )}
 
       <div className="flex justify-center">
-        <Button type="submit" disabled={pending}>
+        <Button type="submit" disabled={pending} arrow={false}>
           {pending ? "Sending…" : "Send message"}
         </Button>
       </div>

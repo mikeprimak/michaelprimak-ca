@@ -80,19 +80,19 @@ export const howIWork = {
   steps: [
     {
       title: "By hand, and with AI",
-      body: "I learned to code long before there was a model to ask, so I can read, debug and design without one — and I use Claude Code every day because it makes a careful developer faster, not because it replaces one. Whatever the stack, the language or the shape of the problem, the answer is the same: it gets built, and it gets built properly.",
+      body: "I learned to code long before there was a model to ask, so I can read, debug and design without one — and I use Claude Code every day because it makes a careful developer faster.",
     },
     {
-      title: "LLM features with guardrails",
-      body: "Good Fights enriches its catalogue with Claude and gates every result on a confidence score, so nothing the model is unsure about reaches a user. There are unit tests that check the model's output — including one that verifies quoted material is real. The part that counts is the model running in production.",
+      title: "LLM Integration",
+      body: "Done carefully, with guidance and guardrails, AI integration makes products more dynamic, valuable and easier to maintain.",
     },
     {
       title: "Tested, and shipped by a pipeline",
-      body: "Jest on the API — including tests that check what the model produced — type-checking and linting on every package, and more than 30 scheduled jobs, built as GitHub Actions workflows and now run from VPS cron, covering the scrapers, enrichment, database backups and content checks. Over-the-air updates push a fix to users without waiting on app-store review.",
+      body: "Automated tests on the API, including tests that check what the AI produced, plus type-checking and linting on every part of the codebase. More than 30 scheduled jobs run the scrapers, the AI enrichment, database backups and content checks on their own. Over-the-air updates get a fix to users without waiting for app-store review.",
     },
     {
       title: "I run the infrastructure",
-      body: "A Docker-built API on Render, a Linux VPS where systemd and cron run the scrapers, the live trackers and the jobs that have to happen at 4am, Postgres with Prisma migrations, Cloudflare R2 for images, PostHog for what people actually do. No platform team behind me — when production breaks at 11pm, it's me.",
+      body: "A Docker-built API on Render, a Linux VPS where systemd and cron run the scrapers, the live trackers and the jobs that have to happen at 4am, Postgres, Cloudflare, PostHog and more. I have experience working with no team behind me, so when something needs doing, it's my can-do attitude that gets it done.",
     },
   ],
 };
@@ -108,30 +108,35 @@ export const experience = {
     {
       when: "Sept 2025 – now",
       org: "Good Fights",
+      logo: "/logos/good-fights.png",
       role: "Founder and sole developer. React Native apps on the App Store and Google Play, a Node/TypeScript API on Postgres, a Next.js site, daily scrapers and Claude-based enrichment — successor to Fighting Tomatoes.",
       type: "Developer" as Role,
     },
     {
       when: "2024 – now",
       org: "LGBT Voice Tanzania",
+      logo: "/logos/lgbt-voice.png",
       role: "Web developer. Redesigned, built, deployed and maintain the site for an LGBT rights advocacy group.",
       type: "Developer" as Role,
     },
     {
       when: "Apr 2024 – Nov 2024",
       org: "Zerion Software",
+      logo: "/logos/zerion.png",
       role: "Implementation Engineer. Adapted a mobile data-collection platform to individual client use cases — talking to customers about what they were capturing, working out how the product should best receive and process it, then making the GUI and JavaScript changes to fit.",
       type: "Developer" as Role,
     },
     {
       when: "2018 – 2020",
       org: "WellnessLiving Systems Inc.",
+      logo: "/logos/wellnessliving.png",
       role: "White Label App Dept. Coordinator. Ran a team of developers, designers and support staff delivering white-label mobile apps to B2B clients.",
       type: "Coordinator" as Role,
     },
     {
       when: "2016 – 2025",
       org: "Fighting Tomatoes",
+      logo: "/logos/fighting-tomatoes.png",
       role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
       type: "Developer" as Role,
     },
