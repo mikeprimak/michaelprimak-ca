@@ -24,7 +24,8 @@ export const site = {
 };
 
 export const nav = [
-  { label: "Selected work", href: "/#work" },
+  { label: "About Me", href: "/#about" },
+  { label: "Projects", href: "/#work" },
   { label: "Working style", href: "/#how" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
@@ -32,7 +33,8 @@ export const nav = [
 
 /**
  * Above-the-fold intro. Laid out like the original michaelprimak.ca: photo on the left,
- * greeting / name / title, the stack, two buttons and the social icons on the right.
+ * greeting / name / title, a logo per technology (src/content/tech-icons.ts), two buttons
+ * and the social icons on the right.
  * `headline` is kept for the Open Graph share image (src/app/opengraph-image.tsx).
  */
 export const hero = {
@@ -42,32 +44,41 @@ export const hero = {
   /** Opens the resume PDF in a new tab. */
   primaryCta: { label: "Download CV", href: site.resumePath },
   secondaryCta: { label: "Contact Info", href: "/#contact" },
-  /** Compact, scannable stack line — recruiters and ATS both read this. */
-  stack: [
-    "TypeScript",
-    "React",
-    "React Native · Expo",
-    "Next.js",
-    "Node",
-    "PostgreSQL · Prisma",
-    "WordPress · PHP",
-    "Docker",
-    "LLM features",
-  ],
   socials: [
     { label: "LinkedIn", href: site.links.linkedin, icon: "/icon-linkedin.png" },
     { label: "GitHub", href: site.links.github, icon: "/icon-github.png" },
   ],
 };
 
+/** Section lead-ins and titles follow the original site: "Get To Know More" / "About Me", and so on. */
+export const about = {
+  eyebrow: "Get To Know More",
+  heading: "About Me",
+  cards: [
+    { title: "Experience", lines: ["8+ years web & mobile development", "Developer and team coordinator roles"] },
+    {
+      title: "Education",
+      lines: [
+        "College Diploma - Big Data Analytics",
+        "Master of Osteopathic Sciences",
+        "Bachelors Degree - Human Kinetics",
+      ],
+    },
+  ],
+  paragraphs: [
+    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web or on iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
+    "I have worked for software companies in developer roles and coordinator roles, so I have experience writing the code and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data analysis and business websites. I am confident I can be the developer your team needs.",
+  ],
+};
+
 export const work = {
-  heading: "Things I've shipped.",
-  intro:
-    "Real products, live today. Each one has a short write-up of what was built, what was hard, and what happened after launch.",
+  eyebrow: "Browse My Recent",
+  heading: "Projects",
 };
 
 export const howIWork = {
-  heading: "If it can be built, I can build it.",
+  eyebrow: "Learn About My",
+  heading: "Working Style",
   intro:
     "Twenty years of writing code by hand, first as a hobbyist and then professionally, and now fully integrated with AI-assisted development. I own the whole ecosystem: the product, the code, the tests, the pipeline and the servers it runs on.",
   steps: [
@@ -88,16 +99,13 @@ export const howIWork = {
       body: "A Docker-built API on Render, a Linux VPS where systemd and cron run the scrapers, the live trackers and the jobs that have to happen at 4am, Postgres with Prisma migrations, Cloudflare R2 for images, PostHog for what people actually do. No platform team behind me — when production breaks at 11pm, it's me.",
     },
   ],
-  callout: {
-    title: "This site is a working example.",
-    body: "Designed and coded with Claude Code, with me reviewing every decision — statically generated, accessible, fast, and dark-mode aware. If you want to know how something here was built, ask me.",
-  },
 };
 
 export type Role = "Developer" | "Coordinator";
 
 export const experience = {
-  heading: "Coder and coordinator, at small and mid-sized organizations.",
+  eyebrow: "Explore My",
+  heading: "Experience",
   intro:
     "I've written the code, sat with the customer, and run the team — which is why I'm comfortable being handed any of the three.",
   timeline: [
@@ -140,7 +148,8 @@ export const experience = {
 };
 
 export const contact = {
-  heading: "Get in touch.",
+  eyebrow: "Get in Touch",
+  heading: "Contact Me",
   intro: `Hiring? Tell me about the role and the team. I reply within ${site.replyTime}.`,
   /** Placeholder in the message box. Written for hiring managers and recruiters as much as clients. */
   messagePlaceholder:

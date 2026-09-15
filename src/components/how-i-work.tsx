@@ -4,9 +4,9 @@ import { Eyebrow, Section, SectionHeading } from "./ui";
 export function HowIWork() {
   return (
     <Section id="how">
-      <Eyebrow number="02" label="Working style" readId="how" />
+      <Eyebrow label={howIWork.eyebrow} readId="how" />
       <SectionHeading intro={howIWork.intro}>{howIWork.heading}</SectionHeading>
-      <ol className="mb-14 grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+      <ol className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
         {howIWork.steps.map((s, i) => (
           <li key={s.title} className="flex flex-col gap-3">
             <span className="serif text-[44px] leading-none text-accent" aria-hidden="true">
@@ -17,10 +17,6 @@ export function HowIWork() {
           </li>
         ))}
       </ol>
-      <div className="rounded-3xl bg-ink px-7 py-7 text-center text-bg sm:px-12 sm:py-10">
-        <h3 className="serif mb-2.5 text-[28px] leading-[1.15] sm:text-[32px]">{howIWork.callout.title}</h3>
-        <p className="mx-auto max-w-[720px] opacity-75">{howIWork.callout.body}</p>
-      </div>
     </Section>
   );
 }

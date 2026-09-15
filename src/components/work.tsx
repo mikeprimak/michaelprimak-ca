@@ -88,8 +88,8 @@ export function Work() {
   const f = featuredProject;
   return (
     <Section id="work">
-      <Eyebrow number="01" label="Selected work" readId="work" />
-      <SectionHeading intro={work.intro}>{work.heading}</SectionHeading>
+      <Eyebrow label={work.eyebrow} readId="work" />
+      <SectionHeading className="mb-9 sm:mb-14">{work.heading}</SectionHeading>
 
       {/* Featured */}
       <div className="mb-7 grid grid-cols-1 items-center gap-7 rounded-3xl bg-bg2 p-7 sm:p-12 lg:grid-cols-2 lg:gap-12">

@@ -32,6 +32,8 @@ type ButtonProps = {
   onClick?: () => void;
   /** Open in a new tab as a plain anchor (files, other sites). */
   external?: boolean;
+  /** Set to false to drop the trailing arrow. */
+  arrow?: boolean;
 } & Omit<ComponentProps<"button">, "children" | "className" | "onClick">;
 
 const btnBase =
@@ -46,8 +48,10 @@ export function Button({
   variant = "solid",
   onClick,
   external = false,
+  arrow = true,
   ...rest
 }: ButtonProps) {
+  const tail = arrow ? <Arrow /> : null;
   const fill =
     variant === "outline"
       ? "border border-ink text-ink hover:border-accent hover:text-accent"
@@ -64,7 +68,7 @@ export function Button({
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className={cls} onClick={onClick} data-no-read>
         {children}
-        <Arrow />
+        {tail}
       </a>
     );
   }
@@ -72,14 +76,14 @@ export function Button({
     return (
       <SectionLink href={href} className={cls} onClick={onClick} data-no-read>
         {children}
-        <Arrow />
+        {tail}
       </SectionLink>
     );
   }
   return (
     <button className={cls} onClick={onClick} data-no-read {...rest}>
       {children}
-      <Arrow />
+      {tail}
     </button>
   );
 }
@@ -112,17 +116,11 @@ export function TextLink({
   );
 }
 
-/** "01 —— Services" style section label, centred. Pass `readId` to add a Listen button on the right. */
-export function Eyebrow({ number, label, readId }: { number?: string; label: string; readId?: string }) {
+/** Plain grey lead-in above a section title ("Browse My Recent"), centred. Pass `readId` to add a Listen button on the right. */
+export function Eyebrow({ label, readId }: { label: string; readId?: string }) {
   return (
-    <div className="relative mb-7 flex flex-wrap items-center justify-center gap-3.5 sm:px-12">
-      {number && (
-        <>
-          <span className="mono">{number}</span>
-          <span aria-hidden="true" className="block h-px w-7 bg-ink3" />
-        </>
-      )}
-      <span className="mono">{label}</span>
+    <div className="relative mb-3 flex flex-wrap items-center justify-center gap-3.5 sm:px-12">
+      <span className="text-[17px] text-ink3 sm:text-[18px]">{label}</span>
       {/* Sits to the right of the centred label on wider screens; wraps under it on phones. */}
       {readId && (
         <>

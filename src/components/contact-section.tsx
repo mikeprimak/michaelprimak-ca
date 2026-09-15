@@ -7,7 +7,7 @@ const directLink = "border-b border-line pb-0.5 text-ink hover:border-accent hov
 export function ContactSection() {
   return (
     <Section id="contact">
-      <Eyebrow number="04" label="Contact" readId="contact" />
+      <Eyebrow label={contact.eyebrow} readId="contact" />
       <SectionHeading intro={contact.intro}>{contact.heading}</SectionHeading>
       {/* Heading on top, the form centred under it, the direct email under the form. */}
       <div className="mx-auto flex w-full max-w-[680px] flex-col items-center gap-8" data-no-read>
