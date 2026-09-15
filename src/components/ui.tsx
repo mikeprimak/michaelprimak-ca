@@ -121,10 +121,11 @@ export function Eyebrow({ label, readId }: { label: string; readId?: string }) {
   return (
     <div className="relative mb-3 flex items-center justify-center gap-3.5 sm:px-12">
       <span className="text-[17px] text-ink3">{label}</span>
-      {/* Top-right of the section on phones (above the lead-in, inside the section's top
-          padding); level with the lead-in on wider screens. */}
+      {/* Level with the lead-in on the right, on wider screens only; hidden on phones. */}
       {readId && (
-        <ListenButton targetId={readId} className="absolute -top-12 right-0 sm:top-1/2 sm:-translate-y-1/2" />
+        <span className="absolute top-1/2 right-0 hidden -translate-y-1/2 sm:block">
+          <ListenButton targetId={readId} />
+        </span>
       )}
     </div>
   );
@@ -165,7 +166,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-16 border-t border-line py-16 sm:py-24 md:border-t-0 ${className}`}
+      className={`scroll-mt-16 py-16 sm:py-24 ${className}`}
     >
       <div className="wrap">{children}</div>
     </section>
