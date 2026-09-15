@@ -2,7 +2,6 @@ import { About } from "@/components/about";
 import { ContactSection } from "@/components/contact-section";
 import { Experience } from "@/components/experience";
 import { Hero } from "@/components/hero";
-import { HowIWork } from "@/components/how-i-work";
 import { Work } from "@/components/work";
 
 // Re-render at most once an hour so the live Good Fights numbers stay fresh.
@@ -14,7 +13,6 @@ export default function HomePage() {
       <Hero />
       <About />
       <Work />
-      <HowIWork />
       <Experience />
       <ContactSection />
     </>

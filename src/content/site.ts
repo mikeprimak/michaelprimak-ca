@@ -26,7 +26,6 @@ export const site = {
 export const nav = [
   { label: "About Me", href: "/#about" },
   { label: "Projects", href: "/#work" },
-  { label: "Working style", href: "/#how" },
   { label: "Experience", href: "/#experience" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -77,31 +76,6 @@ export const about = {
 export const work = {
   eyebrow: "Browse My Recent",
   heading: "Projects",
-};
-
-export const howIWork = {
-  eyebrow: "Learn About My",
-  heading: "Working Style",
-  intro:
-    "Twenty years of writing code by hand, first as a hobbyist and then professionally, and now fully integrated with AI-assisted development. I own the whole ecosystem: the product, the code, the tests, the pipeline and the servers it runs on.",
-  steps: [
-    {
-      title: "By hand, and with AI",
-      body: "I learned to code long before there was a model to ask, so I can read, debug and design without one — and I use Claude Code every day because it makes a careful developer faster.",
-    },
-    {
-      title: "LLM Integration",
-      body: "Done carefully, with guidance and guardrails, AI integration makes products more dynamic, valuable and easier to maintain.",
-    },
-    {
-      title: "Tested, and shipped by a pipeline",
-      body: "Automated tests on the API, including tests that check what the AI produced, plus type-checking and linting on every part of the codebase. More than 30 scheduled jobs run the scrapers, the AI enrichment, database backups and content checks on their own. Over-the-air updates get a fix to users without waiting for app-store review.",
-    },
-    {
-      title: "I run the infrastructure",
-      body: "A Docker-built API on Render, a Linux VPS where systemd and cron run the scrapers, the live trackers and the jobs that have to happen at 4am, Postgres, Cloudflare, PostHog and more. I have experience working with no team behind me, so when something needs doing, it's my can-do attitude that gets it done.",
-    },
-  ],
 };
 
 export type Role = "Developer" | "Coordinator";
