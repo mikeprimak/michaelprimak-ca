@@ -46,3 +46,6 @@ design/mock/*.dc.html
 
 .vercel
 .env*
+
+# Original full-size photos (multi-MB); the cropped web versions live in public/
+reference/photo-sources/

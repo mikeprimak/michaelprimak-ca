@@ -40,6 +40,7 @@ export const nav = [
 export const hero = {
   greeting: "Hello, I'm",
   title: "Software Developer",
+  tagline: "Full Stack Web & Mobile - Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
   primaryCta: { label: "Download CV", href: site.resumePath },
@@ -54,6 +55,12 @@ export const hero = {
 export const about = {
   eyebrow: "Get To Know More",
   heading: "About Me",
+  /** Three 4:5 photos shown in a row (public/about-*.jpg, 800x1000). */
+  photos: [
+    { src: "/about-1.jpg", alt: "Michael with his kids in the woods, looking at a mushroom" },
+    { src: "/about-2.jpg", alt: "Michael and his child in the car on a winter day" },
+    { src: "/about-3.jpg", alt: "Michael skating with his daughter on a frozen lake" },
+  ],
   cards: [
     { title: "Experience", lines: ["8+ years software development - working with code, colleagues and customers."] },
     {
@@ -103,7 +110,7 @@ export const experience = {
   eyebrow: "Explore My",
   heading: "Experience",
   intro:
-    "I've written the code, sat with the customer, and run the team — which is why I'm comfortable being handed any of the three.",
+    "I've written the code, sat with the customer, and run the team — so I am comfortable in any of these roles.",
   timeline: [
     {
       when: "Sept 2025 – now",

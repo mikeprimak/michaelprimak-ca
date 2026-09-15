@@ -23,7 +23,8 @@ export function Hero() {
         <div className="flex max-w-[600px] flex-col items-center text-center">
           <p className="mb-1.5 text-[19px] text-ink2">{hero.greeting}</p>
           <h1 className="serif mb-1.5 text-[44px] leading-[1.04] sm:text-[52px] lg:text-[56px]">{site.name}</h1>
-          <p className="mb-7 text-[22px] text-ink2 sm:text-[23px]">{hero.title}</p>
+          <p className="mb-2 text-[22px] text-ink2 sm:text-[23px]">{hero.title}</p>
+          <p className="mb-7 text-[14px] text-ink3 sm:text-[15px]">{hero.tagline}</p>
 
           {/* One logo per technology, like the original site's row of icons. The name is
               in the tooltip and for screen readers only. */}
