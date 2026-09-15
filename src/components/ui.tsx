@@ -112,10 +112,10 @@ export function TextLink({
   );
 }
 
-/** "01 —— Services" style section label. Pass `readId` to add a Listen button on the right. */
+/** "01 —— Services" style section label, centred. Pass `readId` to add a Listen button on the right. */
 export function Eyebrow({ number, label, readId }: { number?: string; label: string; readId?: string }) {
   return (
-    <div className="mb-7 flex items-center gap-3.5">
+    <div className="relative mb-7 flex flex-wrap items-center justify-center gap-3.5 sm:px-12">
       {number && (
         <>
           <span className="mono">{number}</span>
@@ -123,7 +123,13 @@ export function Eyebrow({ number, label, readId }: { number?: string; label: str
         </>
       )}
       <span className="mono">{label}</span>
-      {readId && <ListenButton targetId={readId} className="ml-auto" />}
+      {/* Sits to the right of the centred label on wider screens; wraps under it on phones. */}
+      {readId && (
+        <>
+          <span className="basis-full sm:hidden" aria-hidden="true" />
+          <ListenButton targetId={readId} className="sm:absolute sm:right-0" />
+        </>
+      )}
     </div>
   );
 }
@@ -138,12 +144,12 @@ export function SectionHeading({
   className?: string;
 }) {
   return (
-    <div className={className}>
-      <h2 className="serif mb-5 max-w-[760px] text-[34px] leading-[1.08] sm:text-[46px]">
+    <div className={`text-center ${className}`}>
+      <h2 className="serif mx-auto mb-5 max-w-[760px] text-[34px] leading-[1.08] sm:text-[46px]">
         {children}
       </h2>
       {intro && (
-        <p className="mb-9 max-w-[620px] text-[17px] text-ink2 sm:mb-14 sm:text-[19px]">
+        <p className="mx-auto mb-9 max-w-[620px] text-[17px] text-ink2 sm:mb-14 sm:text-[19px]">
           {intro}
         </p>
       )}

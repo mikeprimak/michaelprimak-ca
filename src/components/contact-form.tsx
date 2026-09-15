@@ -59,7 +59,7 @@ export function ContactForm() {
 
   if (state.status === "sent") {
     return (
-      <div className="rounded-2xl border border-line bg-bg2 p-8" role="status" aria-live="polite">
+      <div className="w-full rounded-2xl border border-line bg-bg2 p-8 text-center" role="status" aria-live="polite">
         <h3 className="serif mb-2 text-3xl">Thanks — got it.</h3>
         <p className="text-ink2">I’ll reply within {site.replyTime}.</p>
       </div>
@@ -67,7 +67,7 @@ export function ContactForm() {
   }
 
   return (
-    <form action={submit} noValidate className="flex flex-col gap-[18px]">
+    <form action={submit} noValidate className="flex w-full flex-col gap-[18px] text-left">
       {/* Spam controls: bots fill the hidden field or submit instantly. */}
       <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="company">Company</label>
@@ -124,17 +124,17 @@ export function ContactForm() {
 
       {/* A server-side failure that is not about a specific field (e.g. the email service is down). */}
       {state.status === "error" && !state.errors && (
-        <p className="text-[15px] text-accent" role="alert">
+        <p className="text-center text-[15px] text-accent" role="alert">
           {state.message}
         </p>
       )}
       {attempted && hasErrors && (
-        <p className="text-[15px] text-accent" role="alert">
+        <p className="text-center text-[15px] text-accent" role="alert">
           Please fix the highlighted fields.
         </p>
       )}
 
-      <div>
+      <div className="flex justify-center">
         <Button type="submit" disabled={pending}>
           {pending ? "Sending…" : "Send message"}
         </Button>

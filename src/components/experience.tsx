@@ -27,8 +27,8 @@ export function Experience() {
           </li>
         ))}
       </ol>
-      <div className="mt-10 flex flex-wrap gap-10">
-        <div className="flex flex-col gap-1.5">
+      <div className="mt-10 flex flex-wrap justify-center gap-10 text-center">
+        <div className="flex flex-col items-center gap-1.5">
           <span className="mono">Education</span>
           <ul className="flex flex-col gap-1">
             {experience.education.map((e) => (
@@ -36,9 +36,9 @@ export function Experience() {
             ))}
           </ul>
         </div>
-        <div className="flex flex-col gap-1.5">
+        <div className="flex flex-col items-center gap-1.5">
           <span className="mono">Resume</span>
-          <Button href={site.resumePath} external variant="outline" size="sm" className="self-start">
+          <Button href={site.resumePath} external variant="outline" size="sm">
             PDF resume
           </Button>
         </div>

@@ -17,9 +17,9 @@ export function HowIWork() {
           </li>
         ))}
       </ol>
-      <div className="rounded-3xl bg-ink px-7 py-7 text-bg sm:px-12 sm:py-10">
+      <div className="rounded-3xl bg-ink px-7 py-7 text-center text-bg sm:px-12 sm:py-10">
         <h3 className="serif mb-2.5 text-[28px] leading-[1.15] sm:text-[32px]">{howIWork.callout.title}</h3>
-        <p className="max-w-[720px] opacity-75">{howIWork.callout.body}</p>
+        <p className="mx-auto max-w-[720px] opacity-75">{howIWork.callout.body}</p>
       </div>
     </Section>
   );
