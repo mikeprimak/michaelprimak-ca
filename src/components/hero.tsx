@@ -8,20 +8,22 @@ export function Hero() {
     <div className="wrap" id="intro">
       {/* Photo on the left, everything else centred on the right — the layout of the
           original michaelprimak.ca. On phones the photo sits above the text. */}
-      <div className="flex flex-col items-center gap-10 py-10 pb-16 lg:flex-row lg:justify-center lg:gap-20 lg:py-10 lg:pb-20">
+      {/* On desktop the block is vertically centred in the first screen (the header is 76px),
+          like the original site's hero, so there is generous space above it. */}
+      <div className="flex flex-col items-center gap-10 py-10 pb-16 lg:min-h-[calc(100svh-76px)] lg:flex-row lg:justify-center lg:gap-20 lg:py-16 lg:pb-24">
         <Image
           src="/mike-primak.png"
           alt={`${site.name}, smiling`}
           width={1019}
           height={1131}
           priority
-          sizes="(min-width: 1024px) 380px, (min-width: 640px) 320px, 70vw"
-          className="h-auto w-[70vw] max-w-[320px] shrink-0 lg:w-[380px] lg:max-w-none"
+          sizes="(min-width: 1024px) 340px, (min-width: 640px) 320px, 70vw"
+          className="h-auto w-[70vw] max-w-[320px] shrink-0 lg:w-[340px] lg:max-w-none"
         />
         <div className="flex max-w-[600px] flex-col items-center text-center">
-          <p className="mb-1.5 text-[19px] text-ink2 sm:text-[21px]">{hero.greeting}</p>
-          <h1 className="serif mb-1.5 text-[48px] leading-[1.04] sm:text-[60px] lg:text-[66px]">{site.name}</h1>
-          <p className="mb-7 text-[22px] text-ink2 sm:text-[26px]">{hero.title}</p>
+          <p className="mb-1.5 text-[19px] text-ink2">{hero.greeting}</p>
+          <h1 className="serif mb-1.5 text-[44px] leading-[1.04] sm:text-[52px] lg:text-[56px]">{site.name}</h1>
+          <p className="mb-7 text-[22px] text-ink2 sm:text-[23px]">{hero.title}</p>
 
           {/* One logo per technology, like the original site's row of icons. The name is
               in the tooltip and for screen readers only. */}
@@ -37,12 +39,12 @@ export function Hero() {
 
           {/* Both calls to action are the same size: a grid row stretches them to
               matching width and height, and the labels are allowed to wrap. */}
-          <div className="grid w-full max-w-[460px] grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid w-full max-w-[420px] grid-cols-1 gap-3 sm:grid-cols-2">
             <Button
               href={hero.primaryCta.href}
               external
               arrow={false}
-              className="h-auto min-h-[52px] justify-center py-3 text-center whitespace-normal"
+              className="h-auto min-h-[48px] justify-center py-3 text-center text-[15px] whitespace-normal"
             >
               {hero.primaryCta.label}
             </Button>
@@ -50,7 +52,7 @@ export function Hero() {
               href={hero.secondaryCta.href}
               variant="outline"
               arrow={false}
-              className="h-auto min-h-[52px] justify-center py-3 text-center whitespace-normal"
+              className="h-auto min-h-[48px] justify-center py-3 text-center text-[15px] whitespace-normal"
             >
               {hero.secondaryCta.label}
             </Button>
@@ -67,7 +69,7 @@ export function Hero() {
                   className="block rounded-full transition-opacity hover:opacity-70"
                 >
                   {/* The icons are black on transparent, so they invert for dark mode. */}
-                  <Image src={s.icon} alt="" width={40} height={40} className="size-10 dark:invert" />
+                  <Image src={s.icon} alt="" width={36} height={36} className="size-9 dark:invert" />
                 </a>
               </li>
             ))}

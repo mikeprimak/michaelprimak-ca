@@ -19,7 +19,7 @@ export function ContactSection() {
               {site.email}
             </a>
           </p>
-          <p className="text-ink3">{contact.formLead}</p>
+          <p className="mt-5 text-ink3 sm:mt-7 sm:mb-3">{contact.formLead}</p>
         </div>
         <ContactForm />
       </div>

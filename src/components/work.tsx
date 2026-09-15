@@ -63,13 +63,14 @@ function Thumb({ project }: { project: Project }) {
     const blend = project.image.kind === "logo" ? "mix-blend-multiply dark:mix-blend-normal" : "";
     return (
       <div className="flex h-[220px] items-center justify-center rounded-2xl bg-bg2 p-6">
+        {/* Fixed square so every logo reads the same size regardless of its own proportions. */}
         <Image
           src={project.image.src}
           alt={project.image.alt}
           width={240}
           height={240}
-          sizes="240px"
-          className={["max-h-full w-auto max-w-[260px] rounded-lg dark:rounded-xl", blend].join(" ")}
+          sizes="160px"
+          className={["size-40 rounded-lg object-contain dark:rounded-xl", blend].join(" ")}
         />
       </div>
     );
@@ -93,15 +94,16 @@ export function Work() {
 
       {/* Featured */}
       <div className="mb-7 grid grid-cols-1 items-center gap-7 rounded-3xl bg-bg2 p-7 sm:p-12 lg:grid-cols-2 lg:gap-12">
-        <div>
+        {/* On phones the icon is centred and the same size as the other case-study logos. */}
+        <div className="text-center sm:text-left">
           {f.image && (
             <Image
               src={f.image.src}
               alt={f.image.alt}
-              width={112}
-              height={112}
-              sizes="112px"
-              className="mb-[22px] size-24 rounded-[20px] sm:size-28 sm:rounded-[24px]"
+              width={160}
+              height={160}
+              sizes="(min-width: 640px) 112px, 160px"
+              className="mx-auto mb-[22px] size-40 rounded-[28px] sm:mx-0 sm:size-28 sm:rounded-[24px]"
             />
           )}
           <h3 className="serif mb-3.5 text-[32px] leading-[1.08] sm:text-[40px]">

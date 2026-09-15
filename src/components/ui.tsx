@@ -119,14 +119,12 @@ export function TextLink({
 /** Plain grey lead-in above a section title ("Browse My Recent"), centred. Pass `readId` to add a Listen button on the right. */
 export function Eyebrow({ label, readId }: { label: string; readId?: string }) {
   return (
-    <div className="relative mb-3 flex flex-wrap items-center justify-center gap-3.5 sm:px-12">
-      <span className="text-[17px] text-ink3 sm:text-[18px]">{label}</span>
-      {/* Sits to the right of the centred label on wider screens; wraps under it on phones. */}
+    <div className="relative mb-3 flex items-center justify-center gap-3.5 sm:px-12">
+      <span className="text-[17px] text-ink3">{label}</span>
+      {/* Top-right of the section on phones (above the lead-in, inside the section's top
+          padding); level with the lead-in on wider screens. */}
       {readId && (
-        <>
-          <span className="basis-full sm:hidden" aria-hidden="true" />
-          <ListenButton targetId={readId} className="sm:absolute sm:right-0" />
-        </>
+        <ListenButton targetId={readId} className="absolute -top-12 right-0 sm:top-1/2 sm:-translate-y-1/2" />
       )}
     </div>
   );
@@ -143,7 +141,7 @@ export function SectionHeading({
 }) {
   return (
     <div className={`text-center ${className}`}>
-      <h2 className="serif mx-auto mb-5 max-w-[760px] text-[34px] leading-[1.08] sm:text-[46px]">
+      <h2 className="serif mx-auto mb-5 max-w-[760px] text-[34px] leading-[1.08] sm:text-[40px]">
         {children}
       </h2>
       {intro && (
@@ -167,7 +165,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-16 border-t border-line py-16 sm:py-24 ${className}`}
+      className={`scroll-mt-16 border-t border-line py-16 sm:py-24 md:border-t-0 ${className}`}
     >
       <div className="wrap">{children}</div>
     </section>
