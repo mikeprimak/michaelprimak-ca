@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "GitHub Actions",
       "iOS + Android",
     ],
-    kind: "Mobile app · Founder",
+    kind: "iOS, Android and Web - Entertainment",
     featured: true,
     image: { src: "/good-fights-icon.png", alt: "Good Fights app icon", kind: "icon" },
     screenshots: [

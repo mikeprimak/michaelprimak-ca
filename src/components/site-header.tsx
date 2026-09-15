@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/content/site";
 import { SectionLink } from "./section-link";
-import { Button } from "./ui";
 import { ThemeToggle } from "./theme";
 
 export function SiteHeader() {
@@ -46,9 +45,6 @@ export function SiteHeader() {
               </SectionLink>
             ))}
             <ThemeToggle />
-            <Button href="/#contact" size="sm">
-              Get in touch
-            </Button>
           </div>
 
           {/* Mobile */}
@@ -85,11 +81,6 @@ export function SiteHeader() {
               {item.label}
             </SectionLink>
           ))}
-          <div className="mt-4 px-3">
-            <Button href="/#contact" onClick={close}>
-              Get in touch
-            </Button>
-          </div>
         </div>
       )}
     </header>

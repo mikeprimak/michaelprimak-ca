@@ -110,16 +110,7 @@ export function Work() {
             </Link>
           </h3>
           <p className="mb-[22px] text-ink2">{f.summary}</p>
-          <ul className="mb-7 flex flex-wrap gap-2">
-            {f.tags.map((t) => (
-              <li
-                key={t}
-                className="rounded-full border border-line px-2.5 py-1.5 font-mono text-[12px] tracking-[0.03em] text-ink2"
-              >
-                {t}
-              </li>
-            ))}
-          </ul>
+          <p className="mb-7 text-[15px] text-ink3">{f.kind}</p>
           <TextLink href={`/work/${f.slug}`}>Read the case study</TextLink>
         </div>
         <FeaturedShots project={f} />

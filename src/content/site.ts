@@ -55,19 +55,15 @@ export const about = {
   eyebrow: "Get To Know More",
   heading: "About Me",
   cards: [
-    { title: "Experience", lines: ["8+ years web & mobile development", "Developer and team coordinator roles"] },
+    { title: "Experience", lines: ["8+ years software development - working with code, colleagues and customers."] },
     {
       title: "Education",
-      lines: [
-        "College Diploma - Big Data Analytics",
-        "Master of Osteopathic Sciences",
-        "Bachelors Degree - Human Kinetics",
-      ],
+      lines: ["College Diploma - Big Data Analytics", "College Diploma - Osteopathy", "Bachelors Degree - Human Kinetics"],
     },
   ],
   paragraphs: [
-    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web or on iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
-    "I have worked for software companies in developer roles and coordinator roles, so I have experience writing the code and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data analysis and business websites. I am confident I can be the developer your team needs.",
+    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web, iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
+    "I have worked for software companies in developer and coordinator roles, so I have experience with code, clients and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data analysis and business websites. I am confident I can be the developer your team needs.",
   ],
 };
 

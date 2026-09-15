@@ -1,5 +1,5 @@
-import { experience, site } from "@/content/site";
-import { Button, Eyebrow, Section, SectionHeading } from "./ui";
+import { experience } from "@/content/site";
+import { Eyebrow, Section, SectionHeading } from "./ui";
 
 export function Experience() {
   return (
@@ -27,22 +27,6 @@ export function Experience() {
           </li>
         ))}
       </ol>
-      <div className="mt-10 flex flex-wrap justify-center gap-10 text-center">
-        <div className="flex flex-col items-center gap-1.5">
-          <span className="mono">Education</span>
-          <ul className="flex flex-col gap-1">
-            {experience.education.map((e) => (
-              <li key={e}>{e}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="flex flex-col items-center gap-1.5">
-          <span className="mono">Resume</span>
-          <Button href={site.resumePath} external variant="outline" size="sm">
-            PDF resume
-          </Button>
-        </div>
-      </div>
     </Section>
   );
 }

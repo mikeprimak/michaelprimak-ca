@@ -23,14 +23,14 @@ export function Hero() {
           <h1 className="serif mb-1.5 text-[48px] leading-[1.04] sm:text-[60px] lg:text-[66px]">{site.name}</h1>
           <p className="mb-7 text-[22px] text-ink2 sm:text-[26px]">{hero.title}</p>
 
-          {/* One logo per technology, like the original site's row of icons. */}
-          <ul className="mb-8 flex max-w-[520px] flex-wrap justify-center gap-x-5 gap-y-4" aria-label="Technologies I use">
+          {/* One logo per technology, like the original site's row of icons. The name is
+              in the tooltip and for screen readers only. */}
+          <ul className="mb-8 flex max-w-[560px] flex-wrap justify-center gap-x-4 gap-y-3" aria-label="Technologies I use">
             {techIcons.map((t) => (
-              <li key={t.label} className="flex w-[68px] flex-col items-center gap-1.5">
-                <svg viewBox="0 0 24 24" role="img" aria-hidden="true" className="size-9" fill={t.color}>
+              <li key={t.label} title={t.label}>
+                <svg viewBox="0 0 24 24" role="img" aria-label={t.label} className="size-7" fill={t.color}>
                   <path d={t.path} />
                 </svg>
-                <span className="text-[11px] leading-[1.2] text-ink3">{t.label}</span>
               </li>
             ))}
           </ul>
