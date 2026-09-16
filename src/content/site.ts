@@ -36,8 +36,8 @@ export const nav = [
  */
 export const hero = {
   greeting: "Hello, I'm",
-  title: "Senior Software Developer",
-  tagline: "Front-end, Back-end, End-to-end - Ontario, Canada - Remote",
+  title: "Web & Mobile Developer",
+  tagline: "Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
   primaryCta: { label: "Download Resume", href: site.resumePath },
