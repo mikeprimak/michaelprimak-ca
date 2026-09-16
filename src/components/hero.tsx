@@ -48,6 +48,7 @@ export function Hero() {
             <Button
               href={hero.primaryCta.href}
               external
+              variant="outline"
               arrow={false}
               className="h-auto min-h-[48px] justify-center py-3 text-center text-[15px] whitespace-normal"
             >
@@ -55,7 +56,6 @@ export function Hero() {
             </Button>
             <Button
               href={hero.secondaryCta.href}
-              variant="outline"
               arrow={false}
               className="h-auto min-h-[48px] justify-center py-3 text-center text-[15px] whitespace-normal"
             >

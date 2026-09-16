@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { featuredProject, otherProjects, type Project } from "@/content/projects";
-import { work } from "@/content/site";
+import { experience, work } from "@/content/site";
 import { Eyebrow, Section, SectionHeading, TextLink } from "./ui";
 
 export function PhoneFrames({ tall = false }: { tall?: boolean }) {
@@ -87,6 +87,8 @@ function Thumb({ project }: { project: Project }) {
 
 export function Work() {
   const f = featuredProject;
+  // The featured card shows the same logo tile as the project's row in Experience.
+  const logo = experience.timeline.find((row) => row.org === f.title);
   return (
     <Section id="work">
       <Eyebrow label={work.eyebrow} readId="work" />
@@ -94,17 +96,15 @@ export function Work() {
 
       {/* Featured */}
       <div className="mb-7 grid grid-cols-1 items-center gap-7 rounded-3xl bg-bg2 p-7 sm:p-12 lg:grid-cols-2 lg:gap-12">
-        {/* On phones the icon is centred and the same size as the other case-study logos. */}
+        {/* The same wordmark tile as the Experience section, centred on phones. */}
         <div className="text-center sm:text-left">
-          {f.image && (
-            <Image
-              src={f.image.src}
-              alt={f.image.alt}
-              width={160}
-              height={160}
-              sizes="(min-width: 640px) 112px, 160px"
-              className="mx-auto mb-[22px] size-40 rounded-[28px] sm:mx-0 sm:size-28 sm:rounded-[24px]"
-            />
+          {logo && (
+            <span
+              className="mx-auto mb-[22px] flex h-28 w-56 items-center justify-center rounded-2xl bg-white p-3 sm:mx-0 sm:h-[88px] sm:w-44"
+              style={"logoBg" in logo ? { backgroundColor: logo.logoBg } : undefined}
+            >
+              <Image src={logo.logo} alt={`${f.title} logo`} width={400} height={200} sizes="224px" className="h-full w-full object-contain" />
+            </span>
           )}
           <h3 className="serif mb-3.5 text-[32px] leading-[1.08] sm:text-[40px]">
             <Link href={`/work/${f.slug}`} className="hover:text-accent">

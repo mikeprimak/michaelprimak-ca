@@ -61,14 +61,14 @@ export const about = {
     { src: "/about-3.jpg", alt: "Michael skating with his daughter on a frozen lake" },
   ],
   cards: [
-    { title: "Experience", lines: ["8+ years software development - working with code, colleagues and customers."] },
+    { title: "Experience", lines: ["8+ years software development."] },
     {
       title: "Education",
       lines: ["College Diploma - Big Data Analytics", "College Diploma - Osteopathy", "Bachelors Degree - Human Kinetics"],
     },
   ],
   paragraphs: [
-    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web, iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
+    "I'm a programmer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web, iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
     "I have worked for software companies in developer and coordinator roles, so I have experience with code, clients and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data analysis and business websites. I am confident I can be the developer your team needs.",
   ],
 };
