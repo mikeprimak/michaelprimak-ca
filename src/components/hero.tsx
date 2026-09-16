@@ -26,17 +26,21 @@ export function Hero() {
           <p className="mb-2 text-[22px] text-ink2 sm:text-[23px]">{hero.title}</p>
           <p className="mb-7 text-[14px] text-ink3 sm:text-[15px]">{hero.tagline}</p>
 
-          {/* One logo per technology, like the original site's row of icons. The name is
-              in the tooltip and for screen readers only. */}
-          <ul className="mb-8 grid grid-cols-9 gap-x-3 gap-y-3 sm:gap-x-4" aria-label="Technologies I use">
-            {techIcons.map((t) => (
-              <li key={t.label} title={t.label} className="flex justify-center">
-                <svg viewBox="0 0 24 24" role="img" aria-label={t.label} className="size-6 sm:size-7" fill={t.color}>
-                  <path d={t.path} />
-                </svg>
-              </li>
+          {/* Technology logos scroll sideways like a ticker, as on the original site. The row
+              is rendered twice so the loop is seamless; the copy is hidden from screen readers. */}
+          <div className="ticker mb-8 w-full max-w-[400px]" aria-label="Technologies I use">
+            {[0, 1].map((copy) => (
+              <ul key={copy} className="ticker-track" aria-hidden={copy === 1 || undefined}>
+                {techIcons.map((t) => (
+                  <li key={t.label} title={t.label} className="mx-3 shrink-0">
+                    <svg viewBox="0 0 24 24" role="img" aria-label={t.label} className="size-8" fill={t.color}>
+                      <path d={t.path} />
+                    </svg>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </ul>
+          </div>
 
           {/* Both calls to action are the same size: a grid row stretches them to
               matching width and height, and the labels are allowed to wrap. */}

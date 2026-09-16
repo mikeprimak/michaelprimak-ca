@@ -126,3 +126,33 @@
     color: var(--ink3);
   }
 }
+
+/* Hero technology ticker, as on the original site: two copies of the logo row slide left
+   inside a fixed-width strip with faded edges; it pauses on hover. */
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.ticker {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
+}
+.ticker-track {
+  display: inline-flex;
+  align-items: center;
+  animation: ticker 18s linear infinite;
+}
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
