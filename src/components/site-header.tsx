@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { nav, site } from "@/content/site";
+import { BounceMount, BounceToggle } from "./bounce/bounce-toggle";
 import { SectionLink } from "./section-link";
 import { ThemeToggle } from "./theme";
 
@@ -27,6 +28,7 @@ export function SiteHeader() {
     // background solid and free of filters: backdrop-filter would make this element the
     // containing block for the fixed mobile menu, which then collapses to the header's height.
     <header className="sticky top-0 z-50 bg-bg md:static">
+      <BounceMount />
       <div className="wrap">
         <nav aria-label="Main" className="flex h-16 items-center justify-between sm:h-[76px]">
           <Link href="/" className="serif text-2xl text-ink" onClick={close}>
@@ -44,11 +46,13 @@ export function SiteHeader() {
                 {item.label}
               </SectionLink>
             ))}
+            <BounceToggle />
             <ThemeToggle />
           </div>
 
           {/* Mobile */}
           <div className="flex items-center gap-1 md:hidden">
+            <BounceToggle />
             <ThemeToggle />
             <button
               type="button"

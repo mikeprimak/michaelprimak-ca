@@ -101,6 +101,7 @@ export function Work() {
           {logo && (
             <span
               className="mx-auto mb-[22px] flex h-28 w-56 items-center justify-center rounded-2xl bg-white p-3 sm:mx-0 sm:h-[88px] sm:w-44"
+              data-bounce
               style={"logoBg" in logo ? { backgroundColor: logo.logoBg } : undefined}
             >
               <Image src={logo.logo} alt={`${f.title} logo`} width={400} height={200} sizes="224px" className="h-full w-full object-contain" />

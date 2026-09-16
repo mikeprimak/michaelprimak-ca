@@ -219,6 +219,39 @@ Mike's list, all done and pushed:
   "Working style", hero lede without technology names, "Download resume" in the eyebrow
   line, outlined "PDF resume" button.
 
+## Bouncing ball (added 2026-09-16)
+
+An opt-in toy on the home page: the ball icon in the header (left of the theme toggle)
+starts a ball that bounces off the viewport, the sticky header, every word on the page,
+images, buttons, cards and the mouse pointer. Words it hits spring away for 0.4 s. No
+gravity. Press the ball on the page to grab it, let go to throw it. Esc stops it. The
+setting is kept in sessionStorage so it survives a trip to a case study and back, but not
+a new visit. Hidden entirely under `prefers-reduced-motion`. Not on the case study pages.
+
+Code lives in `src/components/bounce/`:
+
+- `engine.ts` — everything: wraps each text node under `<main>` and `<footer>` into
+  per-word `.bw` spans (buttons, SVGs and anything marked `data-bounce` are skipped and
+  treated as one solid box instead), measures every span and solid once into document
+  coordinates, then runs a requestAnimationFrame loop. Circle-vs-rectangle collision with
+  sub-steps so a fast ball cannot skip through a line of text. `stop()` puts the original
+  text nodes back, so React never notices. In dev, `window.__bounce` exposes `ball`,
+  `pointer`, `obstacles`, `step(dt, now)` and `draw(now)` for poking at it from the console.
+- `bounce-layer.tsx` — the fixed full-viewport canvas, portalled to `<body>`, z-30 (under
+  the header's z-50 and the mobile menu's z-40), loaded on demand with `next/dynamic`.
+- `bounce-toggle.tsx` — the button (rendered twice in the header, desktop and phone) and
+  `BounceMount`, rendered once, which is the only thing that mounts the layer.
+
+`data-bounce` marks the About cards, the contact pill, the Experience logo tiles and type
+badges, the featured project's logo tile, and every `Button`. `.bw-hit` in globals.css is
+the nudge animation.
+
+Verified 2026-09-16 by driving `step()` from the console: 60 simulated seconds across the
+whole page with the ball never leaving the screen and no layout shift from the nudge
+(the span turns `inline-block` only for the 0.4 s of the animation). Known limits: the
+ball cannot fit between lines of a paragraph, so paragraphs behave as bumpy slabs; a fast
+scroll can drag a paragraph over the ball, which then pops out of the nearest side.
+
 ## Outstanding
 
 1. **Meaford demo in a real browser.** /demo/meaford-osteopathy renders blank in headless

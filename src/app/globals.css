@@ -156,3 +156,20 @@
     animation: none;
   }
 }
+
+/* Bouncing ball (src/components/bounce). While it runs, every word is wrapped in a .bw
+   span; a word the ball hits gets .bw-hit with --nx/--ny set to the push direction and
+   springs away for a moment. inline-block only during the hit, so links keep their
+   underline the rest of the time. */
+@keyframes bw-nudge {
+  25% {
+    translate: var(--nx, 0) var(--ny, 0);
+  }
+  100% {
+    translate: 0 0;
+  }
+}
+.bw-hit {
+  display: inline-block;
+  animation: bw-nudge 0.4s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
