@@ -11,7 +11,7 @@ export function SiteFooter() {
           © {new Date().getFullYear()} {site.name} · {site.location}
         </div>
         <div className="flex flex-wrap gap-6">
-          {/* The section links, minus Contact (the form is right above the footer). */}
+          {/* The section links, minus Contact (it is right above the footer). */}
           {nav
             .filter((item) => item.href !== "/#contact")
             .map((item) => (

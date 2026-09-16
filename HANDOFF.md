@@ -7,6 +7,14 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
 
 ---
 
+# Contact form (REMOVED 2026-09-15)
+
+Mike asked for the form to go. The Contact section is now just the email address and a
+LinkedIn link side by side in a bordered pill, as on the original site. The server
+action, validation, form component and the `resend` dependency were deleted; the
+`RESEND_API_KEY` variable on Vercel is unused and can be removed. The notes below are
+history only.
+
 # Contact form (done 2026-09-09)
 
 **Working.** Test message delivered to michaelsprimak@gmail.com on 2026-09-09. The

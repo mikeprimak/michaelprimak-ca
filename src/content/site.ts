@@ -19,8 +19,6 @@ export const site = {
     repo: "https://github.com/mikeprimak/michaelprimak-ca",
   },
   resumePath: "/Michael-Primak-Resume.pdf",
-  /** Reply-time promise shown next to the contact form. */
-  replyTime: "one business day",
 };
 
 export const nav = [
@@ -84,7 +82,7 @@ export const experience = {
   eyebrow: "See My",
   heading: "Experience",
   intro:
-    "I've written the code, sat with the customer, and run the team — so I am comfortable in any of these roles.",
+    "I've written code, interfaced with customers, and coordinated the team — so I am comfortable in any of these roles.",
   timeline: [
     {
       when: "Sept 2025 – now",
@@ -134,7 +132,6 @@ export const experience = {
 export const contact = {
   eyebrow: "Get in Touch",
   heading: "Contact Me",
-  /** The envelope icon from the original site sits before the address. */
-  emailIcon: "/icon-email.png",
-  formLead: "or use this form:",
+  /** Email and LinkedIn side by side in a bordered pill, as on the original site. */
+  linkedinIcon: "/icon-linkedin.png",
 };

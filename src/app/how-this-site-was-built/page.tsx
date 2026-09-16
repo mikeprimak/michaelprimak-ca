@@ -14,7 +14,6 @@ const stack = [
   ["Styling", "Tailwind CSS with a small set of design tokens; light and dark themes"],
   ["Type", "Poppins throughout, as on the original site — self-hosted"],
   ["Content", "Plain TypeScript data files, so a text change is a one-line edit"],
-  ["Contact form", "A server action with spam checks, delivering by email through Resend"],
   ["Live data", "The hero card reads real totals from the Good Fights API, refreshed hourly"],
   ["Hosting", "Vercel, deployed from GitHub — every push gets a preview URL"],
 ];
@@ -83,7 +82,7 @@ export default function HowThisSiteWasBuiltPage() {
         <h2 className="serif text-[30px] leading-[1.1] sm:text-[34px]">The code</h2>
         <div className="flex max-w-[640px] flex-col gap-4 text-ink2">
           <p>
-            The whole site is open: the content files, the components, the contact form and the deployment setup.
+            The whole site is open: the content files, the components and the deployment setup.
             Have a look at how it’s put together.
           </p>
           <TextLink href={site.links.repo} external>
