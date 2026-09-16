@@ -44,7 +44,7 @@ export const projects: Project[] = [
     slug: "good-fights",
     title: "Good Fights",
     summary:
-      "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a fight catalogue going back to 1993 that daily scrapers keep current.",
+      "A fight-tracking app for combat-sports fans. Live on the App Store and Google Play, kept current with data extraction and LLM enrichment.",
     deck: "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a catalogue going back to 1993.",
     tags: [
       "React Native · Expo",
@@ -57,7 +57,7 @@ export const projects: Project[] = [
       "GitHub Actions",
       "iOS + Android",
     ],
-    kind: "Mobile and Web - Entertainment",
+    kind: "iOS, Android & Web",
     featured: true,
     image: { src: "/good-fights-icon.png", alt: "Good Fights app icon", kind: "icon" },
     screenshots: [
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     slug: "lgbt-voice-tanzania",
     title: "LGBT Voice Tanzania",
     summary:
-      "Website for an LGBT+ advocacy organization, built on WordPress so the team can publish and manage it themselves.",
+      "I rebuilt a website for an LGBT+ advocacy organization on WordPress so the team can publish and manage it themselves.",
     deck: "A WordPress site for an LGBT+ advocacy organization, built so the team can run it themselves.",
     tags: ["WordPress", "Non-profit"],
     kind: "WordPress · Non-profit",
@@ -176,12 +176,12 @@ export const projects: Project[] = [
   },
   {
     slug: "avoidjawsurgery",
-    title: "avoidjawsurgery.com",
+    title: "Avoid Jaw Surgery",
     summary:
-      "A legacy WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word, redesigned, and ready to host anywhere.",
+      "I converted and restyled a legacy WordPress site to a fast, dependency-free static HTML page. Now editable with AI coding tools, this makes it easier to maintain and edit going forward.",
     deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
-    kind: "Static rebuild · AI-assisted",
+    kind: "Static Rebuild · AI-Assisted",
     image: {
       src: "/logo-avoidjawsurgery.png",
       alt: "avoidjawsurgery.com wordmark: “Avoid” above “Jaw Surgery” in italic brick red",
@@ -228,10 +228,10 @@ export const projects: Project[] = [
     slug: "meaford-osteopathy",
     title: "Meaford Osteopathy",
     summary:
-      "Business website for a local health clinic, with an integrated booking system — the kind of site most small businesses actually need.",
+      "A simple, communicative and functional business website for a local health clinic, with an integrated booking system. Optimized for ease of finding information about the clinic and booking an appointment.",
     deck: "A business website for a local health clinic, with online booking built in.",
     tags: ["Business site", "Booking", "HTML · JavaScript"],
-    kind: "Business site · Booking",
+    kind: "Business Site · Booking",
     image: { src: "/logo-meaford-osteopathy.png", alt: "Meaford Osteopathy logo", kind: "logo" },
     screenshots: [],
     screenshotKind: "web",

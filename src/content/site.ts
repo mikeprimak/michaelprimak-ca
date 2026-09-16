@@ -39,7 +39,7 @@ export const nav = [
 export const hero = {
   greeting: "Hello, I'm",
   title: "Senior Software Developer",
-  tagline: "Full Stack Web & Mobile - Ontario, Canada - Remote",
+  tagline: "Front-end, Back-end, End-to-end - Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
   primaryCta: { label: "Download Resume", href: site.resumePath },
@@ -81,7 +81,7 @@ export const work = {
 export type Role = "Developer" | "Coordinator";
 
 export const experience = {
-  eyebrow: "Explore My",
+  eyebrow: "See My",
   heading: "Experience",
   intro:
     "I've written the code, sat with the customer, and run the team — so I am comfortable in any of these roles.",
@@ -91,28 +91,28 @@ export const experience = {
       org: "Good Fights",
       logo: "/logos/good-fights.png",
       logoBg: "#181818",
-      role: "Founder and sole developer. React Native apps on the App Store and Google Play, a Node/TypeScript API on Postgres, a Next.js site, daily scrapers and Claude-based enrichment — successor to Fighting Tomatoes.",
+      role: "I built and maintain the Good Fights app. It's on iOS, Android and Web, has thousands of real users and is updated daily by scrapers, LLM enrichment and an automated maintenance system. React Native, Node/TS, Postgres, Next.js.",
       type: "Developer" as Role,
     },
     {
       when: "2024 – now",
       org: "LGBT Voice Tanzania",
       logo: "/logos/lgbt-voice.png",
-      role: "Web developer. Redesigned, built, deployed and maintain the site for an LGBT rights advocacy group.",
+      role: "I redesigned and rebuilt their website using a modern WordPress framework so they can upload posts and make other changes easily.",
       type: "Developer" as Role,
     },
     {
       when: "Apr 2024 – Nov 2024",
       org: "Zerion Software",
       logo: "/logos/zerion.png",
-      role: "Implementation Engineer. Adapted a mobile data-collection platform to individual client use cases — talking to customers about what they were capturing, working out how the product should best receive and process it, then making the GUI and JavaScript changes to fit.",
+      role: "I was an implementation engineer - adapting a mobile data-collection platform to individual client use cases. Talking to customers about what they were capturing, working out how the product should best receive and process it, then making the GUI and JavaScript changes to fit.",
       type: "Developer" as Role,
     },
     {
       when: "2018 – 2020",
       org: "WellnessLiving Systems Inc.",
       logo: "/logos/wellnessliving.png",
-      role: "White Label App Dept. Coordinator. Ran a team of developers, designers and support staff delivering white-label mobile apps to B2B clients.",
+      role: "I was the White Label App Department Coordinator. I coordinated a team of developers, designers and support staff delivering white-label mobile apps to B2B clients.",
       type: "Coordinator" as Role,
     },
     {
@@ -120,7 +120,7 @@ export const experience = {
       org: "Fighting Tomatoes",
       logo: "/logos/fighting-tomatoes.png",
       logoBg: "#181818",
-      role: "Web developer. Built and ran the interactive web app Good Fights grew out of — JavaScript, PHP, MySQL and Python, with accounts, ratings, comments and search.",
+      role: 'I built and ran the interactive web app "Fighting Tomatoes" out of vanilla JavaScript, PHP, CSS, MySQL and Python. Think Rotten Tomatoes for combat sports events. This evolved into the "Good Fights" mobile app.',
       type: "Developer" as Role,
     },
   ],
@@ -134,6 +134,7 @@ export const experience = {
 export const contact = {
   eyebrow: "Get in Touch",
   heading: "Contact Me",
-  emailLabel: "Email:",
-  formLead: "or send a message using the form below",
+  /** The envelope icon from the original site sits before the address. */
+  emailIcon: "/icon-email.png",
+  formLead: "or use this form:",
 };

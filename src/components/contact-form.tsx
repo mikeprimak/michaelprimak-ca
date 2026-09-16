@@ -75,7 +75,7 @@ export function ContactForm() {
       </div>
 
       <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2">
-        <Field label="Name" id="name" error={err.name}>
+        <Field label="Your name" id="name" error={err.name}>
           <input
             id="name"
             name="name"
@@ -89,7 +89,7 @@ export function ContactForm() {
             className={inputCls}
           />
         </Field>
-        <Field label="Email" id="email" error={err.email}>
+        <Field label="Your email" id="email" error={err.email}>
           <input
             id="email"
             name="email"
@@ -105,7 +105,7 @@ export function ContactForm() {
         </Field>
       </div>
 
-      <Field label="Message" id="message" error={err.message}>
+      <Field label="Your message" id="message" error={err.message}>
         <textarea
           id="message"
           name="message"
