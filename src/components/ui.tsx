@@ -166,7 +166,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`scroll-mt-16 py-16 sm:py-24 ${className}`}
+      className={`scroll-mt-16 py-24 sm:py-36 ${className}`}
     >
       <div className="wrap">{children}</div>
     </section>
