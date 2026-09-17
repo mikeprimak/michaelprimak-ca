@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GoodFightsArchitecture } from "@/components/architecture-diagram";
 import { ListenButton } from "@/components/listen-button";
-import { Button } from "@/components/ui";
 import { PhoneFrames } from "@/components/work";
 import { getProject, projects, type Project } from "@/content/projects";
 import { fill, getLiveStats, type LiveStats } from "@/lib/good-fights";
@@ -202,11 +201,6 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             </dl>
           )}
         </Block>
-
-        <div className="flex flex-col items-start justify-between gap-6 border-t border-line py-14 sm:flex-row sm:items-center">
-          <h2 className="serif text-[32px] sm:text-[36px]">Looking for someone who builds like this?</h2>
-          <Button href="/#contact">Get in touch</Button>
-        </div>
       </div>
     </article>
   );

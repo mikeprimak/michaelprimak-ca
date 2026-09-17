@@ -45,6 +45,16 @@ Later the same day (phone pass):
 - Resume draft `resume/Michael-Primak-Resume-2col.html` + `.pdf` committed but NOT yet copied
   over `public/Michael-Primak-Resume.pdf`; Mike is still reviewing it.
 
+Third pass the same day:
+
+- Case studies no longer end with the "Looking for someone who builds like this?" block.
+- LGBT Voice: new problem paragraph; "Built for hand-off" challenge replaced by "Working
+  across an ocean" (Canada / Tanzania host coordination by email). Outcome unchanged.
+- Avoid Jaw Surgery: new problem paragraph and HTML bullet; outcome is a single
+  "Live / and easier to maintain" figure instead of the three counts.
+- Experience logo tiles are 176x88 on desktop and 144x72 on phones (were 104x52), the same
+  tile the Good Fights card uses.
+
 ---
 
 # Contact form (REMOVED 2026-09-15)

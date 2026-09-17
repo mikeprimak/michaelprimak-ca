@@ -11,16 +11,16 @@ export function Experience() {
         {experience.timeline.map((row, i) => (
           <li
             key={i}
-            className="grid grid-cols-1 gap-2 border-b border-line py-[22px] sm:grid-cols-[150px_104px_minmax(0,1fr)_auto] sm:items-center sm:gap-6"
+            className="grid grid-cols-1 gap-2 border-b border-line py-[22px] sm:grid-cols-[150px_176px_minmax(0,1fr)_auto] sm:items-center sm:gap-6"
           >
             <span className="font-mono text-[13px] text-ink3">{row.when}</span>
             {/* Every logo is a 2:1 transparent tile (public/logos). White tile by default so dark
                 wordmarks stay readable in dark mode; a row can set `logoBg` for its brand colour. */}
             <span
-              className="flex h-[52px] w-[104px] items-center justify-center rounded-lg border border-line bg-white p-1.5"
+              className="my-1 flex h-[72px] w-[144px] items-center justify-center rounded-xl border border-line bg-white p-2.5 sm:my-0 sm:h-[88px] sm:w-[176px]"
               style={"logoBg" in row ? { backgroundColor: row.logoBg } : undefined}
             >
-              <Image src={row.logo} alt={`${row.org} logo`} width={400} height={200} sizes="104px" className="h-full w-full object-contain" />
+              <Image src={row.logo} alt={`${row.org} logo`} width={400} height={200} sizes="(min-width: 640px) 176px, 144px" className="h-full w-full object-contain" />
             </span>
             <span className="text-xl">
               {row.org}

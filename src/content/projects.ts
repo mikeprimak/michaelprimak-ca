@@ -150,7 +150,7 @@ export const projects: Project[] = [
     ],
     links: [{ label: "lgbtvoicetz.org", href: "https://lgbtvoicetz.org/" }],
     problem: [
-      "An advocacy organization needed a public home for its work that a small, non-technical team could update on their own, from anywhere.",
+      "An advocacy organization needed an update to its old WordPress site. I migrated all their content to a modern WordPress configuration, redesigned and built out features and content, then handed it back to the organization for daily posting and maintenance.",
     ],
     shipped: [
       "A WordPress site set up so the team can publish news and pages without a developer.",
@@ -159,8 +159,8 @@ export const projects: Project[] = [
     ],
     hardParts: [
       {
-        title: "Built for hand-off",
-        body: "The measure of success was the team not needing me afterwards: a simple theme, sensible defaults and no custom code to break.",
+        title: "Working across an ocean",
+        body: "I am in Canada; the organization and its web host are in Tanzania. Anything that touches hosting, DNS or server access goes through the host by email, so a step that takes minutes in the same room takes days. Every question had to be asked up front and the work planned in batches, so nothing sat waiting on a reply.",
       },
       {
         title: "Making it look like something",
@@ -195,12 +195,12 @@ export const projects: Project[] = [
     ],
     links: [{ label: "avoidjawsurgery.com", href: "https://avoidjawsurgery.com" }],
     problem: [
-      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. The content - a dozen long-form pages and 100 testimonials - was the valuable part, and it was locked inside the CMS.",
+      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. With the advent of AI coding, a newer, simple HTML website became the direction of least resistance.",
     ],
     shipped: [
       "Every page and all 100 testimonials migrated word-for-word, with source links preserved.",
       "A complete visual redesign: modern dark theme, responsive, with a mobile menu and scroll-to-top.",
-      "Plain HTML, CSS and JavaScript - no dependencies, no build step, so it can be hosted anywhere for next to nothing.",
+      "Plain HTML, CSS and JavaScript - super light and fast, no dependencies, no build step. It can be hosted anywhere for next to nothing.",
       "Sitemap and robots set up so search rankings carried over.",
     ],
     hardParts: [
@@ -217,11 +217,7 @@ export const projects: Project[] = [
         body: "The migration was done with Claude Code driving the repetitive work, with every page reviewed before it shipped - a fraction of the usual time for a rebuild this size.",
       },
     ],
-    outcome: [
-      { value: "13", label: "pages migrated word-for-word" },
-      { value: "100", label: "testimonials preserved" },
-      { value: "0", label: "dependencies, frameworks or build steps" },
-    ],
+    outcome: [{ value: "Live", label: "and easier to maintain" }],
   },
   {
     slug: "meaford-osteopathy",
