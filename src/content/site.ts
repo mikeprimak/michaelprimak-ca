@@ -1,5 +1,5 @@
 /**
- * Site-wide content. Edit text here — no component changes needed.
+ * Site-wide content. Edit text here - no component changes needed.
  * Anything in [square brackets] is a placeholder still to be filled in.
  */
 
@@ -7,9 +7,9 @@ export const site = {
   name: "Michael Primak",
   legalName: "Michael Primak",
   url: "https://michaelprimak.ca",
-  title: "Michael Primak — Senior full-stack developer",
+  title: "Michael Primak - Senior full-stack developer",
   description:
-    "Senior full-stack developer in Ontario, Canada. React Native, TypeScript, Node and Postgres — shipped to the App Store and Google Play, with LLM features running in production.",
+    "Senior full-stack developer in Ontario, Canada. React Native, TypeScript, Node and Postgres - shipped to the App Store and Google Play, with LLM features running in production.",
   location: "Ontario, Canada",
   email: "michaelsprimak@gmail.com",
   phone: "1-289-838-2575",
@@ -78,7 +78,7 @@ export const experience = {
   eyebrow: "See My",
   heading: "Experience",
   intro:
-    "I've written code, interfaced with customers, and coordinated the team — so I am comfortable in any of these roles.",
+    "I've written code, interfaced with customers and coordinated the team, so I am comfortable in any of these roles.",
   timeline: [
     {
       when: "Sept 2025 – now",

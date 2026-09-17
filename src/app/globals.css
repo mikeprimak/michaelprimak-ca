@@ -140,6 +140,8 @@
 .ticker {
   position: relative;
   overflow: hidden;
+  /* The track is wider than any phone; keep it from setting the column's minimum width. */
+  contain: inline-size;
   white-space: nowrap;
   mask-image: linear-gradient(to right, transparent, black 24px, black calc(100% - 24px), transparent);
 }

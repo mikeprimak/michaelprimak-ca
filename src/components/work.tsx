@@ -54,10 +54,10 @@ function LiveNumbers({ stats }: { stats: LiveStats }) {
   ];
   return (
     <div className="mb-7">
-      <dl className="mx-auto grid max-w-[420px] grid-cols-3 gap-3 sm:mx-0">
+      <dl className="mx-auto grid max-w-[420px] grid-cols-3 gap-2 sm:mx-0 sm:gap-3">
         {items.map((it) => (
-          <div key={it.label} className="rounded-2xl border border-line bg-bg px-3 py-4 text-center">
-            <dd className="serif mb-1 text-[26px] leading-none sm:text-[30px]">{fmt.format(it.value)}</dd>
+          <div key={it.label} className="min-w-0 rounded-2xl border border-line bg-bg px-1.5 py-4 text-center sm:px-3">
+            <dd className="serif mb-1 text-[clamp(17px,5.2vw,30px)] leading-none tabular-nums">{fmt.format(it.value)}</dd>
             <dt className="text-[13px] text-ink3">{it.label}</dt>
           </div>
         ))}
@@ -111,7 +111,7 @@ function Thumb({ project }: { project: Project }) {
       className="flex h-[190px] items-center justify-center rounded-2xl border border-dashed border-ink3 p-4 text-center font-mono text-[12.5px] tracking-[0.06em] text-ink3 uppercase"
       aria-hidden="true"
     >
-      Screenshot — {project.title}
+      Screenshot - {project.title}
     </div>
   );
 }

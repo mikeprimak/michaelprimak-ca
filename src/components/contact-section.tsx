@@ -12,7 +12,7 @@ function EnvelopeIcon() {
   );
 }
 
-const item = "inline-flex items-center gap-3 text-[19px] font-medium text-ink hover:text-accent sm:text-[21px]";
+const item = "inline-flex max-w-full items-center gap-3 text-[17px] font-medium text-ink hover:text-accent sm:text-[21px]";
 const label = "border-b border-line pb-0.5";
 
 export function ContactSection() {
@@ -24,7 +24,7 @@ export function ContactSection() {
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
       {/* Email and LinkedIn side by side inside a bordered pill, as on the original site;
           they stack on narrow phones. */}
-      <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-5 rounded-[32px] border border-line bg-bg2 px-8 py-6 sm:px-12" data-no-read>
+      <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-5 rounded-[32px] border border-line bg-bg2 px-7 py-7 sm:px-12 sm:py-8" data-no-read>
         <a href={`mailto:${site.email}`} className={item}>
           <EnvelopeIcon />
           <span className={label}>{site.email}</span>

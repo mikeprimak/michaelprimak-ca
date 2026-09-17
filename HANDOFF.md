@@ -24,6 +24,27 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
 - Contact section fills the screen below the header and centres the pill, so #contact lands
   with even space above and below.
 
+Later the same day (phone pass):
+
+- Phones scrolled sideways by about 20px. Cause: the hero text column had no width of its own,
+  so the tech-logo ticker's `max-w-[400px]` became the column's minimum width. Fixed with
+  `w-full` on the column and `contain: inline-size` on `.ticker`. To re-check any page for this:
+  serve a page with a 390px iframe of it and compare `documentElement.scrollWidth` to
+  `clientWidth` (the browser tool could not resize a maximized window).
+- Hero buttons are 240px wide on phones (were edge to edge); side by side from `sm`.
+- Good Fights card numbers scale with the viewport (`clamp(17px,5.2vw,30px)`) so they fit
+  their boxes on 360px phones.
+- Contact pill: 17px text and more padding on phones.
+- Architecture diagram has a stacked phone version (`Stacked` in architecture-diagram.tsx);
+  the wide one shows from `sm`.
+- Copy: "The big challenges" replaces "The hard parts" on every case study; Good Fights case
+  study rewritten per Mike (deck, problem, shipped, challenges); every em dash in site copy and
+  both resumes replaced with a plain hyphen (Mike's rule, 2026-09-17). Challenge titles may
+  now be 37 characters (`MAX_HARD_PART_TITLE`), and the phone title size is
+  `clamp(15px,4.3vw,20px)`.
+- Resume draft `resume/Michael-Primak-Resume-2col.html` + `.pdf` committed but NOT yet copied
+  over `public/Michael-Primak-Resume.pdf`; Mike is still reviewing it.
+
 ---
 
 # Contact form (REMOVED 2026-09-15)

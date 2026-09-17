@@ -1,7 +1,7 @@
 /**
  * Case studies. In the Good Fights entry, `{users}`, `{fightRatings}`, `{reviews}`, `{fights}`,
  * `{events}`, `{fighters}` are replaced with live numbers when the page renders
- * (src/lib/good-fights.ts), so the copy stays in step with production. To add a project: append an object here — the home page card and
+ * (src/lib/good-fights.ts), so the copy stays in step with production. To add a project: append an object here - the home page card and
  * the /work/<slug> page are generated from it. Keep `featured` on exactly one.
  * Anything in [square brackets] is a placeholder still to be filled in.
  */
@@ -22,7 +22,7 @@ export type Project = {
    *  full-bleed image such as a site screenshot and must not be blended. */
   image?: { src: string; alt: string; kind: "icon" | "logo" | "artwork" };
   /** Screenshots for the case study page. Paths under /public. Empty = placeholder frames.
-   *  width/height are the file's real pixel size — pass them so the layout box matches the
+   *  width/height are the file's real pixel size - pass them so the layout box matches the
    *  image's aspect ratio and nothing gets squashed. */
   screenshots: { src: string; alt: string; width?: number; height?: number }[];
   screenshotKind: "phone" | "web";
@@ -33,7 +33,7 @@ export type Project = {
   /** Renders the architecture diagram when true (Good Fights only, for now). */
   architecture?: "good-fights";
   hardParts: { title: string; body: string }[];
-  /** "stats" (default) renders big figures. "quote" renders a single pull quote —
+  /** "stats" (default) renders big figures. "quote" renders a single pull quote -
    *  a sentence set at the stat size wraps badly. */
   outcomeKind?: "stats" | "quote";
   outcome: { value: string; label: string }[];
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "Good Fights",
     summary:
       "A fight-tracking app for combat-sports fans. It's live on the App Store and Google Play, and is kept current daily by an automated system.",
-    deck: "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a catalogue going back to 1993.",
+    deck: "A fight-tracking app with thousands of combat-sports fan users. It's live on iOS, Android and Web, and is kept current by automated systems.",
     tags: [
       "React Native · Expo",
       "TypeScript",
@@ -99,16 +99,15 @@ export const projects: Project[] = [
       },
     ],
     problem: [
-      "Film fans have Rotten Tomatoes. Fight fans had nothing — no place to rate an individual fight, see what the crowd thought, or find the great ones they missed.",
-      "Fighting Tomatoes, my earlier web version, proved people wanted this. Good Fights is the mobile-first successor, built to live on both app stores with a real back-end behind it.",
+      "Film fans have Rotten Tomatoes. Fight fans had nothing - no place to rate an individual fight, see what the crowd thought, or see what's hyped on the upcoming events.",
+      "Fighting Tomatoes, my earlier web version, proved people wanted this. Good Fights is the mobile-first successor, with advanced functionality and user reach.",
     ],
     shipped: [
-      "iOS and Android apps from one React Native codebase, published through App Store and Play Store review.",
-      "Accounts with email, Google and Apple sign-in, and a migration that carried the existing Fighting Tomatoes user base onto the new platform — {users} registered users who have submitted {fightRatings} fight ratings and {reviews} written reviews.",
-      "A catalogue of {fights} fights across {events} events dating to 1993 — {fighters} fighters, results and stats — kept current by daily scrapers.",
+      "iOS and Android apps from one React Native codebase.",
+      "Migrated thousands of users from the legacy system. Now Good Fights has {users} registered users who have submitted {totalRatings} fight ratings on {fightsInApp} fights dating back to 1993.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
-      "Claude-based enrichment that writes fight and fighter detail, gated on a confidence score so nothing the model is unsure about is published — with unit tests that check its output, including one that verifies quoted material is real.",
-      "More than 30 scheduled jobs — built as GitHub Actions workflows, since moved to VPS cron with per-job locking and failure alerts — running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
+      "Claude-based enrichment that writes fight, fighter and event detail, gated on a confidence score so nothing the model is unsure about is published - with unit tests that check its output, including one that verifies quoted material is real.",
+      "More than 30 scheduled jobs on the VPS, each with per-job locking and failure alerts, running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
       "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus an automated content system that writes an SEO-focused preview and results article for every numbered UFC card and refreshes a monthly fighter-rankings article from live data.",
       "Over-the-air updates so fixes reach users without a new store submission.",
     ],
@@ -116,15 +115,15 @@ export const projects: Project[] = [
     hardParts: [
       {
         title: "Live trackers that stay accurate",
-        body: "Following the progress and outcome of fights as they happen, across more than 15 combat-sports organizations. Every promotion publishes differently, and they redesign without warning — so the trackers had to be built to survive a moving target, degrading quietly instead of breaking, and isolated enough that one organization's changes don't take the rest down with them.",
+        body: "Good Fights promises to let users know exactly when the fight they want to watch is about to start. This means tracking events while they are live to determine exactly when each fight ends and the next one starts, and doing this consistently across 15+ organizations, week in, week out. So I built trackers that handle complex and changing data sources, degrade gracefully and alert me when there are any issues.",
       },
       {
         title: "Clear the moment you open it",
-        body: "A first-time user has to grasp what they are looking at, what they can do and what to do next — immediately, without a tour. That meant deciding which features earn their place and which don't: enough to be genuinely useful, not so many that the app stops being readable, and ordered so the things people actually came for are the things they find first.",
+        body: "A first-time user has to grasp what they are looking at and what to do, without having to figure it out. This meant limiting feature creep and creating a UI optimized for immediate, intuitive understanding.",
       },
       {
-        title: "Working out what fans actually want",
-        body: "Nobody hands you the requirements for this. Identifying what combat-sports fans want, building it, watching how it really gets used, and adjusting — it is continuous work, not a question that was settled at launch.",
+        title: "Working out what users actually want",
+        body: "Identifying needs in the marketplace and valuable use cases for Good Fights. Nobody hands you the requirements for this. Identifying what combat-sports fans want, building it, watching how it really gets used, and adjusting - it is continuous work, not a question that was settled at launch.",
       },
     ],
     outcome: [
@@ -165,7 +164,7 @@ export const projects: Project[] = [
       },
       {
         title: "Making it look like something",
-        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design — getting it to feel considered rather than templated.",
+        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design - getting it to feel considered rather than templated.",
       },
       {
         title: "Gathering their story into one place",
@@ -179,7 +178,7 @@ export const projects: Project[] = [
     title: "Avoid Jaw Surgery",
     summary:
       "I converted and restyled a legacy WordPress site to a fast, dependency-free static HTML page. Now editable with AI coding tools, this makes it easier to maintain and edit going forward.",
-    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML — every page migrated word-for-word and redesigned.",
+    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML - every page migrated word-for-word and redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static Rebuild · AI-Assisted",
     image: {
@@ -192,16 +191,16 @@ export const projects: Project[] = [
     meta: [
       { label: "Role", value: "Developer" },
       { label: "Type", value: "WordPress → static HTML migration" },
-      { label: "Stack", value: "HTML, CSS, JavaScript — no build step, no CMS" },
+      { label: "Stack", value: "HTML, CSS, JavaScript - no build step, no CMS" },
     ],
     links: [{ label: "avoidjawsurgery.com", href: "https://avoidjawsurgery.com" }],
     problem: [
-      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. The content — a dozen long-form pages and 100 testimonials — was the valuable part, and it was locked inside the CMS.",
+      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. The content - a dozen long-form pages and 100 testimonials - was the valuable part, and it was locked inside the CMS.",
     ],
     shipped: [
       "Every page and all 100 testimonials migrated word-for-word, with source links preserved.",
       "A complete visual redesign: modern dark theme, responsive, with a mobile menu and scroll-to-top.",
-      "Plain HTML, CSS and JavaScript — no dependencies, no build step, so it can be hosted anywhere for next to nothing.",
+      "Plain HTML, CSS and JavaScript - no dependencies, no build step, so it can be hosted anywhere for next to nothing.",
       "Sitemap and robots set up so search rankings carried over.",
     ],
     hardParts: [
@@ -215,7 +214,7 @@ export const projects: Project[] = [
       },
       {
         title: "AI-assisted, human-reviewed",
-        body: "The migration was done with Claude Code driving the repetitive work, with every page reviewed before it shipped — a fraction of the usual time for a rebuild this size.",
+        body: "The migration was done with Claude Code driving the repetitive work, with every page reviewed before it shipped - a fraction of the usual time for a rebuild this size.",
       },
     ],
     outcome: [
@@ -228,7 +227,7 @@ export const projects: Project[] = [
     slug: "meaford-osteopathy",
     title: "Meaford Osteopathy",
     summary:
-      "A simple, communicative and functional business website for a local health clinic, with an integrated booking system. Optimized for ease of finding information about the clinic and booking an appointment.",
+      "A simple, communicative and functional business website for a local health clinic. Optimized for ease of finding information about the clinic and booking an appointment.",
     deck: "A business website for a local health clinic, with online booking built in.",
     tags: ["Business site", "Booking", "HTML · JavaScript"],
     kind: "Business Site · Booking",
@@ -237,7 +236,7 @@ export const projects: Project[] = [
     screenshotKind: "web",
     meta: [
       { label: "Role", value: "Designer & developer" },
-      { label: "Client", value: "Meaford Osteopathy — a clinic in Meaford, Ontario" },
+      { label: "Client", value: "Meaford Osteopathy - a clinic in Meaford, Ontario" },
       { label: "Stack", value: "HTML, CSS, JavaScript, third-party booking integration" },
       {
         label: "Status",
@@ -252,7 +251,7 @@ export const projects: Project[] = [
       "A one-practitioner clinic needed what most small businesses need: a site that says what the clinic does, where it is, and lets patients book.",
     ],
     shipped: [
-      "Pages for services, the practitioner, location and contact — written to be found by local search.",
+      "Pages for services, the practitioner, location and contact - written to be found by local search.",
       "An integrated booking system so patients can book appointments directly from the site.",
       "Google Analytics and a Google Business Profile, set up and integrated so the clinic shows up in local search and can see how the site is used.",
       "A design the client could keep updating with simple edits.",
@@ -260,28 +259,28 @@ export const projects: Project[] = [
     hardParts: [
       {
         title: "Ultra Easy To Use",
-        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters — the booking button, phone number, email, opening hours, where the clinic is, and what it actually does — is concise, clear and on the home page, so anyone can use the website without searching it.",
+        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters - the booking button, phone number, email, opening hours, where the clinic is, and what it actually does - is concise, clear and on the home page, so anyone can use the website without searching it.",
       },
       {
         title: "Keeping it simple",
-        body: "A one-practitioner clinic does not need much: a few pages, a booking link, hours and a map. The discipline was in not adding more — no CMS, no framework, nothing to maintain — so the site stays fast and the client never pays for things they do not use.",
+        body: "A one-practitioner clinic does not need much: a few pages, a booking link, hours and a map. The discipline was in not adding more - no CMS, no framework, nothing to maintain - so the site stays fast and the client never pays for things they do not use.",
       },
       {
         title: "Google Business Profile",
-        body: "Most patients find a local clinic through Google, not by typing in a web address. I set up and verified the clinic's Google Business Profile and connected it, along with Google Analytics, to the site — so the clinic shows up in local search and on Maps with the right hours, phone number and booking link, and can see where its visitors come from.",
+        body: "Most patients find a local clinic through Google, not by typing in a web address. I set up and verified the clinic's Google Business Profile and connected it, along with Google Analytics, to the site - so the clinic shows up in local search and on Maps with the right hours, phone number and booking link, and can see where its visitors come from.",
       },
     ],
     outcomeKind: "quote",
-    outcome: [{ value: "“Patients love it”", label: "— the client, after launch" }],
+    outcome: [{ value: "“Patients love it”", label: "- the client, after launch" }],
   },
 ];
 
 /**
- * "The hard parts" titles are laid out three across on desktop and must fit on one
- * line (Mike, 2026-09-09). 36 characters is the longest that fits at the sizes in
+ * "The big challenges" titles are laid out three across on desktop and must fit on one
+ * line (Mike, 2026-09-09). 37 characters is the longest that fits at the sizes in
  * src/app/work/[slug]/page.tsx; the build fails rather than ship a wrapped title.
  */
-export const MAX_HARD_PART_TITLE = 36;
+export const MAX_HARD_PART_TITLE = 37;
 for (const p of projects) {
   for (const h of p.hardParts) {
     if (h.title.length > MAX_HARD_PART_TITLE) {

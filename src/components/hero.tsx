@@ -20,7 +20,9 @@ export function Hero() {
           sizes="(min-width: 1024px) 340px, (min-width: 640px) 320px, 70vw"
           className="h-auto w-[70vw] max-w-[320px] shrink-0 lg:w-[340px] lg:max-w-none"
         />
-        <div className="flex max-w-[600px] flex-col items-center text-center">
+        {/* w-full matters: without it the column takes the ticker's 400px max width as its
+            minimum and pushes phones narrower than that into sideways scrolling. */}
+        <div className="flex w-full max-w-[600px] flex-col items-center text-center">
           <p className="mb-1.5 text-[19px] text-ink2">{hero.greeting}</p>
           <h1 className="serif mb-1.5 text-[44px] leading-[1.04] sm:text-[52px] lg:text-[56px]">{site.name}</h1>
           <p className="mb-2 text-[22px] text-ink2 sm:text-[23px]">{hero.title}</p>
@@ -44,7 +46,7 @@ export function Hero() {
 
           {/* Both calls to action are the same size: a grid row stretches them to
               matching width and height, and the labels are allowed to wrap. */}
-          <div className="grid w-full max-w-[420px] grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid w-full max-w-[240px] grid-cols-1 gap-3 sm:max-w-[420px] sm:grid-cols-2">
             <Button
               href={hero.primaryCta.href}
               external

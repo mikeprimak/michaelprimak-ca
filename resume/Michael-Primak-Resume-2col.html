@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Michael Primak - Senior Software Developer - Resume</title>
+<style>
+  /* Two pages, letter size. The layout follows Mike's Inkscape resume: a big name, a wide
+     main column with a narrower sidebar, and a thin rule framing the top, bottom and right
+     edge of each page. Every word is real text in reading order (main column, then sidebar),
+     so ATS parsers and screen readers get the content. */
+  @page { size: letter; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "DejaVu Sans Condensed", "DejaVu Sans", Arial, sans-serif;
+    font-size: 9.6pt; line-height: 1.38; color: #111;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    position: relative; width: 8.5in; height: 11in; overflow: hidden;
+    padding: 0.72in 0.6in 0.6in 0.7in;
+    display: grid; grid-template-columns: 1fr 2.2in; column-gap: 0.42in;
+    break-after: page; page-break-after: always;
+  }
+  .page:last-child { break-after: auto; page-break-after: auto; }
+  /* Frame: rule across the top, across the bottom, and down the right edge. */
+  .page::before {
+    content: ""; position: absolute; left: 0; right: 0.36in; top: 0.34in; height: 1.2px; background: #111;
+  }
+  .page::after {
+    content: ""; position: absolute; left: 0; right: 0.36in; bottom: 0.34in; height: 1.2px; background: #111;
+  }
+  .edge { position: absolute; top: 0; bottom: 0.34in; right: 0.36in; width: 1.2px; background: #111; }
+
+  h1 {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    font-size: 40pt; line-height: 0.98; font-weight: 700; letter-spacing: -0.01em;
+    margin: 0 0 8pt; text-transform: uppercase;
+  }
+  .role {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    font-size: 15.5pt; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12pt;
+  }
+  .summary { margin: 0 0 16pt; font-size: 9.8pt; }
+
+  h2 {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    font-size: 13pt; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase;
+    margin: 0 0 9pt;
+  }
+  .side h2 { margin-top: 2pt; }
+  .edu { margin-top: 15pt; }
+  section + section { margin-top: 15pt; }
+
+  .job { margin-bottom: 11pt; break-inside: avoid; }
+  .job .where { font-size: 9.2pt; color: #333; margin: 0 0 1pt; }
+  .job h3 {
+    font-family: "DejaVu Sans", Arial, sans-serif;
+    font-size: 11.6pt; font-weight: 400; margin: 0 0 3pt;
+  }
+  .job p { margin: 0; }
+  ul { margin: 0; padding-left: 11pt; }
+  li { margin: 0 0 2.6pt; padding-left: 1pt; }
+
+  /* Sidebar */
+  .side { font-size: 9.3pt; }
+  .side ul { list-style: none; padding: 0; }
+  .side li { margin: 0 0 3pt; }
+  .contact li { display: flex; gap: 6pt; align-items: baseline; margin-bottom: 4.5pt; }
+  .contact svg { width: 9pt; height: 9pt; flex: 0 0 9pt; position: relative; top: 0.8pt; }
+  .edu li { margin-bottom: 7pt; }
+  .edu b { display: block; font-weight: 400; }
+  .edu span { color: #333; }
+  .skills h4 {
+    font-size: 8.2pt; letter-spacing: 0.08em; text-transform: uppercase; color: #555;
+    font-weight: 400; margin: 7pt 0 3pt;
+  }
+  .skills h4:first-child { margin-top: 0; }
+  .skills ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 6pt; }
+  .skills li { display: flex; gap: 4pt; align-items: baseline; margin-bottom: 2pt; }
+  .skills li.wide { grid-column: 1 / -1; }
+  .bolt { width: 7pt; height: 8.5pt; flex: 0 0 7pt; position: relative; top: 0.6pt; }
+  .projects li { margin-bottom: 8pt; }
+  .projects b { font-weight: 700; }
+  .nowrap { white-space: nowrap; }
+</style>
+</head>
+<body>
+
+<!-- ============================== PAGE 1 ============================== -->
+<div class="page">
+  <div class="edge" aria-hidden="true"></div>
+
+  <main>
+    <h1>Michael<br>Primak</h1>
+    <p class="role">Senior Software Developer</p>
+    <p class="summary">
+      Nine years building and running web and mobile products end to end: React Native apps on both
+      app stores, TypeScript/Node APIs on PostgreSQL, Next.js front ends, and the Docker and Linux
+      infrastructure underneath. I ship LLM features into production with tests and confidence
+      gating, and I am as comfortable with clients and coordinating a team as I am in the codebase.
+    </p>
+
+    <section>
+      <h2>Work Experience</h2>
+
+      <div class="job">
+        <p class="where">Good Fights (goodfights.app) &nbsp;/&nbsp; Sept 2025 &ndash; Present &nbsp;/&nbsp; Remote</p>
+        <h3>Founder &amp; Sole Developer</h3>
+        <ul>
+          <li>Designed, built and operate the whole product: React Native (Expo) apps live on the App Store and Google Play, a Next.js web app, and a TypeScript/Node REST API on PostgreSQL with Prisma.</li>
+          <li>Grew it to 3,600+ registered users, 79,000+ fight ratings and 1,400+ written reviews, migrating the Fighting Tomatoes user base onto the new platform. The catalogue covers 15,000+ fights, 1,600+ events and 10,500+ fighters back to 1993 and is kept current by daily automations.</li>
+          <li>Built Claude-based enrichment that writes catalogue content and a preview-then-results article for every numbered UFC card, gated on a confidence score so output the model is unsure about is never published. Covered by Jest tests, including one that checks quoted material against its source.</li>
+          <li>Run 30+ scheduled jobs on the VPS for scrapers, enrichment, backups, deduplication and freshness checks, each with per-job locking and failure alerts.</li>
+          <li>Run production myself: a Docker-built API on Render, a Linux VPS under systemd and cron, Prisma migrations, Cloudflare R2 storage, push notifications, PostHog analytics, SEO and over-the-air app updates.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="where">LGBT Voice Tanzania &nbsp;/&nbsp; 2024 &ndash; Present &nbsp;/&nbsp; Remote</p>
+        <h3>Web Developer</h3>
+        <ul>
+          <li>Redesigned, built, deployed and maintain the WordPress site for an LGBT rights advocacy group, set up so a small non-technical team can publish without a developer.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <aside class="side">
+    <section class="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><a href="tel:12898382575">1-289-838-2575</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2 5h20v14H2zm2 2v.5l8 5 8-5V7zm0 2.9V17h16V9.9l-8 5z"/></svg><a href="mailto:michaelsprimak@gmail.com">michaelsprimak@gmail.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><a href="https://michaelprimak.ca">michaelprimak.ca</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm3.5 6H5v9h2.5zm-1.25-1.4a1.45 1.45 0 1 0 0-2.9 1.45 1.45 0 0 0 0 2.9zM19 12.9c0-2.6-1.4-3.9-3.3-3.9-1.2 0-2 .6-2.5 1.3V9H10.7v9h2.5v-4.7c0-1.2.5-2 1.6-2s1.5.8 1.5 2V18H19z"/></svg><a href="https://www.linkedin.com/in/michael-primak/">linkedin.com/in/michael-primak</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg><a href="https://github.com/mikeprimak">github.com/mikeprimak</a></li>
+      </ul>
+    </section>
+
+    <section class="skills">
+      <h2>Skills</h2>
+      <h4>Languages</h4>
+      <ul>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>TypeScript</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>JavaScript</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Python</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>PHP</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>SQL</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>HTML &amp; CSS</li>
+      </ul>
+      <h4>Front end &amp; mobile</h4>
+      <ul>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>React</li>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>React Native (Expo)</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Next.js</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Tailwind CSS</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>WordPress</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>WooCommerce</li>
+      </ul>
+      <h4>Back end &amp; data</h4>
+      <ul>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Node.js</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>REST APIs</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>PostgreSQL</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Prisma</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>MySQL</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Web scraping</li>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Data pipelines &amp; transformation</li>
+      </ul>
+      <h4>Artificial Intelligence</h4>
+      <ul>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>LLM features in production (Claude)</li>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Confidence gating &amp; output validation</li>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>AI-assisted development (Claude Code)</li>
+      </ul>
+      <h4>Infrastructure &amp; testing</h4>
+      <ul>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Docker</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Linux VPS</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>GitHub Actions</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Jest</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Vercel</li>
+        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Render</li>
+        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>App Store &amp; Google Play release</li>
+      </ul>
+    </section>
+
+    <section class="edu">
+      <h2>Education</h2>
+      <ul>
+        <li><b>Georgian College</b><span>Big Data Analytics</span></li>
+        <li><b>Canadian Academy of Osteopathy</b><span>Master of Osteopathic Sciences</span></li>
+        <li><b>Laurentian University</b><span>Bachelor of Human Kinetics</span></li>
+      </ul>
+    </section>
+
+  </aside>
+</div>
+
+<!-- ============================== PAGE 2 ============================== -->
+<div class="page">
+  <div class="edge" aria-hidden="true"></div>
+
+  <main>
+    <section>
+      <h2>Work Experience, continued</h2>
+
+      <div class="job">
+        <p class="where">Zerion Software &nbsp;/&nbsp; Apr 2024 &ndash; Nov 2024 &nbsp;/&nbsp; Remote</p>
+        <h3>Implementation Engineer</h3>
+        <ul>
+          <li>Adapted a mobile data-collection platform to each client's use case: worked with customers on what they were capturing and how the product should receive and process it, then made the GUI and JavaScript changes to fit.</li>
+          <li>Acted as the link between what customers asked for and what the product could do, across client and internal teams.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="where">WellnessLiving Systems Inc. &nbsp;/&nbsp; 2018 &ndash; 2020</p>
+        <h3>White Label App Dept. Coordinator</h3>
+        <ul>
+          <li>Coordinated a team of developers, designers and support staff delivering white-label mobile apps to B2B clients. Worked with those clients through delivery: gathering what they needed, translating it for engineering and design, and staying with the account through launch and support.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="where">Fighting Tomatoes &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
+        <h3>Web Developer</h3>
+        <ul>
+          <li>Built and operated the interactive fight-rating web app that Good Fights grew out of, in JavaScript, PHP, MySQL and Python: user accounts, ratings, comments and search.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <p class="where">Self-employed &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
+        <h3>Freelance Web Developer</h3>
+        <ul>
+          <li>Built and maintained business websites and WordPress/WooCommerce sites for small and mid-sized clients, owning consultation, design, build, deployment and maintenance.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2>Selected Projects</h2>
+      <ul>
+        <li><b>goodfights.app</b> - Combat-sports fight-rating platform: React Native apps on both stores, a Next.js web app and a TypeScript/Node API on PostgreSQL, with daily scrapers, live event tracking and Claude-based content. Founded, built and run solo.</li>
+        <li><b>avoidjawsurgery.com</b> - Rebuilt a slow WordPress site as dependency-free static HTML. Every page and 100 testimonials migrated word for word and fully redesigned, with sitemap and robots preserved so search rankings carried over.</li>
+        <li><b>lgbtvoicetz.org</b> - Redesigned and built the WordPress site for LGBT Voice Tanzania so a small non-technical team can publish and manage it themselves.</li>
+        <li><b>meafordosteopathy.com</b> - Business website with integrated online booking for a local health clinic.</li>
+        <li><b>michaelprimak.ca</b> - This portfolio: Next.js, TypeScript and Tailwind, statically generated, with a live section that reads real figures from the Good Fights production API.</li>
+      </ul>
+    </section>
+  </main>
+
+  <aside class="side">
+    <section>
+      <h2>Working Style</h2>
+      <ul>
+        <li style="margin-bottom:6pt">Comfortable as the solo developer who owns a product, or as one engineer on a larger team.</li>
+        <li style="margin-bottom:6pt">Have sat on both sides of the client conversation: gathering requirements from customers, and coordinating the developers and designers who deliver them.</li>
+        <li>Remote from rural Ontario, Canada, on Eastern time.</li>
+      </ul>
+    </section>
+  </aside>
+</div>
+
+</body>
+</html>

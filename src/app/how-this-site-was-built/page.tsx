@@ -5,17 +5,17 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   title: "How this site was built",
   description:
-    "The stack, the process and the AI-assisted workflow behind michaelprimak.ca — a working example of how I build.",
+    "The stack, the process and the AI-assisted workflow behind michaelprimak.ca - a working example of how I build.",
   alternates: { canonical: "/how-this-site-was-built" },
 };
 
 const stack = [
   ["Framework", "Next.js (App Router) with TypeScript, statically generated"],
   ["Styling", "Tailwind CSS with a small set of design tokens; light and dark themes"],
-  ["Type", "Poppins throughout, as on the original site — self-hosted"],
+  ["Type", "Poppins throughout, as on the original site - self-hosted"],
   ["Content", "Plain TypeScript data files, so a text change is a one-line edit"],
   ["Live data", "The hero card reads real totals from the Good Fights API, refreshed hourly"],
-  ["Hosting", "Vercel, deployed from GitHub — every push gets a preview URL"],
+  ["Hosting", "Vercel, deployed from GitHub - every push gets a preview URL"],
 ];
 
 const process = [
@@ -25,7 +25,7 @@ const process = [
   },
   {
     title: "A real design mock, approved before coding",
-    body: "The home page, a case study and the phone layout were mocked up and reviewed — including a deliberately different alternative — so the build started from a decision, not a guess.",
+    body: "The home page, a case study and the phone layout were mocked up and reviewed - including a deliberately different alternative - so the build started from a decision, not a guess.",
   },
   {
     title: "Vibe-coded, senior-reviewed",

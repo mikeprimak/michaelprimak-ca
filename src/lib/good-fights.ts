@@ -18,7 +18,7 @@ const API = "https://fightcrewapp-backend.onrender.com/api";
 export type PublicStats = {
   fightRatings: number;
   hypeRatings: number;
-  /** fightRatings + hypeRatings — shown as "user ratings". */
+  /** fightRatings + hypeRatings - shown as "user ratings". */
   totalRatings: number;
   reviews: number;
   users: number;
@@ -39,7 +39,7 @@ export type LiveStats = PublicStats & {
 // Used when the API can't be reached.
 //
 // fightsInApp/eventsInApp are lower than the raw table counts because /api/fights and
-// /api/events exclude cancelled bouts and shelved promotions — what a user can
+// /api/events exclude cancelled bouts and shelved promotions - what a user can
 // actually see in the app, which is the honest number to show on a live card.
 // The case study quotes the full database figures.
 export const FALLBACK: LiveStats = {
