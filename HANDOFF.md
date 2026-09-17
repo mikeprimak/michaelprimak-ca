@@ -43,7 +43,10 @@ Later the same day (phone pass):
   now be 37 characters (`MAX_HARD_PART_TITLE`), and the phone title size is
   `clamp(15px,4.3vw,20px)`.
 - Resume draft `resume/Michael-Primak-Resume-2col.html` + `.pdf`; Mike approved it and it
-  replaced `public/Michael-Primak-Resume.pdf` later on 2026-09-17.
+  replaced `public/Michael-Primak-Resume.pdf` later on 2026-09-17. Later still: headshot
+  (`resume/photo.png`, a 440px copy of the hero PNG) at the top of the page-1 sidebar, Education
+  moved to the page-2 sidebar to make room, and a third page with a generic cover letter signed
+  with `resume/signature.png` (lifted from Mike's old Inkscape PDF, rotated and made transparent).
 
 Third pass the same day:
 
