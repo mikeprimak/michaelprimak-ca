@@ -166,12 +166,11 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
         )}
 
         <Block heading="The big challenges" wide>
-          {/* Full width, a title that scales down on narrow phones, and a length cap in
-              projects.ts (MAX_HARD_PART_TITLE) so each heading always fits on one line. */}
+          {/* Full width; titles may wrap onto a second line. */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {project.hardParts.map((h) => (
               <div key={h.title} className="flex flex-col gap-2.5 border-t border-ink pt-5">
-                <h3 className="text-[clamp(15px,4.3vw,20px)] leading-[1.2] font-medium whitespace-nowrap md:text-[20px]">{h.title}</h3>
+                <h3 className="text-[20px] leading-[1.2] font-medium">{h.title}</h3>
                 <p className="text-[16px] text-ink2">{h.body}</p>
               </div>
             ))}

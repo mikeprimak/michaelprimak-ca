@@ -4,7 +4,7 @@
  *  Only one is in the accessibility tree at a time. */
 
 const CAPTION =
-  "Mobile app and web front-ends talk to a REST API backed by PostgreSQL; daily scrapers feed the database.";
+  "Mobile app and web front-ends talk to a REST API backed by PostgreSQL; daily automations (scrapers, Brave Search and Claude API processing) feed the database.";
 
 function Arrow({ id }: { id: string }) {
   return (
@@ -18,7 +18,7 @@ function Arrow({ id }: { id: string }) {
 
 const box = "fill-none stroke-ink";
 
-/** Stacked: the two front-ends side by side, then API, database and scrapers down the page. */
+/** Stacked: the two front-ends side by side, then API, database and automations down the page. */
 function Stacked() {
   const title = "fill-ink font-sans text-[17px]";
   const sub = "fill-ink3 font-mono text-[12px]";
@@ -42,8 +42,8 @@ function Stacked() {
         <text x="180" y="210" className={sub}>Node · Fastify · TS</text>
         <text x="180" y="330" className={title}>Database</text>
         <text x="180" y="354" className={sub}>PostgreSQL · Prisma</text>
-        <text x="180" y="446" className={title}>Daily scrapers</text>
-        <text x="180" y="470" className={sub}>VPS cron · results &amp; stats</text>
+        <text x="180" y="446" className={title}>Daily automations</text>
+        <text x="180" y="470" className={sub}>scrapers · Brave Search · Claude API</text>
       </g>
       <g fill="none" strokeWidth="1.4" className="stroke-ink3" markerEnd="url(#arch-arrow-s)">
         <path d="M90 88C90 120 140 120 140 152" />
@@ -55,7 +55,7 @@ function Stacked() {
   );
 }
 
-/** Wide: front-ends on the left, API in the middle, database on the right, scrapers below. */
+/** Wide: front-ends on the left, API in the middle, database on the right, automations below. */
 function Wide() {
   const title = "fill-ink font-sans text-[14px]";
   const sub = "fill-ink3 font-mono text-[11px]";
@@ -79,8 +79,8 @@ function Wide() {
         <text x="380" y="122" className={sub}>Node · Fastify · TS</text>
         <text x="650" y="100" className={title}>Database</text>
         <text x="650" y="122" className={sub}>PostgreSQL · Prisma</text>
-        <text x="380" y="238" className={title}>Daily scrapers</text>
-        <text x="380" y="260" className={sub}>VPS cron · results &amp; stats</text>
+        <text x="380" y="238" className={title}>Daily automations</text>
+        <text x="380" y="260" className={sub}>scrapers · Brave Search · Claude API</text>
       </g>
       <g fill="none" strokeWidth="1.2" className="stroke-ink3" markerEnd="url(#arch-arrow-w)">
         <path d="M210 56C245 56 245 106 280 106" />

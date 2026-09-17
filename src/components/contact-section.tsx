@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { contact, site } from "@/content/site";
 import { Eyebrow, Section, SectionHeading } from "./ui";
 
@@ -22,17 +21,11 @@ export function ContactSection() {
     <Section id="contact" className="flex min-h-[calc(100svh-76px)] flex-col justify-center py-24 sm:py-32">
       <Eyebrow label={contact.eyebrow} />
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
-      {/* Email and LinkedIn side by side inside a bordered pill, as on the original site;
-          they stack on narrow phones. */}
+      {/* The email address inside a bordered pill, as on the original site. */}
       <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-5 rounded-[32px] border border-line bg-bg2 px-7 py-7 sm:px-12 sm:py-8" data-no-read>
         <a href={`mailto:${site.email}`} className={item}>
           <EnvelopeIcon />
           <span className={label}>{site.email}</span>
-        </a>
-        <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className={item}>
-          {/* Black on transparent, so it inverts for dark mode. */}
-          <Image src={contact.linkedinIcon} alt="" width={28} height={28} className="size-7 dark:invert" />
-          <span className={label}>LinkedIn</span>
         </a>
       </div>
     </Section>

@@ -55,6 +55,20 @@ Third pass the same day:
 - Experience logo tiles are 176x88 on desktop and 144x72 on phones (were 104x52), the same
   tile the Good Fights card uses.
 
+Fourth pass the same day:
+
+- The green dot on the Good Fights card pulses (`.live-dot` in globals.css; still under
+  reduced motion).
+- Contact section is the email address only; the LinkedIn link and `contact.linkedinIcon`
+  are gone (the hero still links LinkedIn and GitHub).
+- "Daily scrapers" is now "daily automations (scrapers, Brave Search and Claude API
+  processing)" wherever the site or the two-column resume mentions it, including both
+  architecture drawings. Mike's rule: any phrase for the daily jobs must cover all three.
+- "The big challenges" titles may wrap; the one-line rule and `MAX_HARD_PART_TITLE` guard are
+  gone because Mike supplied a 44-character title.
+- Copy: Good Fights problem and third challenge; Avoid Jaw Surgery first bullet; Meaford
+  problem, bullets and first challenge.
+
 ---
 
 # Contact form (REMOVED 2026-09-15)

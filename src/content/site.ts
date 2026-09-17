@@ -85,7 +85,7 @@ export const experience = {
       org: "Good Fights",
       logo: "/logos/good-fights.png",
       logoBg: "#181818",
-      role: "I built and maintain the Good Fights app. It's on iOS, Android and Web, has thousands of real users and is updated daily by scrapers, LLM enrichment and an automated maintenance system. React Native, Node/TS, Postgres, Next.js.",
+      role: "I built and maintain the Good Fights app. It's on iOS, Android and Web, has thousands of real users and is kept current by daily automations (scrapers, Brave Search and Claude API processing) and an automated maintenance system. React Native, Node/TS, Postgres, Next.js.",
       type: "Developer" as Role,
     },
     {
@@ -128,6 +128,5 @@ export const experience = {
 export const contact = {
   eyebrow: "Get in Touch",
   heading: "Contact Me",
-  /** Email and LinkedIn side by side in a bordered pill, as on the original site. */
-  linkedinIcon: "/icon-linkedin.png",
+  /** Just the email address in a bordered pill. */
 };

@@ -87,7 +87,7 @@ export const projects: Project[] = [
       {
         label: "Stack",
         value:
-          "React Native (Expo), Node/Fastify in TypeScript, PostgreSQL + Prisma, Next.js, Docker on Render, a Linux VPS for scrapers and live trackers, Cloudflare R2",
+          "React Native (Expo), Node/Fastify in TypeScript, PostgreSQL + Prisma, Next.js, Docker on Render, a Linux VPS for the daily automations and live trackers, Cloudflare R2",
       },
     ],
     links: [
@@ -99,7 +99,7 @@ export const projects: Project[] = [
       },
     ],
     problem: [
-      "Film fans have Rotten Tomatoes. Fight fans had nothing - no place to rate an individual fight, see what the crowd thought, or see what's hyped on the upcoming events.",
+      "Film fans have Rotten Tomatoes. Fight fans had nothing - no place to rate an individual fight, see what the crowd thought, or see what's hyped in upcoming weeks.",
       "Fighting Tomatoes, my earlier web version, proved people wanted this. Good Fights is the mobile-first successor, with advanced functionality and user reach.",
     ],
     shipped: [
@@ -107,7 +107,7 @@ export const projects: Project[] = [
       "Migrated thousands of users from the legacy system. Now Good Fights has {users} registered users who have submitted {totalRatings} fight ratings on {fightsInApp} fights dating back to 1993.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
       "Claude-based enrichment that writes fight, fighter and event detail, gated on a confidence score so nothing the model is unsure about is published - with unit tests that check its output, including one that verifies quoted material is real.",
-      "More than 30 scheduled jobs on the VPS, each with per-job locking and failure alerts, running the scrapers, enrichment, database backups, deduplication and content-freshness checks.",
+      "More than 30 scheduled jobs on the VPS, each with per-job locking and failure alerts, running the scrapers, Brave Search lookups, Claude API enrichment, database backups, deduplication and content-freshness checks.",
       "A Remotion video pipeline that renders promo clips from live database data, with generated voice-over, plus an automated content system that writes an SEO-focused preview and results article for every numbered UFC card and refreshes a monthly fighter-rankings article from live data.",
       "Over-the-air updates so fixes reach users without a new store submission.",
     ],
@@ -122,8 +122,8 @@ export const projects: Project[] = [
         body: "A first-time user has to grasp what they are looking at and what to do, without having to figure it out. This meant limiting feature creep and creating a UI optimized for immediate, intuitive understanding.",
       },
       {
-        title: "Working out what users actually want",
-        body: "Identifying needs in the marketplace and valuable use cases for Good Fights. Nobody hands you the requirements for this. Identifying what combat-sports fans want, building it, watching how it really gets used, and adjusting - it is continuous work, not a question that was settled at launch.",
+        title: "Developing functionality users actually want",
+        body: "Identifying valuable use cases for Good Fights and building clean solutions. Good Fights started as rating historic fights only, but has expanded to include hyping upcoming fights, comments, fighter walkout notifications and more. Each of these was built out in response to user feedback.",
       },
     ],
     outcome: [
@@ -198,7 +198,7 @@ export const projects: Project[] = [
       "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. With the advent of AI coding, a newer, simple HTML website became the direction of least resistance.",
     ],
     shipped: [
-      "Every page and all 100 testimonials migrated word-for-word, with source links preserved.",
+      "All content migrated word-for-word.",
       "A complete visual redesign: modern dark theme, responsive, with a mobile menu and scroll-to-top.",
       "Plain HTML, CSS and JavaScript - super light and fast, no dependencies, no build step. It can be hosted anywhere for next to nothing.",
       "Sitemap and robots set up so search rankings carried over.",
@@ -244,18 +244,17 @@ export const projects: Project[] = [
       { label: "Source on GitHub", href: "https://github.com/mikeprimak/MeafordOsteopathy" },
     ],
     problem: [
-      "A one-practitioner clinic needed what most small businesses need: a site that says what the clinic does, where it is, and lets patients book.",
+      "An osteopath needs a simple website that communicates critical information effectively and lets patients book an appointment.",
     ],
     shipped: [
       "Pages for services, the practitioner, location and contact - written to be found by local search.",
       "An integrated booking system so patients can book appointments directly from the site.",
       "Google Analytics and a Google Business Profile, set up and integrated so the clinic shows up in local search and can see how the site is used.",
-      "A design the client could keep updating with simple edits.",
     ],
     hardParts: [
       {
         title: "Ultra Easy To Use",
-        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters - the booking button, phone number, email, opening hours, where the clinic is, and what it actually does - is concise, clear and on the home page, so anyone can use the website without searching it.",
+        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters - the clinic location, phone number, open hours, services and the booking button - is on the home page, so anyone using the website will immediately find what they need.",
       },
       {
         title: "Keeping it simple",
@@ -271,21 +270,8 @@ export const projects: Project[] = [
   },
 ];
 
-/**
- * "The big challenges" titles are laid out three across on desktop and must fit on one
- * line (Mike, 2026-09-09). 37 characters is the longest that fits at the sizes in
- * src/app/work/[slug]/page.tsx; the build fails rather than ship a wrapped title.
- */
-export const MAX_HARD_PART_TITLE = 37;
-for (const p of projects) {
-  for (const h of p.hardParts) {
-    if (h.title.length > MAX_HARD_PART_TITLE) {
-      throw new Error(
-        `projects.ts: "${h.title}" (${p.slug}) is ${h.title.length} characters; hard-part titles must be ${MAX_HARD_PART_TITLE} or fewer so they fit on one line.`,
-      );
-    }
-  }
-}
+// "The big challenges" titles wrap onto a second line when they need to (Mike supplied a
+// 44-character title on 2026-09-17, which ended the earlier one-line rule).
 
 export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
 export const otherProjects = projects.filter((p) => p !== featuredProject);

@@ -113,7 +113,7 @@
           <li>Designed, built and operate the whole product: React Native (Expo) apps live on the App Store and Google Play, a Next.js web app, and a TypeScript/Node REST API on PostgreSQL with Prisma.</li>
           <li>Grew it to 3,600+ registered users, 79,000+ fight ratings and 1,400+ written reviews, migrating the Fighting Tomatoes user base onto the new platform. The catalogue covers 15,000+ fights, 1,600+ events and 10,500+ fighters back to 1993 and is kept current by daily automations.</li>
           <li>Built Claude-based enrichment that writes catalogue content and a preview-then-results article for every numbered UFC card, gated on a confidence score so output the model is unsure about is never published. Covered by Jest tests, including one that checks quoted material against its source.</li>
-          <li>Run 30+ scheduled jobs on the VPS for scrapers, enrichment, backups, deduplication and freshness checks, each with per-job locking and failure alerts.</li>
+          <li>Run 30+ scheduled jobs on the VPS for scrapers, Brave Search lookups, Claude API enrichment, backups, deduplication and freshness checks, each with per-job locking and failure alerts.</li>
           <li>Run production myself: a Docker-built API on Render, a Linux VPS under systemd and cron, Prisma migrations, Cloudflare R2 storage, push notifications, PostHog analytics, SEO and over-the-air app updates.</li>
         </ul>
       </div>
@@ -245,7 +245,7 @@
     <section class="projects">
       <h2>Selected Projects</h2>
       <ul>
-        <li><b>goodfights.app</b> - Combat-sports fight-rating platform: React Native apps on both stores, a Next.js web app and a TypeScript/Node API on PostgreSQL, with daily scrapers, live event tracking and Claude-based content. Founded, built and run solo.</li>
+        <li><b>goodfights.app</b> - Combat-sports fight-rating platform: React Native apps on both stores, a Next.js web app and a TypeScript/Node API on PostgreSQL, with daily automations (scrapers, Brave Search and Claude API processing) and live event tracking. Founded, built and run solo.</li>
         <li><b>avoidjawsurgery.com</b> - Rebuilt a slow WordPress site as dependency-free static HTML. Every page and 100 testimonials migrated word for word and fully redesigned, with sitemap and robots preserved so search rankings carried over.</li>
         <li><b>lgbtvoicetz.org</b> - Redesigned and built the WordPress site for LGBT Voice Tanzania so a small non-technical team can publish and manage it themselves.</li>
         <li><b>meafordosteopathy.com</b> - Business website with integrated online booking for a local health clinic.</li>

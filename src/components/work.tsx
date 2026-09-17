@@ -65,7 +65,7 @@ function LiveNumbers({ stats }: { stats: LiveStats }) {
       <p className="mt-2.5 flex items-center justify-center gap-2 text-[13px] text-ink3 sm:justify-start">
         <span
           aria-hidden="true"
-          className="inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b] shadow-[0_0_0_3px_rgba(47,158,91,0.18)]"
+          className="live-dot inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b]"
         />
         {stats.live ? "Live from the Good Fights server" : "Last known values from the Good Fights server"}
       </p>
