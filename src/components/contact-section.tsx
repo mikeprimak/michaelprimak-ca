@@ -22,7 +22,7 @@ export function ContactSection() {
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
       {/* Email and LinkedIn side by side inside a bordered pill, as on the original site;
           they stack on narrow phones. */}
-      <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-5 rounded-[32px] border border-line bg-bg2 px-8 py-6 sm:px-12" data-no-read data-bounce>
+      <div className="mx-auto flex w-fit max-w-full flex-wrap items-center justify-center gap-x-10 gap-y-5 rounded-[32px] border border-line bg-bg2 px-8 py-6 sm:px-12" data-no-read>
         <a href={`mailto:${site.email}`} className={item}>
           <EnvelopeIcon />
           <span className={label}>{site.email}</span>

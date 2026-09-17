@@ -18,7 +18,6 @@ export function Experience() {
                 wordmarks stay readable in dark mode; a row can set `logoBg` for its brand colour. */}
             <span
               className="flex h-[52px] w-[104px] items-center justify-center rounded-lg border border-line bg-white p-1.5"
-              data-bounce
               style={"logoBg" in row ? { backgroundColor: row.logoBg } : undefined}
             >
               <Image src={row.logo} alt={`${row.org} logo`} width={400} height={200} sizes="104px" className="h-full w-full object-contain" />
@@ -27,7 +26,7 @@ export function Experience() {
               {row.org}
               <small className="mt-0.5 block text-[15px] text-ink2">{row.role}</small>
             </span>
-            <span className="justify-self-start rounded-full border border-line px-2.5 py-1 font-mono text-[11.5px] tracking-[0.06em] whitespace-nowrap text-ink2 uppercase" data-bounce>
+            <span className="justify-self-start rounded-full border border-line px-2.5 py-1 font-mono text-[11.5px] tracking-[0.06em] whitespace-nowrap text-ink2 uppercase">
               {row.type}
             </span>
           </li>

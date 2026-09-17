@@ -66,7 +66,7 @@ export function Button({
   ].join(" ");
   if (href && external) {
     return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={cls} onClick={onClick} data-no-read data-bounce>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={cls} onClick={onClick} data-no-read>
         {children}
         {tail}
       </a>
@@ -74,14 +74,14 @@ export function Button({
   }
   if (href) {
     return (
-      <SectionLink href={href} className={cls} onClick={onClick} data-no-read data-bounce>
+      <SectionLink href={href} className={cls} onClick={onClick} data-no-read>
         {children}
         {tail}
       </SectionLink>
     );
   }
   return (
-    <button className={cls} onClick={onClick} data-no-read data-bounce {...rest}>
+    <button className={cls} onClick={onClick} data-no-read {...rest}>
       {children}
       {tail}
     </button>
