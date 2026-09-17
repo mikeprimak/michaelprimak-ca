@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { featuredProject, otherProjects, type Project } from "@/content/projects";
 import { experience, work } from "@/content/site";
+import { getLiveStats, type LiveStats } from "@/lib/good-fights";
 import { Eyebrow, Section, SectionHeading, TextLink } from "./ui";
 
 export function PhoneFrames({ tall = false }: { tall?: boolean }) {
@@ -38,6 +39,36 @@ function FeaturedShots({ project }: { project: Project }) {
           className={phone ? "h-auto w-24 rounded-2xl sm:w-[150px]" : "h-auto w-full rounded-xl"}
         />
       ))}
+    </div>
+  );
+}
+
+const fmt = new Intl.NumberFormat("en-CA");
+
+/** Users, ratings and fights from the Good Fights API (hourly; see src/lib/good-fights.ts). */
+function LiveNumbers({ stats }: { stats: LiveStats }) {
+  const items = [
+    { value: stats.users, label: "users" },
+    { value: stats.totalRatings, label: "ratings" },
+    { value: stats.fightsInApp, label: "fights" },
+  ];
+  return (
+    <div className="mb-7">
+      <dl className="mx-auto grid max-w-[420px] grid-cols-3 gap-3 sm:mx-0">
+        {items.map((it) => (
+          <div key={it.label} className="rounded-2xl border border-line bg-bg px-3 py-4 text-center">
+            <dd className="serif mb-1 text-[26px] leading-none sm:text-[30px]">{fmt.format(it.value)}</dd>
+            <dt className="text-[13px] text-ink3">{it.label}</dt>
+          </div>
+        ))}
+      </dl>
+      <p className="mt-2.5 flex items-center justify-center gap-2 text-[13px] text-ink3 sm:justify-start">
+        <span
+          aria-hidden="true"
+          className="inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b] shadow-[0_0_0_3px_rgba(47,158,91,0.18)]"
+        />
+        {stats.live ? "Live from the Good Fights server" : "Last known values from the Good Fights server"}
+      </p>
     </div>
   );
 }
@@ -85,8 +116,9 @@ function Thumb({ project }: { project: Project }) {
   );
 }
 
-export function Work() {
+export async function Work() {
   const f = featuredProject;
+  const stats = f.architecture === "good-fights" ? await getLiveStats() : null;
   // The featured card shows the same logo tile as the project's row in Experience.
   const logo = experience.timeline.find((row) => row.org === f.title);
   return (
@@ -113,6 +145,7 @@ export function Work() {
           </h3>
           <p className="mb-[22px] text-ink2">{f.summary}</p>
           <p className="mb-7 text-[15px] text-ink3">{f.kind}</p>
+          {stats && <LiveNumbers stats={stats} />}
           <TextLink href={`/work/${f.slug}`}>Read the case study</TextLink>
         </div>
         <FeaturedShots project={f} />

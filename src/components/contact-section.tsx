@@ -16,8 +16,10 @@ const item = "inline-flex items-center gap-3 text-[19px] font-medium text-ink ho
 const label = "border-b border-line pb-0.5";
 
 export function ContactSection() {
+  // Tall enough to fill the screen below the header, with the content centred, so jumping
+  // to #contact lands with clear space above and below the pill.
   return (
-    <Section id="contact">
+    <Section id="contact" className="flex min-h-[calc(100svh-76px)] flex-col justify-center py-24 sm:py-32">
       <Eyebrow label={contact.eyebrow} />
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
       {/* Email and LinkedIn side by side inside a bordered pill, as on the original site;

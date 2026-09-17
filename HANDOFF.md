@@ -7,6 +7,25 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
 
 ---
 
+# Changes on 2026-09-17
+
+- Bouncing ball removed (the 2026-09-16 commit was reverted; nothing of it remains).
+- Headshot `public/mike-primak.png`: the cutout had one or two pixels of light photo background
+  left around the head, which read as a pale outline in dark mode. The alpha mask was shrunk by
+  2 px and feathered (scipy erosion + 0.7 px gaussian). If the photo is ever replaced, check the
+  edge on a dark background before shipping it.
+- Hero title is "Senior Software Developer".
+- About Me: one photo (about-1) beside the text instead of three in a row; about-2 and about-3
+  deleted from public/. Experience card says "9+ Years Professional Software Development".
+  New bio copy from Mike (the "data flow, transformation & analysis" version).
+- Good Fights card on the home page shows live users / ratings / fights from the production API
+  (`LiveNumbers` in src/components/work.tsx; same hourly fetch as the case study). `Work` is now
+  an async server component.
+- Contact section fills the screen below the header and centres the pill, so #contact lands
+  with even space above and below.
+
+---
+
 # Contact form (REMOVED 2026-09-15)
 
 Mike asked for the form to go. The Contact section is now just the email address and a

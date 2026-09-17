@@ -36,7 +36,7 @@ export const nav = [
  */
 export const hero = {
   greeting: "Hello, I'm",
-  title: "Web & Mobile Developer",
+  title: "Senior Software Developer",
   tagline: "Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
@@ -52,22 +52,18 @@ export const hero = {
 export const about = {
   eyebrow: "Get To Know More",
   heading: "About Me",
-  /** Three 4:5 photos shown in a row (public/about-*.jpg, 800x1000). */
-  photos: [
-    { src: "/about-1.jpg", alt: "Michael with his kids in the woods, looking at a mushroom" },
-    { src: "/about-2.jpg", alt: "Michael and his child in the car on a winter day" },
-    { src: "/about-3.jpg", alt: "Michael skating with his daughter on a frozen lake" },
-  ],
+  /** One 4:5 photo beside the text (public/about-1.jpg, 800x1000). */
+  photo: { src: "/about-1.jpg", alt: "Michael with his kids in the woods, looking at a mushroom" },
   cards: [
-    { title: "Experience", lines: ["8+ years software development."] },
+    { title: "Experience", lines: ["9+ Years Professional Software Development"] },
     {
       title: "Education",
       lines: ["College Diploma - Big Data Analytics", "College Diploma - Osteopathy", "Bachelors Degree - Human Kinetics"],
     },
   ],
   paragraphs: [
-    "I'm a programmer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project, on the web, iOS and Android. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
-    "I have worked for software companies in developer and coordinator roles, so I have experience with code, clients and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data analysis and business websites. I am confident I can be the developer your team needs.",
+    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
+    "I have worked for software companies in developer and coordinator roles, so I have experience with code, clients and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data flow, transformation & analysis. I am confident I can be the developer your team needs.",
   ],
 };
 

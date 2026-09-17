@@ -44,7 +44,7 @@ export const projects: Project[] = [
     slug: "good-fights",
     title: "Good Fights",
     summary:
-      "A fight-tracking app for combat-sports fans. Live on the App Store and Google Play, kept current with data extraction and LLM enrichment.",
+      "A fight-tracking app for combat-sports fans. It's live on the App Store and Google Play, and is kept current daily by an automated system.",
     deck: "A fight-rating app for combat-sports fans — live on the App Store and Google Play, with a catalogue going back to 1993.",
     tags: [
       "React Native · Expo",
