@@ -47,6 +47,16 @@ Later the same day (phone pass):
   (`resume/photo.png`, a 440px copy of the hero PNG) at the top of the page-1 sidebar, Education
   moved to the page-2 sidebar to make room, and a third page with a generic cover letter signed
   with `resume/signature.png` (lifted from Mike's old Inkscape PDF, rotated and made transparent).
+  The letter's "learn quickly" and "I love making beautiful, functional..." passages are Mike's own
+  words from his old letter; keep them. Frame rules: right edge on every page, top rule on the first
+  page and bottom rule on the last, both running to the page's right edge (`.page.first`, `.page.last`).
+  Reprint: same Chrome command as note 5 below with `resume/Michael-Primak-Resume-2col.html` as input and
+  `resume/Michael-Primak-Resume-2col.pdf` as output, then copy over `public/Michael-Primak-Resume.pdf`.
+- Good Fights logo: `public/logos/good-fights.png` is now the horizontal wordmark Mike supplied
+  (opaque #181818 background, matches the tile). Used by the Experience row and the featured card.
+
+**Status 2026-09-17 (end of day): everything above is live.** Nothing pending on the site. The
+job-search side (C:/Users/avoca/job-search/README.md) is where the next work is.
 
 Third pass the same day:
 
