@@ -163,12 +163,12 @@ export const projects: Project[] = [
         body: "I am in Canada; the organization and its web host are in Tanzania. Anything that touches hosting, DNS or server access goes through the host by email, so a step that takes minutes in the same room takes days. Every question had to be asked up front and the work planned in batches, so nothing sat waiting on a reply.",
       },
       {
-        title: "Making it look like something",
-        body: "An advocacy group has to look credible and cared-for to be taken seriously, with no design team and no budget. Most of the effort went into the visual design - getting it to feel considered rather than templated.",
+        title: "Built for hand-off",
+        body: "The measure of success was the team not needing me afterwards: a simple theme, sensible defaults and no custom code to break.",
       },
       {
-        title: "Gathering their story into one place",
-        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. Finding it, judging what belonged, and shaping it into pages that read as one coherent account of who they are and what they do was as much editorial and content work as it was development.",
+        title: "All their content, beautifully told",
+        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. I gathered it, judged what belonged, and shaped it into pages that read as one coherent account of who they are and what they do. Then it had to look the part: an advocacy group has to appear credible and cared-for to be taken seriously, with no design team and no budget, so much of the effort went into a design that feels considered rather than templated and communicates their work and the coverage it has earned.",
       },
     ],
     outcome: [{ value: "Live", label: "and maintained by the organization" }],
