@@ -42,8 +42,8 @@ Later the same day (phone pass):
   both resumes replaced with a plain hyphen (Mike's rule, 2026-09-17). Challenge titles may
   now be 37 characters (`MAX_HARD_PART_TITLE`), and the phone title size is
   `clamp(15px,4.3vw,20px)`.
-- Resume draft `resume/Michael-Primak-Resume-2col.html` + `.pdf` committed but NOT yet copied
-  over `public/Michael-Primak-Resume.pdf`; Mike is still reviewing it.
+- Resume draft `resume/Michael-Primak-Resume-2col.html` + `.pdf`; Mike approved it and it
+  replaced `public/Michael-Primak-Resume.pdf` later on 2026-09-17.
 
 Third pass the same day:
 
@@ -299,8 +299,10 @@ Mike's list, all done and pushed:
    repo public or delete the page.
 4. **Listen buttons** use the browser's own voices; quality varies by device. If a
    consistent voice matters, pre-generate audio per section with a paid TTS service.
-5. **`resume/Michael-Primak-Resume.html` is the source of the PDF.** If you edit it,
-   regenerate with headers off — Chrome's print dialog otherwise bakes in a date stamp
+5. **`resume/Michael-Primak-Resume-2col.html` is the source of the PDF** (since 2026-09-17;
+   the older single-column `Michael-Primak-Resume.html` is kept for reference only). Print it
+   to `resume/Michael-Primak-Resume-2col.pdf`, then copy that over `public/Michael-Primak-Resume.pdf`.
+   Regenerate with headers off — Chrome's print dialog otherwise bakes in a date stamp
    and your local file path:
    ```powershell
    Start-Process -Wait -FilePath "C:\Program Files\Google\Chrome\Application\chrome.exe" -ArgumentList @("--headless=new","--disable-gpu","--no-first-run","--user-data-dir=$env:TEMP\chrome-headless-profile","--no-pdf-header-footer","--print-to-pdf=C:\Users\avoca\mpnew\public\Michael-Primak-Resume.pdf","file:///C:/Users/avoca/mpnew/resume/Michael-Primak-Resume.html")
