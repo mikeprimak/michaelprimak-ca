@@ -168,7 +168,7 @@ export const projects: Project[] = [
       },
       {
         title: "All their content, beautifully told",
-        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. I gathered it, judged what belonged, and shaped it into pages that read as one coherent account of who they are and what they do. Then it had to look the part: an advocacy group has to appear credible and cared-for to be taken seriously, with no design team and no budget, so much of the effort went into a design that feels considered rather than templated and communicates their work and the coverage it has earned.",
+        body: "What existed about the organization was scattered across the web: coverage, references and material published elsewhere. I gathered it, judged what belonged, and shaped it into pages that read as one coherent account of who they are and what they do. Then it had to look the part: an advocacy group has to appear credible and cared-for to be taken seriously, with no design team and no budget, so much of the effort went into a design that feels considered.",
       },
     ],
     outcome: [{ value: "Live", label: "and maintained by the organization" }],
@@ -178,7 +178,7 @@ export const projects: Project[] = [
     title: "Avoid Jaw Surgery",
     summary:
       "I converted and restyled a legacy WordPress site to a fast, dependency-free static HTML page. Now editable with AI coding tools, this makes it easier to maintain and edit going forward.",
-    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML - every page migrated word-for-word and redesigned.",
+    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML - every page migrated word-for-word and visually redesigned.",
     tags: ["Static HTML", "AI-assisted", "Migration"],
     kind: "Static Rebuild · AI-Assisted",
     image: {

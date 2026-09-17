@@ -18,7 +18,7 @@ export function ContactSection() {
   // Tall enough to fill the screen below the header, with the content centred, so jumping
   // to #contact lands with clear space above and below the pill.
   return (
-    <Section id="contact" className="flex min-h-[calc(100svh-76px)] flex-col justify-center py-24 sm:py-32">
+    <Section id="contact" className="flex min-h-[calc(100svh-76px)] flex-col justify-center pt-24 pb-40 sm:pt-32 sm:pb-52">
       <Eyebrow label={contact.eyebrow} />
       <SectionHeading className="mb-9 sm:mb-12">{contact.heading}</SectionHeading>
       {/* The email address inside a bordered pill, as on the original site. */}
