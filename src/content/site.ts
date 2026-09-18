@@ -58,7 +58,8 @@ export const about = {
     { title: "Experience", lines: ["9+ Years Professional Software Development"] },
     {
       title: "Education",
-      lines: ["College Diploma - Big Data Analytics", "College Diploma - Osteopathy", "Bachelors Degree - Human Kinetics"],
+      /** "\n" is a deliberate break: credential on one line, subject on the next. */
+      lines: ["College Diploma\nBig Data Analytics", "College Diploma\nOsteopathy", "Bachelors Degree\nHuman Kinetics"],
     },
   ],
   paragraphs: [

@@ -23,9 +23,9 @@ export function About() {
             {about.cards.map((c) => (
               <div key={c.title} className="rounded-2xl border border-line bg-bg2 px-6 py-6 text-center">
                 <h3 className="mb-2 text-xl font-medium">{c.title}</h3>
-                <ul className="flex flex-col gap-1 text-[15px] text-ink2">
+                <ul className="flex flex-col gap-2 text-[15px] leading-snug text-ink2">
                   {c.lines.map((l) => (
-                    <li key={l}>{l}</li>
+                    <li key={l} className="whitespace-pre-line">{l}</li>
                   ))}
                 </ul>
               </div>
