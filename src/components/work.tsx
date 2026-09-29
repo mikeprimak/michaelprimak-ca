@@ -90,8 +90,9 @@ function Thumb({ project }: { project: Project }) {
     );
   }
   if (project.image?.kind === "logo" || project.image?.kind === "artwork") {
-    // Blending only suits logos drawn on white; it turns artwork muddy in light mode.
-    const blend = project.image.kind === "logo" ? "mix-blend-multiply dark:mix-blend-normal" : "";
+    // Logos sit on a white square, matching the Experience tiles. No blend mode: multiply
+    // used to tint their white backgrounds with the beige of the tile behind them.
+    const tile = project.image.kind === "logo" ? "bg-white" : "";
     return (
       <div className="flex h-[220px] items-center justify-center rounded-2xl bg-bg2 p-6">
         {/* Fixed square so every logo reads the same size regardless of its own proportions. */}
@@ -101,7 +102,7 @@ function Thumb({ project }: { project: Project }) {
           width={240}
           height={240}
           sizes="160px"
-          className={["size-40 rounded-lg object-contain dark:rounded-xl", blend].join(" ")}
+          className={["size-40 rounded-lg object-contain dark:rounded-xl", tile].join(" ")}
         />
       </div>
     );
