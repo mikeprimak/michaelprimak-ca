@@ -7,9 +7,9 @@ export const site = {
   name: "Michael Primak",
   legalName: "Michael Primak",
   url: "https://michaelprimak.ca",
-  title: "Michael Primak - Senior full-stack developer",
+  title: "Michael Primak - Full-stack developer",
   description:
-    "Senior full-stack developer in Ontario, Canada. React Native, TypeScript, Node and Postgres - shipped to the App Store and Google Play, with LLM features running in production.",
+    "Full-stack developer in Ontario, Canada, building and shipping web and mobile products since 2016. React Native, TypeScript, Node and Postgres - shipped to the App Store and Google Play, with LLM features running in production.",
   location: "Ontario, Canada",
   email: "michaelsprimak@gmail.com",
   phone: "1-289-838-2575",
@@ -36,7 +36,7 @@ export const nav = [
  */
 export const hero = {
   greeting: "Hello, I'm",
-  title: "Senior Software Developer",
+  title: "Full-Stack Developer",
   tagline: "Ontario, Canada - Remote",
   headline: "I design, build, run and maintain software.",
   /** Opens the resume PDF in a new tab. */
@@ -55,7 +55,7 @@ export const about = {
   /** One 4:5 photo beside the text (public/about-1.jpg, 800x1000). */
   photo: { src: "/about-1.jpg", alt: "Michael with his kids in the woods, looking at a mushroom" },
   cards: [
-    { title: "Experience", lines: ["9+ Years Professional Software Development"] },
+    { title: "Experience", lines: ["Building software since 2016"] },
     {
       title: "Education",
       /** "\n" is a deliberate break: credential on one line, subject on the next. */

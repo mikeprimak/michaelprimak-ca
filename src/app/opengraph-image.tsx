@@ -21,7 +21,7 @@ async function loadFont(family: string, text: string): Promise<ArrayBuffer | und
 }
 
 export default async function OpenGraphImage() {
-  const text = `${hero.headline}${site.name}${site.url}Senior full-stack developer · Remote, Canada`;
+  const text = `${hero.headline}${site.name}${site.url}Full-stack developer · Remote, Canada`;
   const serif = await loadFont("Poppins:wght@600", text);
 
   return new ImageResponse(
@@ -40,7 +40,7 @@ export default async function OpenGraphImage() {
         }}
       >
         <div style={{ display: "flex", fontSize: 24, letterSpacing: 2, color: "#7d786e", textTransform: "uppercase" }}>
-          Senior full-stack developer · Remote, Canada
+          Full-stack developer · Remote, Canada
         </div>
         <div style={{ display: "flex", fontSize: 76, lineHeight: 1.04, letterSpacing: -1, maxWidth: 1000 }}>
           {hero.headline}
