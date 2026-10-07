@@ -206,5 +206,14 @@
   </div>
 </div>
 
+<script>
+  // Open with "?standalone" to print the resume page on its own: the cover letter is dropped and
+  // the frame closes with the bottom rule (that is public/Michael-Primak-Resume.pdf). Without it,
+  // both pages print and only the letter carries the bottom rule.
+  if (location.search.indexOf("standalone") !== -1) {
+    document.querySelector(".page.letter").remove();
+    document.querySelector(".page.first").classList.add("last");
+  }
+</script>
 </body>
 </html>

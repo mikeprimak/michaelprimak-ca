@@ -24,9 +24,13 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
 - Resume is one page plus the cover letter: Selected Projects, Working Style and the Fighting
   Tomatoes job are gone,
   jobs are single paragraphs, skills are one line per group with " / " between technologies
-  (`.skills p`, `.sep`). Page 1 is full; if copy grows, check with the unlocked-height render
-  (`.page { height: auto }`) before reprinting. Reprint command unchanged (note 5 under
-  Outstanding), then copy over `public/Michael-Primak-Resume.pdf`.
+  (`.skills p`, `.sep`). If copy grows, check with the unlocked-height render
+  (`.page { height: auto }`) before reprinting.
+- Two PDFs now print from the same HTML. `public/Michael-Primak-Resume.pdf` (the site download) is
+  the resume page alone with the frame closed top, right and bottom: print the HTML with
+  `?standalone` on the URL (a script drops the letter and adds `.last` to page 1).
+  `resume/Michael-Primak-Resume-2col.pdf` is resume + cover letter, printed without the query.
+  Same Chrome command as note 5 under Outstanding for both; nothing is copied between them.
 
 ---
 
