@@ -48,7 +48,7 @@ export const projects: Project[] = [
     title: "Good Fights",
     summary:
       "A fight-tracking app for combat-sports fans. It's live on the App Store and Google Play, and is kept current daily by an automated system.",
-    deck: "A fight-tracking app with thousands of combat-sports fan users. It's live on iOS, Android and Web, and is kept current by automated systems.",
+    deck: "A fight-tracking app for combat-sports fans. It's live on iOS, Android and Web, and is kept current by automated systems.",
     tags: [
       "React Native · Expo",
       "TypeScript",
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     ],
     shipped: [
       "iOS and Android apps from one React Native codebase.",
-      "Migrated thousands of users from the legacy system. Now Good Fights has {users} registered users who have submitted {totalRatings} fight ratings on {fightsInApp} fights dating back to 1993.",
+      "Migrated the legacy Fighting Tomatoes accounts onto the new platform. Good Fights users have submitted {totalRatings} fight ratings on {fightsInApp} fights dating back to 1993.",
       "A REST API in TypeScript on PostgreSQL, shared by the apps and the Next.js web version at goodfights.app.",
       "Claude-based enrichment that writes fight, fighter and event detail, gated on a confidence score so nothing the model is unsure about is published - with unit tests that check its output, including one that verifies quoted material is real.",
       "More than 30 scheduled jobs on the VPS, each with per-job locking and failure alerts, running the scrapers, Brave Search lookups, Claude API enrichment, database backups, deduplication and content-freshness checks.",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
     ],
     outcome: [
       { value: "{fightRatings}", label: "fight ratings submitted by users" },
-      { value: "{users}", label: "registered users" },
+      { value: "{reviews}", label: "written reviews" },
       { value: "{fights}", label: "fights catalogued across {events} events" },
     ],
   },

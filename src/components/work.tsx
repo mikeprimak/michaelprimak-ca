@@ -45,10 +45,10 @@ function FeaturedShots({ project }: { project: Project }) {
 
 const fmt = new Intl.NumberFormat("en-CA");
 
-/** Users, ratings and fights from the Good Fights API (hourly; see src/lib/good-fights.ts). */
+/** Reviews, ratings and fights from the Good Fights API (hourly; see src/lib/good-fights.ts). No user count (Mike, 2026-10-07). */
 function LiveNumbers({ stats }: { stats: LiveStats }) {
   const items = [
-    { value: stats.users, label: "users" },
+    { value: stats.reviews, label: "reviews" },
     { value: stats.totalRatings, label: "ratings" },
     { value: stats.fightsInApp, label: "fights" },
   ];
