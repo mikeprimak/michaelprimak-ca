@@ -21,7 +21,8 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
   Experience badge.
 - Experience copy: Good Fights, LGBT Voice and Zerion are Mike's 10-07 paragraphs.
   Education on the site and resume is Big Data Analytics only.
-- Resume is one page plus the cover letter: Selected Projects and Working Style sections gone,
+- Resume is one page plus the cover letter: Selected Projects, Working Style and the Fighting
+  Tomatoes job are gone,
   jobs are single paragraphs, skills are one line per group with " / " between technologies
   (`.skills p`, `.sep`). Page 1 is full; if copy grows, check with the unlocked-height render
   (`.page { height: auto }`) before reprinting. Reprint command unchanged (note 5 under
