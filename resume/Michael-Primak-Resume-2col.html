@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Michael Primak - Full-Stack Developer - Resume</title>
 <style>
-  /* Two pages, letter size. The layout follows Mike's Inkscape resume: a big name, a wide
+  /* One resume page plus a cover letter, letter size. The layout follows Mike's Inkscape resume: a big name, a wide
      main column with a narrower sidebar, and a thin rule framing the top, bottom and right
      edge of each page. Every word is real text in reading order (main column, then sidebar),
      so ATS parsers and screen readers get the content. */
@@ -38,13 +38,13 @@
   h1 {
     font-family: "DejaVu Sans", Arial, sans-serif;
     font-size: 40pt; line-height: 0.98; font-weight: 700; letter-spacing: -0.01em;
-    margin: 0 0 8pt; text-transform: uppercase;
+    margin: 0 0 6pt; text-transform: uppercase;
   }
   .role {
     font-family: "DejaVu Sans", Arial, sans-serif;
-    font-size: 15.5pt; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12pt;
+    font-size: 15.5pt; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 10pt;
   }
-  .summary { margin: 0 0 16pt; font-size: 9.8pt; }
+  .summary { margin: 0 0 14pt; font-size: 9.8pt; }
 
   h2 {
     font-family: "DejaVu Sans", Arial, sans-serif;
@@ -52,9 +52,9 @@
     margin: 0 0 9pt;
   }
   .side h2 { margin-top: 2pt; }
-  section + section { margin-top: 15pt; }
+  section + section { margin-top: 13pt; }
 
-  .job { margin-bottom: 11pt; break-inside: avoid; }
+  .job { margin-bottom: 9.5pt; break-inside: avoid; }
   .job .where { font-size: 9.2pt; color: #333; margin: 0 0 1pt; }
   .job h3 {
     font-family: "DejaVu Sans", Arial, sans-serif;
@@ -78,16 +78,12 @@
     font-weight: 400; margin: 7pt 0 3pt;
   }
   .skills h4:first-child { margin-top: 0; }
-  .skills ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 6pt; }
-  .skills li { display: flex; gap: 4pt; align-items: baseline; margin-bottom: 2pt; }
-  .skills li.wide { grid-column: 1 / -1; }
-  .bolt { width: 7pt; height: 8.5pt; flex: 0 0 7pt; position: relative; top: 0.6pt; }
-  .projects li { margin-bottom: 8pt; }
-  .projects b { font-weight: 700; }
+  /* Skills: one line per group, technologies separated by " / ". */
+  .skills p { margin: 0; line-height: 1.4; }
+  .skills .sep { color: #888; }
   .nowrap { white-space: nowrap; }
   /* 1.6in wide, nudged 0.08in left of the column centre so it sits over the text block. */
   .photo { display: block; width: 1.6in; height: auto; margin: -0.08in 0 0.16in 0.22in; }
-  .edu { margin-top: 0; }
 
   /* Cover letter page: one centred column, the same frame. */
   .letter { display: block; padding-top: 0.95in; }
@@ -102,7 +98,7 @@
 </head>
 <body>
 
-<!-- ============================== PAGE 1 ============================== -->
+<!-- ============================== PAGE 1: RESUME ============================== -->
 <div class="page first">
   <div class="edge" aria-hidden="true"></div>
 
@@ -124,30 +120,37 @@
       <div class="job">
         <p class="where">Good Fights (goodfights.app) &nbsp;/&nbsp; Sept 2025 &ndash; Present &nbsp;/&nbsp; Remote</p>
         <h3>Founder &amp; Sole Developer</h3>
-        <ul>
-          <li>Design, build, operate. React Native (Expo) on App Store and Google Play. Next.js web. TypeScript/Node REST API on PostgreSQL with Prisma.</li>
-          <li>Grew it to 3,600+ registered users, 79,000+ fight ratings and 1,400+ written reviews.</li>
-          <li>Built Claude-based enrichment that writes in-app content and SEO targeted articles.</li>
-          <li>Run 30+ scheduled jobs on the VPS for scrapers, Brave Search lookups, Claude API enrichment, backups, deduplication and freshness checks.</li>
-          <li>Run a production environment: Docker, Render, a Linux VPS, Cloudflare R2 storage, push notifications, PostHog analytics, SEO and over-the-air app updates.</li>
-        </ul>
+        <p>I was the founder and sole developer, bringing this iOS and Android app to life. I am responsible for the full stack: React Native, TypeScript, Node, Next, Postgres, Prisma, Docker, AI enrichments and all infrastructure. A demonstration of my ability to execute every stage of app development.</p>
       </div>
 
       <div class="job">
         <p class="where">LGBT Voice Tanzania &nbsp;/&nbsp; 2024 &ndash; Present &nbsp;/&nbsp; Remote</p>
-        <h3>Web Developer</h3>
-        <ul>
-          <li>Re-built an old WordPress site using a modern WordPress stack. Made the website nicer looking, more functional, more comprehensive and easy for the organization to maintain.</li>
-        </ul>
+        <h3>Volunteer Web Developer</h3>
+        <p>Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.</p>
       </div>
 
       <div class="job">
         <p class="where">Zerion Software &nbsp;/&nbsp; Apr 2024 &ndash; Nov 2024 &nbsp;/&nbsp; Remote</p>
         <h3>Implementation Engineer</h3>
-        <ul>
-          <li>Adapted a mobile data-collection platform to each client's use case: worked with customers on what they were capturing and how the product should receive and process it, then made the GUI and JavaScript changes to fit.</li>
-          <li>Worked as a member of a team on larger projects such as platform changes and developing new organizational capabilities.</li>
-        </ul>
+        <p>I worked with a small team of developers to build custom features for B2B clients. The product was a customizable data collection app. I was on calls with clients gathering requirements and writing custom code solutions.</p>
+      </div>
+
+      <div class="job">
+        <p class="where">WellnessLiving Systems Inc. &nbsp;/&nbsp; 2018 &ndash; 2020 &nbsp;/&nbsp; Hybrid</p>
+        <h3>White Label App Dept. Coordinator</h3>
+        <p>Coordinated a team of developers, designers and support staff delivering white-label mobile apps to B2B clients. Worked with those clients through delivery: gathering what they needed, translating it for engineering and design, and staying with the account through launch and support.</p>
+      </div>
+
+      <div class="job">
+        <p class="where">Fighting Tomatoes &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
+        <h3>Web Developer</h3>
+        <p>Built and operated the interactive fight-rating web app in JavaScript, PHP, MySQL and Python. This evolved into the Good Fights app.</p>
+      </div>
+
+      <div class="job">
+        <p class="where">Self-employed &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
+        <h3>Freelance Web Developer</h3>
+        <p>Built and maintained business websites and WordPress/WooCommerce sites for small and mid-sized clients, owning consultation, design, build, deployment and maintenance.</p>
       </div>
     </section>
   </main>
@@ -168,120 +171,27 @@
     <section class="skills">
       <h2>Skills</h2>
       <h4>Languages</h4>
-      <ul>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>TypeScript</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>JavaScript</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Python</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>PHP</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>SQL</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>HTML &amp; CSS</li>
-      </ul>
+      <p><span class="nowrap">TypeScript</span> <span class="sep">/</span> <span class="nowrap">JavaScript</span> <span class="sep">/</span> <span class="nowrap">Python</span> <span class="sep">/</span> <span class="nowrap">PHP</span> <span class="sep">/</span> <span class="nowrap">SQL</span> <span class="sep">/</span> <span class="nowrap">HTML &amp; CSS</span></p>
       <h4>Front end &amp; mobile</h4>
-      <ul>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>React</li>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>React Native (Expo)</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Next.js</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Tailwind CSS</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>WordPress</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>WooCommerce</li>
-      </ul>
+      <p><span class="nowrap">React</span> <span class="sep">/</span> <span class="nowrap">React Native (Expo)</span> <span class="sep">/</span> <span class="nowrap">Next.js</span> <span class="sep">/</span> <span class="nowrap">Tailwind CSS</span> <span class="sep">/</span> <span class="nowrap">WordPress</span> <span class="sep">/</span> <span class="nowrap">WooCommerce</span></p>
       <h4>Back end &amp; data</h4>
-      <ul>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Node.js</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>REST APIs</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>PostgreSQL</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Prisma</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>MySQL</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Web scraping</li>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Data pipelines &amp; transformation</li>
-      </ul>
-      <h4>Artificial Intelligence</h4>
-      <ul>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>LLM features in production</li>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Output validation</li>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>AI-assisted development</li>
-      </ul>
+      <p><span class="nowrap">Node.js</span> <span class="sep">/</span> <span class="nowrap">REST APIs</span> <span class="sep">/</span> <span class="nowrap">PostgreSQL</span> <span class="sep">/</span> <span class="nowrap">Prisma</span> <span class="sep">/</span> <span class="nowrap">MySQL</span> <span class="sep">/</span> <span class="nowrap">Web scraping</span> <span class="sep">/</span> <span class="nowrap">Data pipelines</span></p>
+      <h4>Artificial intelligence</h4>
+      <p><span class="nowrap">LLM features in production</span> <span class="sep">/</span> <span class="nowrap">Output validation</span> <span class="sep">/</span> <span class="nowrap">AI-assisted development</span></p>
       <h4>Infrastructure &amp; testing</h4>
-      <ul>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Docker</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Linux VPS</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>GitHub Actions</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Jest</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Vercel</li>
-        <li><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>Render</li>
-        <li class="wide"><svg class="bolt" viewBox="0 0 10 12" fill="currentColor" aria-hidden="true"><path d="M6 0 0 7h3.5L3 12l6-7H5.5z"/></svg>App Store &amp; Google Play release</li>
-      </ul>
-    </section>
-  </aside>
-</div>
-
-<!-- ============================== PAGE 2 ============================== -->
-<div class="page">
-  <div class="edge" aria-hidden="true"></div>
-
-  <main>
-    <section>
-      <h2>Work Experience, continued</h2>
-
-      <div class="job">
-        <p class="where">WellnessLiving Systems Inc. &nbsp;/&nbsp; 2018 &ndash; 2020 &nbsp;/&nbsp; Hybrid</p>
-        <h3>White Label App Dept. Coordinator</h3>
-        <ul>
-          <li>Coordinated a team of developers, designers and support staff delivering white-label mobile apps to B2B clients. Worked with those clients through delivery: gathering what they needed, translating it for engineering and design, and staying with the account through launch and support.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p class="where">Fighting Tomatoes &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
-        <h3>Web Developer</h3>
-        <ul>
-          <li>Built and operated the interactive fight-rating web app in JavaScript, PHP, MySQL and Python. This evolved into the Good Fights app.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <p class="where">Self-employed &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
-        <h3>Freelance Web Developer</h3>
-        <ul>
-          <li>Built and maintained business websites and WordPress/WooCommerce sites for small and mid-sized clients, owning consultation, design, build, deployment and maintenance.</li>
-        </ul>
-      </div>
+      <p><span class="nowrap">Docker</span> <span class="sep">/</span> <span class="nowrap">Linux VPS</span> <span class="sep">/</span> <span class="nowrap">GitHub Actions</span> <span class="sep">/</span> <span class="nowrap">Jest</span> <span class="sep">/</span> <span class="nowrap">Vercel</span> <span class="sep">/</span> <span class="nowrap">Render</span> <span class="sep">/</span> <span class="nowrap">App Store &amp; Google Play release</span></p>
     </section>
 
-    <section class="projects">
-      <h2>Selected Projects</h2>
-      <ul>
-        <li><b>goodfights.app</b> - Combat-sports fight-rating platform: React Native, iOS, Android, Next.js Web, TypeScript/Node API, daily automations (scrapers, Brave Search and Claude API processing) and live event tracking. Founded, built and run solo.</li>
-        <li><b>lgbtvoicetz.org</b> - Redesigned and built the WordPress site for LGBT Voice Tanzania so a small non-technical team can publish and manage it themselves.</li>
-        <li><b>meafordosteopathy.com</b> - Business website with integrated online booking for a local health clinic.</li>
-        <li><b>avoidjawsurgery.com</b> - Rebuilt a slow WordPress site as dependency-free static HTML. Made it easier for the owner to maintain with AI tools going forward.</li>
-        <li><b>michaelprimak.ca</b> - My personal website. Trying to communicate my friendly personality, extensive experience and eagerness for a new challenge.</li>
-      </ul>
-    </section>
-  </main>
-
-  <aside class="side">
     <section class="edu">
       <h2>Education</h2>
       <ul>
         <li><b>Georgian College</b><span>Big Data Analytics</span></li>
-        <li><b>Canadian Academy of Osteopathy</b><span>Master of Osteopathic Sciences</span></li>
-        <li><b>Laurentian University</b><span>Bachelor of Human Kinetics</span></li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Working Style</h2>
-      <ul>
-        <li style="margin-bottom:6pt">Most of my recent work has been solo. I am looking for my first long-term seat on an engineering team.</li>
-        <li style="margin-bottom:6pt">Experienced gathering requirements directly from clients, coordinating teams and writing code.</li>
-        <li>Remote from rural Ontario, Canada, on Eastern time.</li>
       </ul>
     </section>
   </aside>
 </div>
 
-<!-- ============================== PAGE 3: COVER LETTER ============================== -->
+<!-- ============================== PAGE 2: COVER LETTER ============================== -->
 <div class="page letter last">
   <div class="edge" aria-hidden="true"></div>
   <div class="inner">

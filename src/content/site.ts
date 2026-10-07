@@ -25,6 +25,7 @@ export const nav = [
   { label: "About Me", href: "/#about" },
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#work" },
+  { label: "Volunteer", href: "/#volunteer" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -59,7 +60,7 @@ export const about = {
     {
       title: "Education",
       /** "\n" is a deliberate break: credential on one line, subject on the next. */
-      lines: ["College Diploma\nBig Data Analytics", "College Diploma\nOsteopathy", "Bachelors Degree\nHuman Kinetics"],
+      lines: ["College Diploma\nBig Data Analytics"],
     },
   ],
   paragraphs: [
@@ -69,11 +70,18 @@ export const about = {
 };
 
 export const work = {
-  eyebrow: "Browse My Recent",
-  heading: "Projects",
+  eyebrow: "An Example Of My",
+  heading: "Full-Stack Mobile Development",
+  intro:
+    "Good Fights is an example of my full-stack mobile development work. I founded it and built every part of it, from the React Native apps to the API, database, AI enrichment and infrastructure.",
 };
 
-export type Role = "Developer" | "Coordinator";
+export const volunteer = {
+  eyebrow: "How I Give Back",
+  heading: "Volunteer",
+};
+
+export type Role = "Developer" | "Coordinator" | "Volunteer";
 
 export const experience = {
   eyebrow: "See My",
@@ -86,21 +94,21 @@ export const experience = {
       org: "Good Fights",
       logo: "/logos/good-fights.png",
       logoBg: "#181818",
-      role: "I built and maintain the Good Fights app. It's on iOS, Android and Web, has thousands of real users and is kept current by daily automations (scrapers, Brave Search and Claude API processing) and an automated maintenance system. React Native, Node/TS, Postgres, Next.js.",
+      role: "I was the founder and sole developer, bringing this iOS and Android app to life. I am responsible for the full stack: React Native, TypeScript, Node, Next, Postgres, Prisma, Docker, AI enrichments and all infrastructure. A demonstration of my ability to execute every stage of app development.",
       type: "Developer" as Role,
     },
     {
       when: "2024 – now",
       org: "LGBT Voice Tanzania",
       logo: "/logos/lgbt-voice.png",
-      role: "I redesigned and rebuilt their website using a modern WordPress framework so they can upload posts and make other changes easily.",
-      type: "Developer" as Role,
+      role: "Volunteer. Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.",
+      type: "Volunteer" as Role,
     },
     {
       when: "Apr 2024 – Nov 2024",
       org: "Zerion Software",
       logo: "/logos/zerion.png",
-      role: "I was an implementation engineer - adapting a mobile data-collection platform to individual client use cases. Talking to customers about what they were capturing, working out how the product should best receive and process it, then making the GUI and JavaScript changes to fit.",
+      role: "Implementation engineer. I worked with a small team of developers to build custom features for B2B clients. The product was a customizable data collection app. I was on calls with clients gathering requirements and writing custom code solutions.",
       type: "Developer" as Role,
     },
     {
@@ -119,11 +127,7 @@ export const experience = {
       type: "Developer" as Role,
     },
   ],
-  education: [
-    "Big Data Analytics, Georgian College",
-    "Master of Osteopathic Sciences, Canadian Academy of Osteopathy",
-    "BA Human Kinetics, Laurentian University",
-  ],
+  education: ["Big Data Analytics, Georgian College"],
 };
 
 export const contact = {

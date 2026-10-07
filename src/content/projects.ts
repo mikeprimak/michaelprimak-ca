@@ -2,7 +2,8 @@
  * Case studies. In the Good Fights entry, `{users}`, `{fightRatings}`, `{reviews}`, `{fights}`,
  * `{events}`, `{fighters}` are replaced with live numbers when the page renders
  * (src/lib/good-fights.ts), so the copy stays in step with production. To add a project: append an object here - the home page card and
- * the /work/<slug> page are generated from it. Keep `featured` on exactly one.
+ * the /work/<slug> page are generated from it. Keep `featured` on exactly one; `volunteer`
+ * entries render in the Volunteer section instead of Projects.
  * Anything in [square brackets] is a placeholder still to be filled in.
  */
 
@@ -17,6 +18,8 @@ export type Project = {
   /** Short label pair shown on the small home cards, e.g. "Business site · Booking". */
   kind: string;
   featured?: boolean;
+  /** Volunteer work: shown in the Volunteer section instead of Projects. */
+  volunteer?: boolean;
   /** Logo or icon shown on cards. Path under /public. */
   /** `logo` is blended onto the card (designed for logos on white); `artwork` is a
    *  full-bleed image such as a site screenshot and must not be blended. */
@@ -136,16 +139,17 @@ export const projects: Project[] = [
     slug: "lgbt-voice-tanzania",
     title: "LGBT Voice Tanzania",
     summary:
-      "I rebuilt a website for an LGBT+ advocacy organization on WordPress so the team can publish and manage it themselves.",
+      "Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.",
     deck: "A WordPress site for an LGBT+ advocacy organization, built so the team can run it themselves.",
     tags: ["WordPress", "Non-profit"],
     kind: "WordPress · Non-profit",
+    volunteer: true,
     image: { src: "/logo-lgbt-voice.png", alt: "LGBT Voice logo", kind: "logo" },
     screenshots: [],
     screenshotKind: "web",
     meta: [
-      { label: "Role", value: "Developer" },
-      { label: "Client", value: "LGBT Voice Tanzania" },
+      { label: "Role", value: "Volunteer developer" },
+      { label: "Organization", value: "LGBT Voice Tanzania" },
       { label: "Stack", value: "WordPress" },
     ],
     links: [{ label: "lgbtvoicetz.org", href: "https://lgbtvoicetz.org/" }],
@@ -173,106 +177,12 @@ export const projects: Project[] = [
     ],
     outcome: [{ value: "Live", label: "and maintained by the organization" }],
   },
-  {
-    slug: "avoidjawsurgery",
-    title: "Avoid Jaw Surgery",
-    summary:
-      "I converted and restyled a legacy WordPress site to a fast, dependency-free static HTML page. Now editable with AI coding tools, this makes it easier to maintain and edit going forward.",
-    deck: "A legacy WordPress site rebuilt as fast, dependency-free static HTML - every page migrated word-for-word and visually redesigned.",
-    tags: ["Static HTML", "AI-assisted", "Migration"],
-    kind: "Static Rebuild · AI-Assisted",
-    image: {
-      src: "/logo-avoidjawsurgery.png",
-      alt: "avoidjawsurgery.com wordmark: “Avoid” above “Jaw Surgery” in italic brick red",
-      kind: "logo",
-    },
-    screenshots: [],
-    screenshotKind: "web",
-    meta: [
-      { label: "Role", value: "Developer" },
-      { label: "Type", value: "WordPress → static HTML migration" },
-      { label: "Stack", value: "HTML, CSS, JavaScript - no build step, no CMS" },
-    ],
-    links: [{ label: "avoidjawsurgery.com", href: "https://avoidjawsurgery.com" }],
-    problem: [
-      "The original site ran on WordPress on shared hosting: slow, expensive, tedious to keep patched, and fragile to edit. With the advent of AI coding, a newer, simple HTML website became the direction of least resistance.",
-    ],
-    shipped: [
-      "All content migrated word-for-word.",
-      "A complete visual redesign: modern dark theme, responsive, with a mobile menu and scroll-to-top.",
-      "Plain HTML, CSS and JavaScript - super light and fast, no dependencies, no build step. It can be hosted anywhere for next to nothing.",
-      "Sitemap and robots set up so search rankings carried over.",
-    ],
-    hardParts: [
-      {
-        title: "Nothing lost in the move",
-        body: "Long pages, embedded links and testimonials had to come across exactly. The content was scraped from the live site and checked page by page.",
-      },
-      {
-        title: "Redesign without a framework",
-        body: "A modern look built with one stylesheet and no framework, so the site stays fast and stays editable by anyone who can read HTML.",
-      },
-      {
-        title: "AI-assisted, human-reviewed",
-        body: "The migration was done with Claude Code driving the repetitive work, with every page reviewed before it shipped - a fraction of the usual time for a rebuild this size.",
-      },
-    ],
-    outcome: [{ value: "Live", label: "and easier to maintain" }],
-  },
-  {
-    slug: "meaford-osteopathy",
-    title: "Meaford Osteopathy",
-    summary:
-      "A simple, communicative and functional business website for a local health clinic. Optimized for ease of finding information about the clinic and booking an appointment.",
-    deck: "A business website for a local health clinic, with online booking built in.",
-    tags: ["Business site", "Booking", "HTML · JavaScript"],
-    kind: "Business Site · Booking",
-    image: { src: "/logo-meaford-osteopathy.png", alt: "Meaford Osteopathy logo", kind: "logo" },
-    screenshots: [],
-    screenshotKind: "web",
-    meta: [
-      { label: "Role", value: "Designer & developer" },
-      { label: "Client", value: "Meaford Osteopathy - a clinic in Meaford, Ontario" },
-      { label: "Stack", value: "HTML, CSS, JavaScript, third-party booking integration" },
-      {
-        label: "Status",
-        value: "The clinic has since moved to a hosted platform. \"See the site\" opens the site as I built it, rendered from the original source.",
-      },
-    ],
-    links: [
-      { label: "See the site", href: "/demo/meaford-osteopathy" },
-      { label: "Source on GitHub", href: "https://github.com/mikeprimak/MeafordOsteopathy" },
-    ],
-    problem: [
-      "An osteopath needs a simple website that communicates critical information effectively and lets patients book an appointment.",
-    ],
-    shipped: [
-      "Pages for services, the practitioner, location and contact - written to be found by local search.",
-      "An integrated booking system so patients can book appointments directly from the site.",
-      "Google Analytics and a Google Business Profile, set up and integrated so the clinic shows up in local search and can see how the site is used.",
-    ],
-    hardParts: [
-      {
-        title: "Ultra Easy To Use",
-        body: "Many patients are older, so clarity and ease of use are everything. Everything that matters - the clinic location, phone number, open hours, services and the booking button - is on the home page, so anyone using the website will immediately find what they need.",
-      },
-      {
-        title: "Keeping it simple",
-        body: "A one-practitioner clinic does not need much: a few pages, a booking link, hours and a map. The discipline was in not adding more - no CMS, no framework, nothing to maintain - so the site stays fast and the client never pays for things they do not use.",
-      },
-      {
-        title: "Google Business Profile",
-        body: "Most patients find a local clinic through Google, not by typing in a web address. I set up and verified the clinic's Google Business Profile and connected it, along with Google Analytics, to the site - so the clinic shows up in local search and on Maps with the right hours, phone number and booking link, and can see where its visitors come from.",
-      },
-    ],
-    outcomeKind: "quote",
-    outcome: [{ value: "“Patients love it”", label: "- the client, after launch" }],
-  },
 ];
 
 // "The big challenges" titles wrap onto a second line when they need to (Mike supplied a
 // 44-character title on 2026-09-17, which ended the earlier one-line rule).
 
 export const featuredProject = projects.find((p) => p.featured) ?? projects[0];
-export const otherProjects = projects.filter((p) => p !== featuredProject);
+export const otherProjects = projects.filter((p) => p !== featuredProject && !p.volunteer);
+export const volunteerProjects = projects.filter((p) => p.volunteer);
 export const getProject = (slug: string) => projects.find((p) => p.slug === slug);

@@ -7,6 +7,28 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
 
 ---
 
+# Changes on 2026-10-07
+
+- Projects: Avoid Jaw Surgery and Meaford Osteopathy removed from `src/content/projects.ts`
+  (their `/work/...` pages now 404; the two logo PNGs are deleted). The section is Good Fights
+  only, headed "An Example Of My / Full-Stack Mobile Development" with an intro line
+  (`work.intro` in site.ts). The "others" grid in `work.tsx` renders only when a non-featured,
+  non-volunteer project exists. The Meaford static demo under `public/demo/` and its
+  `next.config.ts` rewrites are still there, unlinked; delete when convenient.
+- New Volunteer section (`src/components/volunteer.tsx`, `#volunteer`, nav + footer entry)
+  for LGBT Voice Tanzania. A project with `volunteer: true` renders there instead of Projects;
+  its case study stays at `/work/lgbt-voice-tanzania`. `Role` gained "Volunteer" for the
+  Experience badge.
+- Experience copy: Good Fights, LGBT Voice and Zerion are Mike's 10-07 paragraphs.
+  Education on the site and resume is Big Data Analytics only.
+- Resume is one page plus the cover letter: Selected Projects and Working Style sections gone,
+  jobs are single paragraphs, skills are one line per group with " / " between technologies
+  (`.skills p`, `.sep`). Page 1 is full; if copy grows, check with the unlocked-height render
+  (`.page { height: auto }`) before reprinting. Reprint command unchanged (note 5 under
+  Outstanding), then copy over `public/Michael-Primak-Resume.pdf`.
+
+---
+
 # Changes on 2026-09-17
 
 - Bouncing ball removed (the 2026-09-16 commit was reverted; nothing of it remains).

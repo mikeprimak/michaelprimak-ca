@@ -125,7 +125,7 @@ export async function Work() {
   return (
     <Section id="work">
       <Eyebrow label={work.eyebrow} readId="work" />
-      <SectionHeading className="mb-9 sm:mb-14">{work.heading}</SectionHeading>
+      <SectionHeading intro={work.intro}>{work.heading}</SectionHeading>
 
       {/* Featured */}
       <div className="mb-7 grid grid-cols-1 items-center gap-7 rounded-3xl bg-bg2 p-7 sm:p-12 lg:grid-cols-2 lg:gap-12">
@@ -152,7 +152,8 @@ export async function Work() {
         <FeaturedShots project={f} />
       </div>
 
-      {/* Others */}
+      {/* Others (none at the moment; the grid renders only when there are some) */}
+      {otherProjects.length > 0 && (
       <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
         {otherProjects.map((p) => (
           <article key={p.slug} className="flex flex-col gap-3.5">
@@ -174,6 +175,7 @@ export async function Work() {
           </article>
         ))}
       </div>
+      )}
     </Section>
   );
 }
