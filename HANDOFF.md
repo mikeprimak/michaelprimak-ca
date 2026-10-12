@@ -26,6 +26,8 @@ from the production API, and Mike's full edit list from 2026-09-09 is in (see "C
   jobs are single paragraphs, skills are one line per group with " / " between technologies
   (`.skills p`, `.sep`). If copy grows, check with the unlocked-height render
   (`.page { height: auto }`) before reprinting.
+- **2026-10-12: the site download `public/Michael-Primak-Resume.pdf` is now the two-page resume + cover letter
+  (Mike asked for the combo); the one-page standalone print is kept at `resume/Michael-Primak-Resume-standalone.pdf`.**
 - Two PDFs now print from the same HTML. `public/Michael-Primak-Resume.pdf` (the site download) is
   the resume page alone with the frame closed top, right and bottom: print the HTML with
   `?standalone` on the URL (a script drops the letter and adds `.last` to page 1).
