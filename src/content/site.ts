@@ -9,7 +9,7 @@ export const site = {
   url: "https://michaelprimak.ca",
   title: "Michael Primak - Full-stack developer",
   description:
-    "Full-stack developer in Ontario, Canada, building and shipping web and mobile products since 2016. React Native, TypeScript, Node and Postgres - shipped to the App Store and Google Play, with LLM features running in production.",
+    "Full-stack developer in Ontario, Canada, building and shipping web and mobile products since 2012. React Native, TypeScript, Node and Postgres - shipped to the App Store and Google Play, with LLM features running in production.",
   location: "Ontario, Canada",
   email: "michaelsprimak@gmail.com",
   phone: "1-289-838-2575",
