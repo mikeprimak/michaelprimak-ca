@@ -130,7 +130,8 @@ export default async function CaseStudyPage({ params }: { params: Promise<Params
             height={360}
             sizes="(min-width: 640px) 360px, 240px"
             // Keep the class list as plain strings: Tailwind ignores a class glued to a ${} expression.
-            className={["size-60 rounded-xl object-contain sm:size-[360px]", project.image.kind === "logo" ? "mix-blend-multiply dark:mix-blend-normal" : ""].join(" ")}
+            // Logos sit on white, as on the home page cards; multiply tinted their white backgrounds.
+            className={["size-60 rounded-xl object-contain sm:size-[360px]", project.image.kind === "logo" ? "bg-white" : ""].join(" ")}
           />
         ) : (
           <div

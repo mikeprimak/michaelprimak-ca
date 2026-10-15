@@ -56,16 +56,20 @@ export const about = {
   /** One 4:5 photo beside the text (public/about-1.jpg, 800x1000). */
   photo: { src: "/about-1.jpg", alt: "Michael with his kids in the woods, looking at a mushroom" },
   cards: [
-    { title: "Experience", lines: ["Building software since 2016"] },
+    {
+      title: "Experience",
+      lines: ["Began building software in 2012", "Professional software work since 2018"],
+    },
     {
       title: "Education",
       /** "\n" is a deliberate break: credential on one line, subject on the next. */
-      lines: ["College Diploma\nBig Data Analytics"],
+      lines: ["Self Taught\nSoftware Development", "College Diploma\nBig Data Analytics"],
     },
   ],
   paragraphs: [
-    "I'm a software developer who helps companies build and improve their products. I can build new from scratch or upgrade an existing project. I can design, advise and code, and I work well as a solo developer or as a member of a team.",
-    "I have worked for software companies in developer and coordinator roles, so I have experience with code, clients and managing a team. I have worked with a wide variety of projects and technologies, so I will be comfortable with any technology you require. My core competencies include web and mobile apps, APIs, web scrapers, LLM features, data flow, transformation & analysis. I am confident I can be the developer your team needs.",
+    "Hi, my name is Mike Primak. I am an experienced full-stack developer capable across a wide variety of technologies and work environments.",
+    "I have experience working in small developer teams, taking requirements directly from clients and then coding solutions. I have worked at SaaS companies as a team member, and I have also done solo jobs which demonstrate my ability to oversee and execute any part of the development process.",
+    "My core competencies include gathering requirements, system integration, data management, web and mobile apps, APIs and AI integration. I am confident I can be the developer your team needs.",
   ],
 };
 
