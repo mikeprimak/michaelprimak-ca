@@ -58,7 +58,7 @@ export const about = {
   cards: [
     {
       title: "Experience",
-      lines: ["Began building software in 2012", "Professional software work since 2018"],
+      lines: ["Building Software\nSince 2012", "Professional Work\nSince 2018"],
     },
     {
       title: "Education",
