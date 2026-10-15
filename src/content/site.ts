@@ -105,7 +105,7 @@ export const experience = {
       when: "2024 – now",
       org: "LGBT Voice Tanzania",
       logo: "/logos/lgbt-voice.png",
-      role: "Volunteer. Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.",
+      role: "Volunteer. I re-built an old WordPress site using a modern WordPress framework. I made the website nicer looking, more comprehensive and easier to maintain.",
       type: "Volunteer" as Role,
     },
     {

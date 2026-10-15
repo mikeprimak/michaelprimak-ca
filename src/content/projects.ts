@@ -47,7 +47,7 @@ export const projects: Project[] = [
     slug: "good-fights",
     title: "Good Fights",
     summary:
-      "A fight-tracking app for combat-sports fans. It's live on the App Store and Google Play, and is kept current daily by an automated system.",
+      "A fight-tracking app for combat-sports fans. It's live on the App Store and Google Play, and is kept current by an automated system.",
     deck: "A fight-tracking app for combat-sports fans. It's live on iOS, Android and Web, and is kept current by automated systems.",
     tags: [
       "React Native · Expo",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     slug: "lgbt-voice-tanzania",
     title: "LGBT Voice Tanzania",
     summary:
-      "Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.",
+      "I re-built an old WordPress site using a modern WordPress framework. I made the website nicer looking, more comprehensive and easier to maintain.",
     deck: "A WordPress site for an LGBT+ advocacy organization, built so the team can run it themselves.",
     tags: ["WordPress", "Non-profit"],
     kind: "WordPress · Non-profit",
