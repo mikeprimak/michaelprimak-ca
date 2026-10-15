@@ -33,6 +33,8 @@ export type LiveStats = PublicStats & {
   eventsInApp: number;
   /** True when the numbers came from the API on this build. */
   live: boolean;
+  /** When these numbers were fetched (or, for the fallback, last recorded). ISO string. */
+  updatedAt: string;
 };
 
 // Last known values (2026-09-09, from packages/backend/scripts/portfolio-stats.ts).
@@ -54,6 +56,7 @@ export const FALLBACK: LiveStats = {
   fightsInApp: 15348,
   eventsInApp: 1573,
   live: false,
+  updatedAt: "2026-09-09T12:00:00-04:00",
 };
 
 const opts = { next: { revalidate: 3600 }, signal: AbortSignal.timeout(5000) } as const;
@@ -81,7 +84,7 @@ export async function getLiveStats(): Promise<LiveStats> {
   if (fightsInApp.status !== "fulfilled" || eventsInApp.status !== "fulfilled") return FALLBACK;
   // /api/public-stats is newer than the other two; until it is deployed, keep the fallback counts.
   const base = stats.status === "fulfilled" ? stats.value : FALLBACK;
-  return { ...base, fightsInApp: fightsInApp.value, eventsInApp: eventsInApp.value, live: true };
+  return { ...base, fightsInApp: fightsInApp.value, eventsInApp: eventsInApp.value, live: true, updatedAt: new Date().toISOString() };
 }
 
 const fmt = new Intl.NumberFormat("en-CA");

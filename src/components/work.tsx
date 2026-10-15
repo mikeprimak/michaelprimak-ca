@@ -45,12 +45,24 @@ function FeaturedShots({ project }: { project: Project }) {
 
 const fmt = new Intl.NumberFormat("en-CA");
 
-/** Reviews, ratings and fights from the Good Fights API (hourly; see src/lib/good-fights.ts). No user count (Mike, 2026-10-07). */
+// Rendered on the server, so the time zone is pinned to Ontario rather than left to the build machine.
+// e.g. "October 15, 2026 at 1:24 PM EDT".
+const stamp = new Intl.DateTimeFormat("en-US", {
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZoneName: "short",
+  timeZone: "America/Toronto",
+});
+
+/** Users, ratings and reviews from the Good Fights API (hourly; see src/lib/good-fights.ts). Users back, fights out (Mike, 2026-10-15). */
 function LiveNumbers({ stats }: { stats: LiveStats }) {
   const items = [
-    { value: stats.reviews, label: "reviews" },
+    { value: stats.users, label: "users" },
     { value: stats.totalRatings, label: "ratings" },
-    { value: stats.fightsInApp, label: "fights" },
+    { value: stats.reviews, label: "reviews" },
   ];
   return (
     <div className="mb-7">
@@ -68,6 +80,9 @@ function LiveNumbers({ stats }: { stats: LiveStats }) {
           className="live-dot inline-block size-2 shrink-0 rounded-full bg-[#2f9e5b]"
         />
         {stats.live ? "Live from the Good Fights server" : "Last known values from the Good Fights server"}
+      </p>
+      <p className="mt-1 text-center text-[12px] text-ink3 sm:text-left">
+        Updated <time dateTime={stats.updatedAt}>{stamp.format(new Date(stats.updatedAt))}</time>
       </p>
     </div>
   );

@@ -77,7 +77,7 @@ export const work = {
   eyebrow: "An Example Of My",
   heading: "Full-Stack Mobile Development",
   intro:
-    "Good Fights is an example of my full-stack mobile development work. I founded it and built every part of it, from the React Native apps to the API, database, AI enrichment and infrastructure.",
+    "Good Fights is an example of my full-stack mobile development work. I founded it and built every part of it.",
 };
 
 export const volunteer = {
@@ -91,7 +91,7 @@ export const experience = {
   eyebrow: "See My",
   heading: "Experience",
   intro:
-    "I've written code, interfaced with customers and coordinated the team, so I am comfortable in any of these roles.",
+    "Customer Relations, Team Coordination and Full Stack Coding",
   timeline: [
     {
       when: "Sept 2025 – now",
