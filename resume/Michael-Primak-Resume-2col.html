@@ -54,7 +54,7 @@
   .side h2 { margin-top: 2pt; }
   section + section { margin-top: 13pt; }
 
-  .job { margin-bottom: 9.5pt; break-inside: avoid; }
+  .job { margin-bottom: 8pt; break-inside: avoid; }
   .job .where { font-size: 9.2pt; color: #333; margin: 0 0 1pt; }
   .job h3 {
     font-family: "DejaVu Sans", Arial, sans-serif;
@@ -70,7 +70,7 @@
   .side li { margin: 0 0 3pt; }
   .contact li { display: flex; gap: 6pt; align-items: baseline; margin-bottom: 4.5pt; }
   .contact svg { width: 9pt; height: 9pt; flex: 0 0 9pt; position: relative; top: 0.8pt; }
-  .edu li { margin-bottom: 7pt; }
+  .edu li { margin-bottom: 4pt; }
   .edu b { display: block; font-weight: 400; }
   .edu span { color: #333; }
   .skills h4 {
@@ -83,7 +83,7 @@
   .skills .sep { color: #888; }
   .nowrap { white-space: nowrap; }
   /* 1.6in wide, nudged 0.08in left of the column centre so it sits over the text block. */
-  .photo { display: block; width: 1.6in; height: auto; margin: -0.08in 0 0.16in 0.22in; }
+  .photo { display: block; width: 1.6in; height: auto; margin: -0.08in 0 0.06in 0.22in; }
 
   /* Cover letter page: one centred column, the same frame. */
   .letter { display: block; padding-top: 0.95in; }
@@ -107,12 +107,12 @@
     <h1>Michael<br>Primak</h1>
     <p class="role">Full-Stack Developer</p>
     <p class="summary">
-      Hi, my name is Mike Primak. Thank you for taking the time to read my resume. I am an experienced
-      full-stack developer capable across a wide variety of technologies and work environments. I have
-      experience working in small developer teams, taking requirements directly from clients and then
-      coding solutions. I have worked at SaaS companies, where I played a role in a larger team. I have
-      also built complex solo projects which demonstrate my ability to oversee and execute any part of
-      the development process.
+      Hi, my name is Mike Primak. Thank you for reading my resume. I have three years inside B2B SaaS
+      companies: at Zerion I was on a small developer team writing JavaScript integrations for clients,
+      and at WellnessLiving I coordinated developers, designers and support staff through 2,500+
+      white-label app launches. Since 2025 I have built and run Good Fights, a React Native and Next.js
+      app on both app stores, where I use Claude as a coding partner and as a production feature.
+      I work remotely from Meaford, Ontario, on Eastern time.
     </p>
 
     <section>
@@ -120,32 +120,26 @@
 
       <div class="job">
         <p class="where">Good Fights &nbsp;/&nbsp; Sept 2025 &ndash; Present &nbsp;/&nbsp; Remote</p>
-        <h3>Founder &amp; Sole Developer</h3>
-        <p>I was the founder and sole developer, bringing this iOS and Android app to life. I am responsible for the full stack: React Native, TypeScript, Node, Next, Postgres, Prisma, Docker, AI enrichments and all infrastructure. A demonstration of my ability to execute every stage of app development.</p>
-      </div>
-
-      <div class="job">
-        <p class="where">LGBT Voice Tanzania &nbsp;/&nbsp; 2024 &ndash; Present &nbsp;/&nbsp; Remote</p>
-        <h3>Volunteer Web Developer</h3>
-        <p>Re-built an old WordPress site using a modern WordPress framework. Made the website easier to maintain, nicer looking, and more comprehensive.</p>
+        <h3>Founder &amp; Developer (goodfights.app)</h3>
+        <p>Fight-rating app on iOS, Android and web. Designed, built and run by me: React Native (Expo), Next.js, TypeScript/Node API, PostgreSQL with Prisma, Docker on a Linux VPS. Scrapers pull fight cards from 10+ sites with merge tooling for duplicate fighters; Claude enrichment writes in-app content behind a confidence gate; 30+ scheduled jobs keep it running. Users have left 79,000+ ratings and 1,400+ written reviews.</p>
       </div>
 
       <div class="job">
         <p class="where">Zerion Software &nbsp;/&nbsp; Apr 2024 &ndash; Nov 2024 &nbsp;/&nbsp; Remote</p>
         <h3>Implementation Engineer</h3>
-        <p>I worked with a small team of developers to build custom features for B2B clients. The product was a customizable data collection app. I was on calls with clients gathering requirements and writing custom code solutions.</p>
+        <p>On a small remote team of developers customizing a B2B data collection app for farms, warehouses, retailers and research groups. Met each new client on Zoom to learn their workflow, configured the app, and wrote custom JavaScript where the GUI fell short, including data pipelines from the app into client databases through Zapier, HubSpot and webhook integrations. Reviewed each solution with the client and reported to the founder.</p>
       </div>
 
       <div class="job">
-        <p class="where">WellnessLiving Systems Inc. &nbsp;/&nbsp; 2018 &ndash; 2020 &nbsp;/&nbsp; Hybrid</p>
-        <h3>White Label App Dept. Coordinator</h3>
-        <p>Coordinated a team of developers, designers and support staff delivering white-label mobile apps to B2B clients. Worked with those clients through delivery: gathering what they needed, translating it for engineering and design, and staying with the account through launch and support.</p>
+        <p class="where">WellnessLiving Systems Inc. &nbsp;/&nbsp; Feb 2018 &ndash; Aug 2020 &nbsp;/&nbsp; Hybrid</p>
+        <h3>White Label App Department Coordinator</h3>
+        <p>Ran the white-label app department of a B2B SaaS for fitness studios, taking each client from sale to a live app on the App Store and Google Play. Coordinated a dozen developers, designers and front-line staff, submitted builds to both stores, trained business owners, and rebuilt the Zoho CRM onboarding workflow (schemas, automations) so the CRM carried more of the work. 2,500+ apps launched in 30 months. Reported to both founders.</p>
       </div>
 
       <div class="job">
-        <p class="where">Self-employed &nbsp;/&nbsp; 2016 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
+        <p class="where">Self-employed &nbsp;/&nbsp; 2012 &ndash; 2025 &nbsp;/&nbsp; Remote</p>
         <h3>Freelance Web Developer</h3>
-        <p>Built and maintained business websites and WordPress/WooCommerce sites for small and mid-sized clients, owning consultation, design, build, deployment and maintenance.</p>
+        <p>Business, e-commerce and non-profit websites in WordPress, WooCommerce, PHP and static HTML, owning consultation, design, build, deployment and maintenance. Volunteer: rebuilt lgbtvoicetz.org.</p>
       </div>
     </section>
   </main>
@@ -171,8 +165,10 @@
       <p><span class="nowrap">React</span> <span class="sep">/</span> <span class="nowrap">React Native (Expo)</span> <span class="sep">/</span> <span class="nowrap">Next.js</span> <span class="sep">/</span> <span class="nowrap">Tailwind CSS</span> <span class="sep">/</span> <span class="nowrap">WordPress</span> <span class="sep">/</span> <span class="nowrap">WooCommerce</span></p>
       <h4>Back end &amp; data</h4>
       <p><span class="nowrap">Node.js</span> <span class="sep">/</span> <span class="nowrap">REST APIs</span> <span class="sep">/</span> <span class="nowrap">PostgreSQL</span> <span class="sep">/</span> <span class="nowrap">Prisma</span> <span class="sep">/</span> <span class="nowrap">MySQL</span> <span class="sep">/</span> <span class="nowrap">Web scraping</span> <span class="sep">/</span> <span class="nowrap">Data pipelines</span></p>
+      <h4>Integrations &amp; CRM</h4>
+      <p><span class="nowrap">Zoho CRM</span> <span class="sep">/</span> <span class="nowrap">HubSpot</span> <span class="sep">/</span> <span class="nowrap">Zapier</span> <span class="sep">/</span> <span class="nowrap">Webhooks</span></p>
       <h4>Artificial intelligence</h4>
-      <p><span class="nowrap">LLM features in production</span> <span class="sep">/</span> <span class="nowrap">Output validation</span> <span class="sep">/</span> <span class="nowrap">AI-assisted development</span></p>
+      <p><span class="nowrap">LLM features in production</span> <span class="sep">/</span> <span class="nowrap">Output validation</span> <span class="sep">/</span> <span class="nowrap">Claude Code</span></p>
       <h4>Infrastructure &amp; testing</h4>
       <p><span class="nowrap">Docker</span> <span class="sep">/</span> <span class="nowrap">Linux VPS</span> <span class="sep">/</span> <span class="nowrap">GitHub Actions</span> <span class="sep">/</span> <span class="nowrap">Jest</span> <span class="sep">/</span> <span class="nowrap">Vercel</span> <span class="sep">/</span> <span class="nowrap">Render</span> <span class="sep">/</span> <span class="nowrap">App Store &amp; Google Play release</span></p>
     </section>
@@ -181,6 +177,8 @@
       <h2>Education</h2>
       <ul>
         <li><b>Georgian College</b><span>Big Data Analytics</span></li>
+        <li><b>Canadian Academy of Osteopathy</b><span>Osteopathic Manual Therapy diploma</span></li>
+        <li><b>Laurentian University</b><span>Bachelor of Human Kinetics</span></li>
       </ul>
     </section>
   </aside>
