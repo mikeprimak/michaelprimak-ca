@@ -94,7 +94,7 @@ export const experience = {
     "Customer Relations, Team Coordination and Full Stack Coding",
   timeline: [
     {
-      when: "Sept 2025 – now",
+      when: "Sept 2025 – Nov 2026",
       org: "Good Fights",
       logo: "/logos/good-fights.png",
       logoBg: "#181818",
